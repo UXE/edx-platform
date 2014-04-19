@@ -12,30 +12,15 @@ from collections import OrderedDict, defaultdict
 from decimal import Decimal, InvalidOperation
 from hashlib import sha1
 from textwrap import dedent
-
-log = logging.getLogger("shoppingcart")
-try:
-    import stripe
-except ImportError, e:
-    raise e
-log.warning(""" 
- __          __              _             
- \ \        / /             (_)            
-  \ \  /\  / /_ _ _ __ _ __  _ _ __   __ _ 
-   \ \/  \/ / _` | '__| '_ \| | '_ \ / _` |
-    \  /\  / (_| | |  | | | | | | | | (_| |
-     \/  \/ \__,_|_|  |_| |_|_|_| |_|\__, |
-                                      __/ |
-                                     |___/ 
-{0}
-{1}
-""".format(stripe, stripe.CardError))
+import stripe
 from django.conf import settings
 from django.utils.translation import ugettext as _
 from edxmako.shortcuts import render_to_string
 from django.core.urlresolvers import reverse
 from shoppingcart.models import Order
 from shoppingcart.processors.exceptions import *
+
+log = logging.getLogger("shoppingcart")
 
 
 def process_postpay_callback(params):
@@ -67,9 +52,13 @@ def process_postpay_callback(params):
     except Order.DoesNotExist:
         raise CCProcessorDataException(_("the order you are trying to pay for is not found, an order whose number is not in our system."))
 
+    user = order.user
+    amount = int(order.total_cost*100) # cost in cents as required by Stripe
+    currency = order.currency
+
     # Set your secret key: remember to change this to your live secret key in production
     # See your keys here https://manage.stripe.com/account
-    stripe.api_key = "sk_test_sDshP03YNn7oZlRAQUqlDxlf"
+    stripe.api_key = "sk_test_sDshP03YNn7oZlRAQUqlDxlf" #TODO retrieve it from settings
 
     
     # Get the credit card details submitted by the form
@@ -85,13 +74,23 @@ def process_postpay_callback(params):
     {0}
     """.format(token))
     
+    # Create the customer on stripe servers 
+    ## TODO store those customers in django models to easly retrieve them later
+    customer = stripe.Customer.create(
+        description= u"Customer Object for user: {0} with this email: {1}".format(user, user.email),
+        card= token,
+        email= user.email
+        ## TODO add more meta data
+    )
+
     # Create the charge on Stripe's servers - this will charge the user's card
     try:
         charge = stripe.Charge.create(
-            amount=1000, # amount in cents, again
-            currency="usd",
-            card=token,
-            description="payinguser@example.com"
+            amount= amount, # amount in cents, again
+            currency= currency,
+            customer= customer,
+            description= u"Payment for courses on Syasi.org from user: {0} with email: {1}".format(user, user.email)
+            ## TODO add more meta data
         )
         log.warning(""" 
       _        __      
@@ -107,30 +106,30 @@ def process_postpay_callback(params):
         return {'success': True,
                 'order': order,
                 'error_html': ''}
-    except stripe.CardError, e:
+    except stripe.CardError, error:
       # The card has been declined
       return {'success': False,
                 'order': None,  # due to exception we may not have the order
                 # 'error_html': get_processor_exception_html(error)} # TODO implement one like this
                 # of cybersource for stripe and incorporate this one also 'error_html': get_processor_decline_html(params)}
-                'error_html': e}
+                'error_html': error}
 
-    try:
-        result = payment_accepted(params)
-        if result['accepted']:
-            # SUCCESS CASE first, rest are some sort of oddity
-            record_purchase(params, result['order'])
-            return {'success': True,
-                    'order': result['order'],
-                    'error_html': ''}
-        else:
-            return {'success': False,
-                    'order': result['order'],
-                    'error_html': get_processor_decline_html(params)}
-    except CCProcessorException as error:
-        return {'success': False,
-                'order': None,  # due to exception we may not have the order
-                'error_html': get_processor_exception_html(error)}
+    # try:
+    #     result = payment_accepted(params)
+    #     if result['accepted']:
+    #         # SUCCESS CASE first, rest are some sort of oddity
+    #         record_purchase(params, result['order'])
+    #         return {'success': True,
+    #                 'order': result['order'],
+    #                 'error_html': ''}
+    #     else:
+    #         return {'success': False,
+    #                 'order': result['order'],
+    #                 'error_html': get_processor_decline_html(params)}
+    # except CCProcessorException as error:
+    #     return {'success': False,
+    #             'order': None,  # due to exception we may not have the order
+    #             'error_html': get_processor_exception_html(error)}
 
 
 def processor_hash(value):
@@ -189,6 +188,7 @@ def render_purchase_form_html(cart):
     return render_to_string('shoppingcart/StripePayment_form.html', {
         'action': get_purchase_endpoint(),
         'params': get_signed_purchase_params(cart),
+        'total_payment': cart.total_cost*100 # converting to cents as required by stripe
     })
 
 def get_signed_purchase_params(cart):
