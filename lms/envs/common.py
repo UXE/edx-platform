@@ -654,6 +654,10 @@ ZENDESK_API_KEY = None
 PAYMENT_SUPPORT_EMAIL = 'payment@example.com'
 ##### Using cybersource by default #####
 CC_PROCESSOR = {
+    'stripe': {
+        'SECRET_KEY': 'sk_test_sDshP03YNn7oZlRAQUqlDxlf',
+        'PUBLISH_KEY': 'pk_test_yrNR7N5jcsqo23tbvR8OJZeE',
+    },
     'CyberSource': {
         'SHARED_SECRET': '',
         'MERCHANT_ID': '',
