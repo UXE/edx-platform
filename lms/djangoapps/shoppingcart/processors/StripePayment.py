@@ -2,6 +2,7 @@
 ### The name of this file should be used as the key of the dict in the CC_PROCESSOR setting
 ### Implementes interface as specified by __init__.py
 
+import logging
 import time
 import hmac
 import binascii
@@ -11,9 +12,28 @@ from collections import OrderedDict, defaultdict
 from decimal import Decimal, InvalidOperation
 from hashlib import sha1
 from textwrap import dedent
+
+log = logging.getLogger("shoppingcart")
+try:
+    import stripe
+except ImportError, e:
+    raise e
+log.warning(""" 
+ __          __              _             
+ \ \        / /             (_)            
+  \ \  /\  / /_ _ _ __ _ __  _ _ __   __ _ 
+   \ \/  \/ / _` | '__| '_ \| | '_ \ / _` |
+    \  /\  / (_| | |  | | | | | | | | (_| |
+     \/  \/ \__,_|_|  |_| |_|_|_| |_|\__, |
+                                      __/ |
+                                     |___/ 
+{0}
+{1}
+""".format(stripe, stripe.CardError))
 from django.conf import settings
 from django.utils.translation import ugettext as _
 from edxmako.shortcuts import render_to_string
+from django.core.urlresolvers import reverse
 from shoppingcart.models import Order
 from shoppingcart.processors.exceptions import *
 
@@ -31,26 +51,71 @@ def process_postpay_callback(params):
     return a helpful-enough error message in error_html.
     """
 
+    # check if oreder exists
     try:
-        import stripe
-    except ImportError, e:
-        raise e
-
-    log.warning(""" 
-     __          __              _             
-     \ \        / /             (_)            
-      \ \  /\  / /_ _ _ __ _ __  _ _ __   __ _ 
-       \ \/  \/ / _` | '__| '_ \| | '_ \ / _` |
-        \  /\  / (_| | |  | | | | | | | | (_| |
-         \/  \/ \__,_|_|  |_| |_|_|_| |_|\__, |
-                                          __/ |
-                                         |___/ 
+        order = Order.objects.get(id=params.get('orderNumber', ''))
+        log.warning(""" 
+      _        __      
+     (_)      / _|     
+      _ _ __ | |_ ___  
+     | | '_ \|  _/ _ \ 
+     | | | | | || (_) |
+     |_|_| |_|_| \___/ 
+                   
     {0}
-    {1}
-    """.format(stripe, stripe.CardError))
+    """.format(order))
+    except Order.DoesNotExist:
+        raise CCProcessorDataException(_("the order you are trying to pay for is not found, an order whose number is not in our system."))
+
+    # Set your secret key: remember to change this to your live secret key in production
+    # See your keys here https://manage.stripe.com/account
+    stripe.api_key = "sk_test_sDshP03YNn7oZlRAQUqlDxlf"
+
     
+    # Get the credit card details submitted by the form
+    token = params.get('stripeToken', '')
+    log.warning(""" 
+      _        __      
+     (_)      / _|     
+      _ _ __ | |_ ___  
+     | | '_ \|  _/ _ \ 
+     | | | | | || (_) |
+     |_|_| |_|_| \___/ 
+                   
+    {0}
+    """.format(token))
+    
+    # Create the charge on Stripe's servers - this will charge the user's card
     try:
-        verify_signatures(params)
+        charge = stripe.Charge.create(
+            amount=1000, # amount in cents, again
+            currency="usd",
+            card=token,
+            description="payinguser@example.com"
+        )
+        log.warning(""" 
+      _        __      
+     (_)      / _|     
+      _ _ __ | |_ ___  
+     | | '_ \|  _/ _ \ 
+     | | | | | || (_) |
+     |_|_| |_|_| \___/ 
+                   
+    {0}
+    """.format(charge))
+        record_purchase(params, order)
+        return {'success': True,
+                'order': order,
+                'error_html': ''}
+    except stripe.CardError, e:
+      # The card has been declined
+      return {'success': False,
+                'order': None,  # due to exception we may not have the order
+                # 'error_html': get_processor_exception_html(error)} # TODO implement one like this
+                # of cybersource for stripe and incorporate this one also 'error_html': get_processor_decline_html(params)}
+                'error_html': e}
+
+    try:
         result = payment_accepted(params)
         if result['accepted']:
             # SUCCESS CASE first, rest are some sort of oddity
@@ -121,7 +186,7 @@ def render_purchase_form_html(cart):
     """
     Renders the HTML of the hidden POST form that must be used to initiate a purchase with CyberSource
     """
-    return render_to_string('shoppingcart/cybersource_form.html', {
+    return render_to_string('shoppingcart/StripePayment_form.html', {
         'action': get_purchase_endpoint(),
         'params': get_signed_purchase_params(cart),
     })
@@ -142,7 +207,7 @@ def get_purchase_params(cart):
     return params
 
 def get_purchase_endpoint():
-    return settings.CC_PROCESSOR['CyberSource'].get('PURCHASE_ENDPOINT', '')
+    return reverse('shoppingcart.views.postpay_callback')
 
 def payment_accepted(params):
     """
@@ -178,16 +243,6 @@ def payment_accepted(params):
         raise CCProcessorDataException(_("The payment processor accepted an order whose number is not in our system."))
 
     if valid_params['decision'] == 'ACCEPT':
-        try:
-            # Moved reading of charged_amount here from the valid_params loop above because
-            # only 'ACCEPT' messages have a 'ccAuthReply_amount' parameter
-            charged_amt = Decimal(params['ccAuthReply_amount'])
-        except InvalidOperation:
-            raise CCProcessorDataException(
-                _("The payment processor returned a badly-typed value {0} for param {1}.".format(
-                    params['ccAuthReply_amount'], 'ccAuthReply_amount'))
-            )
-
         if charged_amt == order.total_cost and valid_params['orderCurrency'] == order.currency:
             return {'accepted': True,
                     'amt_charged': charged_amt,
@@ -210,12 +265,7 @@ def record_purchase(params, order):
     """
     Record the purchase and run purchased_callbacks
     """
-    ccnum_str = params.get('card_accountNumber', '')
-    m = re.search("\d", ccnum_str)
-    if m:
-        ccnum = ccnum_str[m.start():]
-    else:
-        ccnum = "####"
+    last4 = params.get('last4', '####')
 
     order.purchase(
         first=params.get('billTo_firstName', ''),
@@ -226,7 +276,7 @@ def record_purchase(params, order):
         state=params.get('billTo_state', ''),
         country=params.get('billTo_country', ''),
         postalcode=params.get('billTo_postalCode', ''),
-        ccnum=ccnum,
+        ccnum=last4,
         cardtype=CARDTYPE_MAP[params.get('card_cardType', 'UNKNOWN')],
         processor_reply_dump=json.dumps(params)
     )

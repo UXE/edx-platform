@@ -1,0 +1,13 @@
+ 		<form action="${action}" method="POST">
+ 			% for pk, pv in params.iteritems():
+                <input type="hidden" name="${pk}" value="${pv}" />
+            % endfor
+		  <script
+		    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		    data-key="pk_test_yrNR7N5jcsqo23tbvR8OJZeE"
+		    data-image="/square-image.png"
+		    data-name="Demo Site"
+		    data-description="2 widgets ($300.00)"
+		    data-amount="2000">
+		  </script>
+		</form>
