@@ -894,7 +894,6 @@ msgstr "الرجاء الاطلاع على سطر الكود الأساسي ال
 #. Translators: 'unmask_name' is a method name and should not be translated.
 #: common/lib/capa/capa/responsetypes.py
 msgid "unmask_name called on response that is not masked"
-msgstr ""
 
 #. Translators: 'shuffle' and 'answer-pool' are attribute names and should not
 #. be translated.
@@ -1979,7 +1978,6 @@ msgstr "أهداف"
 
 #: lms/djangoapps/instructor/views/api.py
 msgid "Module does not exist."
-msgstr ""
 
 #: lms/djangoapps/instructor/views/api.py
 #: lms/djangoapps/instructor/views/legacy.py
@@ -7215,6 +7213,9 @@ msgid ""
 msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
+"In order to request a refund for the amount you paid, you will need to send "
+"an email to {billing_email}.  Be sure to include your email and the course "
+"name."
 msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
