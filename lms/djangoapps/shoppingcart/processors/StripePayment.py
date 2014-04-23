@@ -188,7 +188,8 @@ def render_purchase_form_html(cart):
     return render_to_string('shoppingcart/StripePayment_form.html', {
         'action': get_purchase_endpoint(),
         'params': get_signed_purchase_params(cart),
-        'total_payment': cart.total_cost*100 # converting to cents as required by stripe
+        'total_payment': cart.total_cost*100, # converting to cents as required by stripe
+        'data_email': cart.user.email
     })
 
 def get_signed_purchase_params(cart):

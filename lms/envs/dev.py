@@ -270,8 +270,8 @@ if SEGMENT_IO_LMS_KEY:
 
 ###################### Payment ##############################3
 ###################### stripe ##############################3
-CC_PROCESSOR['stripe']['SECRET_KEY'] = os.environ.get('STRIPE_SECRET_KEY', 'sk_test_sDshP03YNn7oZlRAQUqlDxlf')
-CC_PROCESSOR['stripe']['PUBLISH_KEY'] = os.environ.get('STRIPE_PUBLISH_KEY', 'pk_test_yrNR7N5jcsqo23tbvR8OJZeE')
+CC_PROCESSOR['StripePayment']['SECRET_KEY'] = os.environ.get('STRIPE_SECRET_KEY', 'sk_test_sDshP03YNn7oZlRAQUqlDxlf')
+CC_PROCESSOR['StripePayment']['PUBLISH_KEY'] = os.environ.get('STRIPE_PUBLISH_KEY', 'pk_test_yrNR7N5jcsqo23tbvR8OJZeE')
 
 ###################### cybersource ##############################3
 
