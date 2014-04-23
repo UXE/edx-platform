@@ -911,7 +911,6 @@ msgstr ""
 #. Translators: 'Choicegroup' is an input type and should not be translated.
 #: common/lib/capa/capa/responsetypes.py
 msgid "Choicegroup must include at least 1 correct and 1 incorrect choice"
-msgstr ""
 
 #: common/lib/capa/capa/responsetypes.py common/lib/capa/capa/responsetypes.py
 msgid "There was a problem with the staff answer to this problem."
@@ -1985,7 +1984,6 @@ msgstr ""
 #: lms/djangoapps/instructor/views/api.py
 #: lms/djangoapps/instructor/views/legacy.py
 msgid "An error occurred while deleting the score."
-msgstr ""
 
 #: lms/djangoapps/instructor/views/api.py
 #: lms/templates/verify_student/midcourse_reverify_dash.html
@@ -2665,7 +2663,6 @@ msgstr "محاولة إضافة عملة مختلفة لسلة التسوق"
 
 #: lms/djangoapps/shoppingcart/models.py
 msgid "Registration for Course: {course_name}"
-msgstr ""
 
 #: lms/djangoapps/shoppingcart/models.py
 msgid ""
@@ -4182,7 +4179,6 @@ msgstr "رقم المقرر"
 #: lms/templates/discussion/mustache/_inline_discussion_cohorted.mustache
 #: lms/templates/verify_student/face_upload.html
 msgid "Cancel"
-msgstr ""
 
 #: cms/templates/index.html
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
@@ -4218,7 +4214,6 @@ msgstr "كلمة السر"
 #: cms/templates/widgets/header.html
 #: lms/templates/wiki/includes/article_menu.html
 msgid "Settings"
-msgstr ""
 
 #: cms/templates/manage_users.html
 #: lms/templates/courseware/instructor_dashboard.html
@@ -4232,7 +4227,6 @@ msgstr "مشرف"
 #: lms/templates/combinedopenended/selfassessment/self_assessment_prompt.html
 #: lms/templates/verify_student/face_upload.html
 msgid "Save"
-msgstr ""
 
 #: cms/templates/register.html cms/templates/widgets/header.html
 #: lms/templates/index.html
@@ -5309,7 +5303,6 @@ msgstr "تسجيل الخروج"
 
 #: lms/templates/navigation.html
 msgid "Shopping Cart"
-msgstr ""
 
 #: lms/templates/navigation.html
 msgid "How it Works"
@@ -9160,13 +9153,11 @@ msgstr "قم بالتسجيل في [اسم المقرر] | إيصال (الطل�
 
 #: lms/templates/shoppingcart/receipt.html
 msgid "Thank you for your Purchase!"
-msgstr ""
 
 #: lms/templates/shoppingcart/receipt.html
 msgid ""
 "Please print this receipt page for your records. You should also have "
 "received a receipt in your email."
-msgstr ""
 
 #: lms/templates/shoppingcart/receipt.html
 msgid " () Electronic Receipt"
