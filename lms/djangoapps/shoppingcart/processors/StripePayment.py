@@ -92,6 +92,7 @@ def process_postpay_callback(params):
             description= u"Payment for courses on Syasi.org from user: {0} with email: {1}".format(user, user.email)
             ## TODO add more meta data
         )
+
         log.warning(""" 
       _        __      
      (_)      / _|     
@@ -102,6 +103,8 @@ def process_postpay_callback(params):
                    
     {0}
     """.format(charge))
+
+        # her is the real enrollment process
         record_purchase(params, order)
         return {'success': True,
                 'order': order,
