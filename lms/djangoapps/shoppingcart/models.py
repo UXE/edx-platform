@@ -616,3 +616,23 @@ class CertificateItem(OrderItem):
                 mode='verified',
                 status='purchased',
                 unit_cost__gt=(CourseMode.min_course_price_for_verified_for_currency(course_id, 'usd')))).count()
+
+class PaymentAprrovalRequest(models.Model):
+    """
+    docstring for PaymentAprrovalRequest
+    """
+
+    cart = models.ForeignKey(Order)
+    paid_course_registrations = models.ManyToManyField(PaidCourseRegistration)
+    request_details = models.TextField()
+    approved_by = models.ForeignKey(User, blank=True, null=True)
+    is_approved = models.BooleanField(default=False)
+    message = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["cart"]
+
+    def __unicode__(self):
+        return u"request by {} for {} is {}".format(self.cart.user, self.cart, self.is_approved)
