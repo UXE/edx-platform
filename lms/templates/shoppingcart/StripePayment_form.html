@@ -1,7 +1,8 @@
- 		<form action="${action}" method="POST">
+ 		<form id="stripe-form" action="${action}" method="POST">
  			% for pk, pv in params.iteritems():
                 <input type="hidden" name="${pk}" value="${pv}" />
             % endfor
+            	<input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>
 		  <script
 		    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		    data-key="pk_test_yrNR7N5jcsqo23tbvR8OJZeE"
@@ -11,4 +12,12 @@
 		    data-description="Pying for Syasi.org courses"
 		    data-amount="${total_payment}">
 		  </script>
+		</form>
+		<p>OR</p>
+		<form id="bank-payment" action="bank_payments/new_payment_request/" method="POST">
+ 			% for pk, pv in params.iteritems():
+                <input type="hidden" name="${pk}" value="${pv}" />
+            % endfor
+            <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>
+            <input type="submit" value="Bank Payment" />
 		</form>

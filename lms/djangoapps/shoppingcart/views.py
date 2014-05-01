@@ -9,12 +9,13 @@ from django.utils.translation import ugettext as _
 from django.views.decorators.http import require_POST
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
+from django_future.csrf import ensure_csrf_cookie
 from django.contrib.auth.decorators import login_required
 from edxmako.shortcuts import render_to_response
 from shoppingcart.reports import RefundReport, ItemizedPurchaseReport, UniversityRevenueShareReport, CertificateStatusReport
 from student.models import CourseEnrollment
 from .exceptions import ItemAlreadyInCartException, AlreadyEnrolledInCourseException, CourseDoesNotExistException, ReportTypeDoesNotExistException
-from .models import Order, PaidCourseRegistration, OrderItem
+from .models import Order, PaidCourseRegistration, OrderItem, PaymentAprrovalRequest
 from .processors import process_postpay_callback, render_purchase_form_html
 
 log = logging.getLogger("shoppingcart")
@@ -92,8 +93,10 @@ def remove_item(request):
     return HttpResponse('OK')
 
 
-@csrf_exempt
+# @csrf_exempt
 @require_POST
+@login_required
+@ensure_csrf_cookie
 def postpay_callback(request):
     """
     Receives the POST-back from processor.
@@ -227,3 +230,68 @@ def csv_report(request):
 
     else:
         return HttpResponseBadRequest("HTTP Method Not Supported")
+
+
+# bank payments views
+
+@require_POST
+@login_required
+@ensure_csrf_cookie
+def new_payment_request(request):
+    """
+    create new bank payments request
+    """
+    user = request.user
+    if not user.is_authenticated():
+        return HttpResponseForbidden('you are not allowed to do  so!')
+
+    cart = Order.get_cart_for_user(request.user)
+    cart_items = cart.orderitem_set.all().select_subclasses("paidcourseregistration") ## use cart.orderitem_set.all().select_subclasses('paidcourseregistration') to return the approperiate type
+    payment_request = PaymentAprrovalRequest(cart=cart, request_details='demo', message='Waiting approval')
+    payment_request.save()
+
+    log.warning(""" 
+      _        __      
+     (_)      / _|     
+      _ _ __ | |_ ___  
+     | | '_ \|  _/ _ \ 
+     | | | | | || (_) |
+     |_|_| |_|_| \___/ 
+                   
+    {0}
+    """.format(cart_items))
+
+    for item in cart_items:
+        log.warning(""" 
+      _        __      
+     (_)      / _|     
+      _ _ __ | |_ ___  
+     | | '_ \|  _/ _ \ 
+     | | | | | || (_) |
+     |_|_| |_|_| \___/ 
+                   
+    {0}
+    """.format(item.course_id))
+        # payment_request.paid_course_registrations.add(item)
+
+        payment_request.paid_course_registrations.add(item)
+
+    payment_request.save()
+
+    log.warning(""" 
+      _        __      
+     (_)      / _|     
+      _ _ __ | |_ ___  
+     | | '_ \|  _/ _ \ 
+     | | | | | || (_) |
+     |_|_| |_|_| \___/ 
+                   
+    {0}
+    """.format(payment_request))
+
+
+    if result['success']:
+        return HttpResponseRedirect(reverse('shoppingcart.views.show_receipt', args=[result['order'].id]))
+    else:
+        return render_to_response('shoppingcart/error.html', {'order': result['order'],
+                                                              'error_html': result['error_html']})
