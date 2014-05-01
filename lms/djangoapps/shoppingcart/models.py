@@ -202,6 +202,9 @@ class Order(models.Model):
             instruction_set.update(set_of_html)
         return instruction_dict, instruction_set
 
+    def __unicode__(self):
+        return u"Order cart for user: {}, with id:{}".format(self.user, self.id)
+
 
 class OrderItem(models.Model):
     """
@@ -422,6 +425,9 @@ class PaidCourseRegistration(OrderItem):
         except PaidCourseRegistrationAnnotation.DoesNotExist:
             return u""
 
+    def __unicode__(self):
+        return u"PaidCourseRegistration for course:{}, user: {}".format(self.course_id, self.order.user)
+
 
 class PaidCourseRegistrationAnnotation(models.Model):
     """
@@ -635,4 +641,4 @@ class PaymentAprrovalRequest(models.Model):
         ordering = ["cart"]
 
     def __unicode__(self):
-        return u"request by {} for {} is {}".format(self.cart.user, self.cart, self.is_approved)
+        return u"payment approval request by {} for {} is {}".format(self.cart.user, self.cart, self.is_approved)

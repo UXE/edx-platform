@@ -243,41 +243,29 @@ def new_payment_request(request):
     """
     user = request.user
     if not user.is_authenticated():
+        log.warning('you are not allowed to do  so!')
         return HttpResponseForbidden('you are not allowed to do  so!')
 
     cart = Order.get_cart_for_user(request.user)
-    cart_items = cart.orderitem_set.all().select_subclasses("paidcourseregistration") ## use cart.orderitem_set.all().select_subclasses('paidcourseregistration') to return the approperiate type
+    if not user == cart.user:
+        log.warning('Trying to manipulate other users cart!')
+        return HttpResponseForbidden('Trying to manipulate other users cart!')
+
+    ## use cart.orderitem_set.all().select_subclasses('paidcourseregistration') to return the approperiate type
+    cart_items = cart.orderitem_set.all().select_subclasses("paidcourseregistration") 
+    if len(cart_items) == 0:
+        log.warning('Trying to submit empty cart!')
+        return HttpResponseForbidden('Trying to submit empty cart!')
+
     payment_request = PaymentAprrovalRequest(cart=cart, request_details='demo', message='Waiting approval')
     payment_request.save()
 
-    log.warning(""" 
-      _        __      
-     (_)      / _|     
-      _ _ __ | |_ ___  
-     | | '_ \|  _/ _ \ 
-     | | | | | || (_) |
-     |_|_| |_|_| \___/ 
-                   
-    {0}
-    """.format(cart_items))
-
     for item in cart_items:
-        log.warning(""" 
-      _        __      
-     (_)      / _|     
-      _ _ __ | |_ ___  
-     | | '_ \|  _/ _ \ 
-     | | | | | || (_) |
-     |_|_| |_|_| \___/ 
-                   
-    {0}
-    """.format(item.course_id))
-        # payment_request.paid_course_registrations.add(item)
-
         payment_request.paid_course_registrations.add(item)
 
     payment_request.save()
 
+
     log.warning(""" 
       _        __      
      (_)      / _|     
@@ -287,11 +275,8 @@ def new_payment_request(request):
      |_|_| |_|_| \___/ 
                    
     {0}
-    """.format(payment_request))
+    """.format(payment_request.paid_course_registrations.all()))
 
-
-    if result['success']:
-        return HttpResponseRedirect(reverse('shoppingcart.views.show_receipt', args=[result['order'].id]))
-    else:
-        return render_to_response('shoppingcart/error.html', {'order': result['order'],
-                                                              'error_html': result['error_html']})
+    # return HttpResponseRedirect('http://127.0.0.1:8000/shoppingcart/')
+    return HttpResponse(_("Payment request added to cart."))
+    # HttpResponseRedirect(reverse('shoppingcart.views.show_cart')
