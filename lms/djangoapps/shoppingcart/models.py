@@ -629,6 +629,9 @@ class PaymentAprrovalRequest(models.Model):
     """
 
     cart = models.ForeignKey(Order)
+
+    # needed for queries on requests view
+    user = models.ForeignKey(User)
     paid_course_registrations = models.ManyToManyField(PaidCourseRegistration)
     request_details = models.TextField()
     approved_by = models.ForeignKey(User, blank=True, null=True)

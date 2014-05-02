@@ -1,0 +1,26 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.core.urlresolvers import reverse %>
+
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Payment Requests List")}</%block>
+
+
+<section class="container cart-list">
+    <p><h1>${_("Your Payment Requests List!")}</h1></p>
+    % if payment_requests:
+    <ol>
+    		% for item in payment_requests:
+        <li>
+        <h2>Request Details</h2>
+        <ul class="cart-items">
+          <li><h3>Creation time:</h3> ${item.created_at}</li>
+          <li><h3>Details you sent:</h3> ${item.request_details}</li>
+          <li><h3>Is approved?:</h3> ${item.is_approved}</li>
+          <li><h3>Request Stauts:</h3> ${item.message}</li>
+        </ul>
+        </li>
+        % endfor
+    </ol>
+    % endif
+</section>

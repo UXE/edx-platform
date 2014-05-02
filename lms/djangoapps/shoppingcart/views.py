@@ -247,6 +247,7 @@ def new_payment_request(request):
         return HttpResponseForbidden('you are not allowed to do  so!')
 
     cart = Order.get_cart_for_user(request.user)
+    # by the way this will allawys be false, but will leave it to figure out what to do
     if not user == cart.user:
         log.warning('Trying to manipulate other users cart!')
         return HttpResponseForbidden('Trying to manipulate other users cart!')
@@ -257,7 +258,7 @@ def new_payment_request(request):
         log.warning('Trying to submit empty cart!')
         return HttpResponseForbidden('Trying to submit empty cart!')
 
-    payment_request = PaymentAprrovalRequest(cart=cart, request_details='demo', message='Waiting approval')
+    payment_request = PaymentAprrovalRequest(cart=cart, user=user, request_details='demo', message='Waiting approval')
     payment_request.save()
 
     for item in cart_items:
@@ -280,3 +281,46 @@ def new_payment_request(request):
     # return HttpResponseRedirect('http://127.0.0.1:8000/shoppingcart/')
     return HttpResponse(_("Payment request added to cart."))
     # HttpResponseRedirect(reverse('shoppingcart.views.show_cart')
+
+@login_required
+def user_payment_requests(request):
+    """
+    user will be redirected to this page, and review all his past requset even the approved ones
+    """
+
+    try:
+        payment_requests = PaymentAprrovalRequest.objects.filter(user=request.user)
+        return render_to_response('shoppingcart/payment_requests.html', 
+                                    {'payment_requests': payment_requests})
+    except PaymentAprrovalRequest.DoesNotExist:
+        raise
+    
+
+def all_payment_requests(request):
+    """
+    list all Payment approval requests in the system
+    """
+    try:
+        payment_requests = PaymentAprrovalRequest.objects.all()
+        return render_to_response('shoppingcart/all_payment_requests.html', 
+                                    {'payment_requests': payment_requests})
+    except PaymentAprrovalRequest.DoesNotExist:
+        raise
+
+def course_payment_requests(request):
+    """
+    list of Payment requests in a specific course
+    """
+    pass
+
+def approve_payment_request(request):
+    """
+    approve Payment request and call the logic of purchase items and send emails and so on
+    """
+    pass
+
+def update_payment_request(request):
+    """
+    can be used to change the status message and send the user an email of changes
+    """
+    pass
