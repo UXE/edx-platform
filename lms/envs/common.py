@@ -37,7 +37,7 @@ from lms.lib.xblock.mixin import LmsBlockMixin
 
 ################################### FEATURES ###################################
 # The display name of the platform to be used in templates/emails/etc.
-PLATFORM_NAME = "edX"
+PLATFORM_NAME = "Daress"
 CC_MERCHANT_NAME = PLATFORM_NAME
 
 COURSEWARE_ENABLED = True
@@ -493,7 +493,7 @@ CMS_BASE = 'localhost:8001'
 
 # Site info
 SITE_ID = 1
-SITE_NAME = "edx.org"
+SITE_NAME = "localhost"
 HTTPS = 'on'
 ROOT_URLCONF = 'lms.urls'
 IGNORABLE_404_ENDS = ('favicon.ico')
