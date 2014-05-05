@@ -258,7 +258,9 @@ def new_payment_request(request):
         log.warning('Trying to submit empty cart!')
         return HttpResponseForbidden('Trying to submit empty cart!')
 
-    payment_request = PaymentAprrovalRequest(cart=cart, user=user, request_details='demo', message='Waiting approval')
+    request_details = request.POST.get('payment_request_details', '')
+
+    payment_request = PaymentAprrovalRequest(cart=cart, user=user, request_details=request_details, message='Waiting approval')
     payment_request.save()
 
     for item in cart_items:
@@ -278,8 +280,9 @@ def new_payment_request(request):
     {0}
     """.format(payment_request.paid_course_registrations.all()))
 
-    # return HttpResponseRedirect('http://127.0.0.1:8000/shoppingcart/')
-    return HttpResponse(_("Payment request added to cart."))
+    return HttpResponseRedirect('http://127.0.0.1:8000/shoppingcart/bank_payments/list/')
+    # return HttpResponseRedirect(reverse('user_payment_requests')
+    # return HttpResponse(_("Payment request added to cart."))
     # HttpResponseRedirect(reverse('shoppingcart.views.show_cart')
 
 @login_required
@@ -295,11 +298,16 @@ def user_payment_requests(request):
     except PaymentAprrovalRequest.DoesNotExist:
         raise
     
-
+@login_required
 def all_payment_requests(request):
     """
     list all Payment approval requests in the system
     """
+
+    if not request.user.is_superuser:
+        log.warning("normal user is trying to access payment requests page")
+        return HttpResponseForbidden(_('You must be admin to do this task'))
+    # we should check to restrict this view to specific users such as admins or a member of i.e. 'payments group'
     try:
         payment_requests = PaymentAprrovalRequest.objects.all()
         return render_to_response('shoppingcart/all_payment_requests.html', 
@@ -313,14 +321,72 @@ def course_payment_requests(request):
     """
     pass
 
+@require_POST
+@login_required
+@ensure_csrf_cookie
 def approve_payment_request(request):
     """
     approve Payment request and call the logic of purchase items and send emails and so on
     """
-    pass
 
+    # we should check to restrict this view to specific users such as admins or a member of i.e. 'payments group'
+    
+    payment_request_id = int(request.POST.get('payment_request_id', ''))
+    try:
+        payment_request = PaymentAprrovalRequest.objects.get(pk=payment_request_id)
+        if not request.user.is_superuser:
+            log.warning("normal user is trying to approve {} to cart".format(payment_request))
+            return HttpResponseForbidden(_('You must be admin to do this task'))
+        cart = payment_request.cart
+        items_in_cart = cart.orderitem_set.all().select_subclasses()
+        items_in_request = payment_request.paid_course_registrations.all()
+
+        if len(items_in_cart) > len(items_in_request): # if user added courses after sending payment request, we must approve those in request and remove them from cart
+            pass # will implement it later
+        else: # this is the case where items in items_in_cart <= items_in_request so user may removed a course from his cart
+            # simply we will call the purchase method of the cart
+            processor_reply_dump=u'this courses were manully approved by "{0}" using payment request mechanism'.format(request.user)
+            cart.purchase(processor_reply_dump=processor_reply_dump)
+            payment_request.is_approved = True
+            payment_request.approved_by = request.user
+            payment_request.save()
+
+        log.warning(""" 
+      _        __      
+     (_)      / _|     
+      _ _ __ | |_ ___  
+     | | '_ \|  _/ _ \ 
+     | | | | | || (_) |
+     |_|_| |_|_| \___/ 
+                   
+    payment_request:{0}, cart:{1}, payment_request.items:{2}
+    """.format(payment_request, cart, payment_request.paid_course_registrations.all()))
+
+        return HttpResponseRedirect('http://127.0.0.1:8000/shoppingcart/bank_payments/all/')
+        # return HttpResponse(_("Payment approved."))
+    except PaymentAprrovalRequest.DoesNotExist:
+        log.warning('Trying to approve payment_request that DoesNotExist!')
+        raise
+
+@require_POST
+@login_required
+@ensure_csrf_cookie
 def update_payment_request(request):
     """
     can be used to change the status message and send the user an email of changes
     """
-    pass
+    payment_request_id = int(request.POST.get('payment_request_id', ''))
+    
+    try:
+        payment_request = PaymentAprrovalRequest.objects.get(pk=payment_request_id)
+        if not request.user.is_superuser:
+            log.warning("normal user is trying to approve {} to cart".format(payment_request))
+            return HttpResponseForbidden(_('You must be admin to do this task'))
+
+        message = request.POST.get('payment_request_status', '')
+        payment_request.message = message
+        payment_request.save()
+        return HttpResponseRedirect('http://127.0.0.1:8000/shoppingcart/bank_payments/all/')
+    except PaymentAprrovalRequest.DoesNotExist:
+        log.warning('Trying to update payment_request that DoesNotExist!')
+        raise

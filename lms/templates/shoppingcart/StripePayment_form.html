@@ -18,6 +18,7 @@
  			% for pk, pv in params.iteritems():
                 <input type="hidden" name="${pk}" value="${pv}" />
             % endfor
+            <textarea id="payment_request_details" name="payment_request_details" placeholder="type your request detials here" value="" required></textarea>
             <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>
             <input type="submit" value="Bank Payment" />
 		</form>

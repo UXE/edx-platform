@@ -10,14 +10,30 @@
     <p><h1>${_("All Payment Requests in the system!")}</h1></p>
     % if payment_requests:
     <ol>
-    	% for item in payment_requests:
+    	% for payment_request in payment_requests:
     	<li>
         <h2>Request Details</h2>
+        	% if not payment_request.is_approved:
+        		<section class="payment-request-actions">
+        			<form action="${reverse('shoppingcart.views.approve_payment_request')}" method="post">
+		            	<input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>
+        				<input type="hidden" name="payment_request_id" value="${payment_request.id}"/>
+        				<button name="submit" type="submit" id="approve-${payment_request.id}" class="">Approve</button>
+        			</form>
+        			<span>OR</span>
+        			<form action="${reverse('shoppingcart.views.update_payment_request')}" method="post">
+		            	<input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>
+        				<input type="hidden" name="payment_request_id" value="${payment_request.id}"/>
+		            	<textarea id="payment_request_status" name="payment_request_status" placeholder="type the status message that will show for the user" value="" required></textarea>
+        				<button name="submit" type="submit" id="update-${payment_request.id}" class="">Update</button>
+        			</form>
+        		</section>
+        	% endif
         <ul class="cart-items">
-          <li><h3>Creation time:</h3> ${item.created_at}</li>
-          <li><h3>Details you sent:</h3> ${item.request_details}</li>
-          <li><h3>Is approved?:</h3> ${item.is_approved}</li>
-          <li><h3>Request Stauts:</h3> ${item.message}</li>
+          <li><h3>Creation time:</h3> ${payment_request.created_at}</li>
+          <li><h3>Details you sent:</h3> ${payment_request.request_details}</li>
+          <li><h3>Is approved?:</h3> ${payment_request.is_approved}</li>
+          <li><h3>Request Stauts:</h3> ${payment_request.message}</li>
         </ul>
         </li>
         % endfor

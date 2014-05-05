@@ -203,7 +203,7 @@ class Order(models.Model):
         return instruction_dict, instruction_set
 
     def __unicode__(self):
-        return u"Order cart for user: {}, with id:{}".format(self.user, self.id)
+        return u"'Cart for user: {}, with id:{}'".format(self.user, self.id)
 
 
 class OrderItem(models.Model):
@@ -426,7 +426,7 @@ class PaidCourseRegistration(OrderItem):
             return u""
 
     def __unicode__(self):
-        return u"PaidCourseRegistration for course:{}, user: {}".format(self.course_id, self.order.user)
+        return u"PCR for course:{}, user: {}".format(self.course_id, self.order.user)
 
 
 class PaidCourseRegistrationAnnotation(models.Model):

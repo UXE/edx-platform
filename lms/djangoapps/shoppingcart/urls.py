@@ -17,6 +17,8 @@ if settings.FEATURES['ENABLE_SHOPPING_CART']:
         url(r'^bank_payments/new_payment_request/$', 'new_payment_request', name='new_payment_request'),
         url(r'^bank_payments/list/$', 'user_payment_requests', name='user_payment_requests'),
         url(r'^bank_payments/all/$', 'all_payment_requests', name='all_payment_requests'),
+        url(r'^bank_payments/approve/$', 'approve_payment_request', name='approve_payment_request'),
+        url(r'^bank_payments/update/$', 'update_payment_request', name='update_payment_request'),
     )
 
 if settings.FEATURES.get('ENABLE_PAYMENT_FAKE'):
