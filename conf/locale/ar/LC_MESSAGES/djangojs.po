@@ -36,8 +36,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-04-22 09:01-0400\n"
-"PO-Revision-Date: 2014-04-17 10:24+0000\n"
+"POT-Creation-Date: 2014-05-02 17:09-0400\n"
+"PO-Revision-Date: 2014-04-26 09:40+0000\n"
 "Last-Translator: may <may@qordoba.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/edx-platform/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -254,7 +254,7 @@ msgid ""
 "SequenceModule. Please contact the course staff."
 msgstr ""
 "خطأ في التسلسل! ليس بالإمكان الانتقال إلى علامة التبويب %(tab_name)s في "
-"الـSequenceModule الحالي. الرجاء الاتصال بطاقم المقرر."
+"الـSequenceModule الحالي. الرجاء الاتصال بطاقم المساق."
 
 #: common/lib/xmodule/xmodule/js/src/video/04_video_control.js
 msgid "Video slider"
@@ -390,6 +390,7 @@ msgstr "إظهار النقاش"
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
+#: common/static/coffee/src/discussion/views/discussion_user_profile_view.js
 #: common/static/coffee/src/discussion/views/response_comment_view.js
 msgid "Sorry"
 msgstr "عذراً"
@@ -586,6 +587,12 @@ msgstr "تحميل الـ %(numResponses)s رداً التالية"
 #: common/static/coffee/src/discussion/views/discussion_thread_view.js
 msgid "Are you sure you want to delete this post?"
 msgstr "هل أنت متأكد من أنك تودّ إلغاء هذه المشاركة؟ "
+
+#: common/static/coffee/src/discussion/views/discussion_user_profile_view.js
+msgid "We had some trouble loading the page you requested. Please try again."
+msgstr ""
+"هناك مشكلة ما في عملية تحميل الصفحة التي طلبتها. الرجاء إعادة المحاولة "
+"لاحقاً."
 
 #: common/static/coffee/src/discussion/views/response_comment_show_view.js
 msgid "anonymous"
@@ -1013,7 +1020,7 @@ msgstr ""
 #. usernames) appears after this sentence;
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Could not find users associated with the following identifiers:"
-msgstr "لم يتم إيجاد مستخدمين لديهم عناوين البريد الإلكتروني التالية:"
+msgstr "لم يتم إيجاد مستخدمين لديهم الأرقام لتالية:"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Error enrolling/unenrolling users."
@@ -1021,7 +1028,7 @@ msgstr "حدث خطأ في عملية تسجيل/إلغاء تسجيل المس�
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "The following email addresses and/or usernames are invalid:"
-msgstr "عنوان البريد الإلكتروني التالي غير صالح:"
+msgstr "عناوين البريد الإلكتروني و / أو الأسماء التالية غير صحيحة:"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Successfully enrolled and sent email to the following users:"
@@ -1068,19 +1075,19 @@ msgid ""
 "course:"
 msgstr ""
 "تم إرسال الرسائل الإلكترونية بنجاح. ولم يعد المستخدمون التالية أسماؤهم "
-"مسجّلون بالمقرر:"
+"مسجّلون بالمساق:"
 
 #. Translators: A list of users appears after this sentence;
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "The following users are no longer enrolled in the course:"
-msgstr "لم يعد المستخدمون التالية أسماؤهم مسجّلون بالمقرر:"
+msgstr "لم يعد المستخدمون التالية أسماؤهم مسجّلون بالمساق:"
 
 #. Translators: A list of users appears after this sentence;
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid ""
 "These users were not affiliated with the course so could not be unenrolled:"
 msgstr ""
-"لم يكن المستخدمون المذكورون لاحقاً منتسبين للمقرر ولذلك فلا يمكن إلغاء "
+"لم يكن المستخدمون المذكورون لاحقاً منتسبين للمساق ولذلك فلا يمكن إلغاء "
 "تسجيلهم فيه:"
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
@@ -1109,7 +1116,7 @@ msgid ""
 "staff or instructor on this course. Is this OK?"
 msgstr ""
 "أنت بصدد إرسال بريد إلكتروني عنوانه ’<%= subject %>‘ إلى جميع الأشخاص "
-"المسجلين ضمن فريق العمل أو التدريس في هذا المقرر. هل هذا ما تريد فعله؟ "
+"المسجلين ضمن فريق العمل أو التدريس في هذا المساق. هل هذا ما تريد فعله؟ "
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid ""
@@ -1117,7 +1124,7 @@ msgid ""
 "is enrolled in this course as student, staff, or instructor). Is this OK?"
 msgstr ""
 "أنت بصدد إرسال بريد إلكتروني عنوانه ’<%= subject %>‘ إلى الجميع (كافة "
-"الأشخاص المسجلين كطلاب أو ضمن فريق العمل أو التدريس في هذا المقرر). هل هذا "
+"الأشخاص المسجلين كطلاب أو ضمن فريق العمل أو التدريس في هذا المساق). هل هذا "
 "ما تريد فعله؟ "
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
@@ -1128,8 +1135,8 @@ msgid ""
 msgstr ""
 "تم بنجاح إدراج رسالتك ضمن صف الرسائل بانتظار إرسالها. الرجاء أخذ العلم بأنه "
 "في حالة الصفوف الكبيرة، قد يستغرق إرسال كافة الرسائل الإلكترونية ما يصل إلى "
-"الساعة (أو أكثر، في حال كانت المقرّرات الأخرى تقوم بإرسال رسائل إلكترونية "
-"بالتزامن مع هذا المقرر). "
+"الساعة (أو أكثر، في حال كانت المساقات الأخرى تقوم بإرسال رسائل إلكترونية "
+"بالتزامن مع هذا المساق). "
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Error sending email."
@@ -1137,13 +1144,13 @@ msgstr "خطأ في إرسال البريد الإلكتروني."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "There is no email history for this course."
-msgstr "لا يوجد سجل خاص بالرسائل البريدية المرسلة لهذا المقرّر."
+msgstr "لا يوجد سجل خاص بالرسائل البريدية المرسلة لهذا المساق."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "There was an error obtaining email task history for this course."
 msgstr ""
 "حدث خطأ أثناء محاولة الحصول على سجل عن المهمات الخاصة بالرسائل البريدية لهذا"
-" المقرّر."
+" المساق."
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
@@ -1609,7 +1616,7 @@ msgid ""
 "The combined length of the organization, course number, and course run "
 "fields cannot be more than 65 characters."
 msgstr ""
-"الطول الكلي لحقول اسم المؤسسة، ورقم المقرر، ورمز تشغيل المنهاج لا يمكن أن "
+"الطول الكلي لحقول اسم المؤسسة، ورقم المساق، ورمز تشغيل المنهاج لا يمكن أن "
 "تتجاوز 65 حرف. "
 
 #: cms/static/js/index.js
@@ -1642,15 +1649,15 @@ msgstr "أو"
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course must have an assigned start date."
-msgstr "لابد من تعيين تاريخ بدء المقرر."
+msgstr "لابد من تعيين تاريخ بدء المساق."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course end date cannot be before the course start date."
-msgstr "لايمكن أن يسبق تاريخ انتهاء المقرر تاريخ ابتدائه."
+msgstr "لايمكن أن يسبق تاريخ انتهاء المساق تاريخ ابتدائه."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course start date cannot be before the enrollment start date."
-msgstr "لايمكن أن يسبق تاريخ بدء المقرر تاريخ التسجيل فيه."
+msgstr "لايمكن أن يسبق تاريخ بدء المساق تاريخ التسجيل فيه."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The enrollment start date cannot be after the enrollment end date."
@@ -1661,7 +1668,7 @@ msgstr ""
 #: cms/static/js/models/settings/course_details.js
 msgid "The enrollment end date cannot be after the course end date."
 msgstr ""
-"لا يمكن أن يكون تاريخ انتهاء التسجيل في المقرر بعد تاريخ انتهاء المقرر."
+"لا يمكن أن يكون تاريخ انتهاء التسجيل في المساق بعد تاريخ انتهاء المساق."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "Key should only contain letters, numbers, _, or -"
@@ -1752,6 +1759,10 @@ msgid ""
 "extension."
 msgstr "صيغة الملف غير مدعومة. الرجاء تحميل ملف بلاحقة <code>tar.gz</code>."
 
+#: cms/static/js/views/metadata.js
+msgid "Upload File"
+msgstr "تحميل ملف"
+
 #: cms/static/js/views/overview.js
 msgid "Collapse All Sections"
 msgstr "طي جميع الأقسام"
@@ -1812,7 +1823,7 @@ msgid ""
 " your courseware's navigation will also be removed."
 msgstr ""
 "لا يمكن الرجوع أو عكس عملية حذف الكتاب، وحال القيام بها سيتم كذلك إزالة أي "
-"مرجعٍ لهذا الكتاب في تصفح المنهاج التعليمي الخاص بك."
+"مرجعٍ لهذا الكتاب في تصفح منهاج المساق الخاص بك."
 
 #: cms/static/js/views/show_textbook.js
 msgid "Deleting"
@@ -1896,7 +1907,7 @@ msgstr ""
 
 #: cms/static/js/views/settings/main.js
 msgid "Upload your course image."
-msgstr "تحميل الصورة الخاصة بالمقرر."
+msgstr "تحميل الصورة الخاصة بالمساق."
 
 #: cms/static/js/views/settings/main.js
 msgid "Files must be in JPEG or PNG format."
