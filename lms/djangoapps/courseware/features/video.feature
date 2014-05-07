@@ -3,12 +3,6 @@ Feature: LMS.Video component
   As a student, I want to view course videos in LMS
 
   # 1
-  Scenario: Video component is fully rendered in the LMS in HTML5 mode
-    Given the course has a Video component in "HTML5" mode
-    When the video has rendered in "HTML5" mode
-    And all sources are correct
-
-  # 2
   Scenario: Multiple videos in sequentials all load and work, switching between sequentials
     Given I am registered for the course "test_course"
     And it has a video "A" in "Youtube" mode in position "1" of sequential
@@ -30,7 +24,7 @@ Feature: LMS.Video component
     When I open video "A"
     Then video "A" should start playing at speed "2.0"
 
-  # 3
+  # 2
   Scenario: Video component stores speed correctly when each video is in separate sequence
     Given I am registered for the course "test_course"
     And it has a video "A" in "Youtube" mode in position "1" of sequential
@@ -52,22 +46,7 @@ Feature: LMS.Video component
     When I open video "C"
     Then video "C" should start playing at speed "1.0"
 
-  # 4
-   Scenario: Language menu works correctly in Video component
-    Given I am registered for the course "test_course"
-    And I have a "chinese_transcripts.srt" transcript file in assets
-    And I have a "subs_OEoXaMPEzfM.srt.sjson" transcript file in assets
-    And it has a video in "Youtube" mode:
-      | transcripts                       | sub         |
-      | {"zh": "chinese_transcripts.srt"} | OEoXaMPEzfM |
-    And I make sure captions are closed
-    And I see video menu "language" with correct items
-    And I select language with code "zh"
-    Then I see "好 各位同学" text in the captions
-    And I select language with code "en"
-    And I see "Hi, welcome to Edx." text in the captions
-
-  # 5
+  # 3
   Scenario: Download Transcript button works correctly in Video component
     Given I am registered for the course "test_course"
     And I have a "subs_OEoXaMPEzfM.srt.sjson" transcript file in assets
@@ -107,7 +86,7 @@ Feature: LMS.Video component
     # "1:56" is the duration in the VCR timer before the video plays.
 #    And I see duration "1:56"
 
-  # 6
+  # 4
   Scenario: Verify that each video in each sub-section includes a transcript for non-Youtube countries
     Given youtube server is up and response time is 2 seconds
     And I am registered for the course "test_course"
@@ -148,7 +127,7 @@ Feature: LMS.Video component
 #    And I click video button "play"
 #    Then I see video slider at "0:10" position
 
-  # 7
+  # 5
   Scenario: End time works for Youtube video
     Given I am registered for the course "test_course"
     And it has a video in "Youtube" mode:
@@ -158,7 +137,7 @@ Feature: LMS.Video component
     And I wait "5" seconds
     Then I see video slider at "0:02" position
 
-  # 8
+  # 6
   Scenario: Youtube video with end-time at 1:00 and the video starts playing at 0:58
     Given I am registered for the course "test_course"
     And it has a video in "Youtube" mode:
@@ -170,7 +149,7 @@ Feature: LMS.Video component
     And I wait "5" seconds
     Then I see video slider at "1:00" position
 
-  # 9
+  # 7
   Scenario: Start time and end time work together for Youtube video
     Given I am registered for the course "test_course"
     And it has a video in "Youtube" mode:
@@ -181,7 +160,7 @@ Feature: LMS.Video component
     And I wait "5" seconds
     Then I see video slider at "0:12" position
 
-  # 10
+  # 8
   Scenario: Youtube video after pausing at end time video plays to the end from end time
     Given I am registered for the course "test_course"
     And it has a video in "Youtube" mode:
@@ -196,7 +175,7 @@ Feature: LMS.Video component
     # The default video length is 00:01:55.
     Then I see video slider at "1:55" position
 
-  # 11
+  # 9
   Scenario: Youtube video with end-time at 0:32 and start-time at 0:30, the video starts playing from 0:28
     Given I am registered for the course "test_course"
     And it has a video in "Youtube" mode:
@@ -208,7 +187,7 @@ Feature: LMS.Video component
     And I wait "8" seconds
     Then I see video slider at "0:32" position
 
-  # 12
+  # 10
   Scenario: Youtube video with end-time at 1:00, the video starts playing from 1:52
     Given I am registered for the course "test_course"
     And it has a video in "Youtube" mode:
@@ -221,7 +200,7 @@ Feature: LMS.Video component
     # Video stops at the end.
     Then I see video slider at "1:55" position
 
-  # 13
+  # 11
   @skip_firefox
   Scenario: Quality button appears on play
     Given the course has a Video component in "Youtube" mode
@@ -229,7 +208,7 @@ Feature: LMS.Video component
     And I click video button "play"
     Then I see video button "quality" is visible
 
-  # 14
+  # 12
   @skip_firefox
   Scenario: Quality button works correctly
     Given the course has a Video component in "Youtube" mode
