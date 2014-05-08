@@ -96,7 +96,7 @@ class VideoFields(object):
         default=False
     )
     sub = String(
-        help="The default transcript for the video, from the Timed Transcript field on the Basic tab. This transcript should be in English. You don't have to change this setting.",
+        help="The default transcript for the video, from the Default Timed Transcript field on the Basic tab. This transcript should be in English. You don't have to change this setting.",
         display_name="Default Timed Transcript",
         scope=Scope.settings,
         default=""
