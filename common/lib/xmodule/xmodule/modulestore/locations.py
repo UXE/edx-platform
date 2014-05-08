@@ -252,6 +252,13 @@ class LocationBase(object):
                 son[prefix + field_name] = getattr(self, field_name)
         return son
 
+    @classmethod
+    def _from_deprecated_son(cls, id_dict, run):
+        """
+        Return the Location decoding this id_dict and run
+        """
+        return cls(id_dict['org'], id_dict['course'], run, id_dict['category'], id_dict['name'], id_dict['revision'])
+
 
 class Location(LocationBase, UsageKey, DefinitionKey):
     """
@@ -324,6 +331,13 @@ class AssetLocation(LocationBase, AssetKey):
             A new :class:`CourseObjectMixin` instance.
         """
         return AssetLocation(course_key.org, course_key.course, course_key.run, self.category, self.name, self.revision)
+
+    def to_deprecated_list_repr(self):
+        """
+        Thumbnail locations stored as lists [c4x, org, course, thumbnail, path, None]
+        :param location:
+        """
+        return ['c4x', self.org, self.course, self.block_type, self.name, None]
 
 
 class i4xEncoder(json.JSONEncoder):
