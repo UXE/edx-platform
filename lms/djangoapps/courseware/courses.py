@@ -52,6 +52,7 @@ def get_course(course_id, depth=0):
     course = modulestore().get_course(course_id, depth=depth)
     if course is None:
         raise ValueError(u"Course not found: {0}".format(course_id))
+    return course
 
 
 # TODO please rename this function to get_course_by_key at next opportunity!
