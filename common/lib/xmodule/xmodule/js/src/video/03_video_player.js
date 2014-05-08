@@ -95,7 +95,7 @@ function (HTML5Video, Resizer) {
         state.videoPlayer.ready = _.once(function () {
             $(window).on('unload', state.saveState);
 
-            if (!state.isFlashMode()) {
+            if (!state.isFlashMode() && state.speed != '1.0') {
                 state.videoPlayer.setPlaybackRate(state.speed);
             }
             state.videoPlayer.player.setVolume(state.currentVolume);
@@ -353,7 +353,8 @@ function (HTML5Video, Resizer) {
     }
 
     function setPlaybackRate(newSpeed) {
-        var time = this.videoPlayer.currentTime,
+        var duration = this.videoPlayer.duration(),
+            time = this.videoPlayer.currentTime,
             methodName, youtubeId;
 
         if (
@@ -379,7 +380,22 @@ function (HTML5Video, Resizer) {
             }
 
             this.videoPlayer.player[methodName](youtubeId, time);
-            this.videoPlayer.updatePlayTime(time);
+
+            // We need to call play() explicitly because after the call
+            // to functions cueVideoById() followed by seekTo() the video
+            // is in a PAUSED state.
+            //
+            // Why? This is how the YouTube API is implemented.
+            if (time > 0 && this.isFlashMode()) {
+                this.videoPlayer.seekTo(time);
+                this.videoPlayer.updatePlayTime(time);
+                this.trigger(
+                    'videoProgressSlider.updateStartEndTimeRegion',
+                    {
+                        duration: duration
+                    }
+                );
+            }
         }
     }
 
@@ -613,6 +629,7 @@ function (HTML5Video, Resizer) {
                 // have 1 speed available, we fall back to Flash.
 
                 _restartUsingFlash(this);
+                return false;
             } else if (availablePlaybackRates.length > 1) {
                 this.setPlayerMode('html5');
 
@@ -650,16 +667,15 @@ function (HTML5Video, Resizer) {
             this.videoPlayer.player.setPlaybackRate(this.speed);
         }
 
-        this.el.trigger('ready', arguments);
-        /* The following has been commented out to make sure autoplay is
-           disabled for students.
-        if (
-            !this.isTouch &&
-            $('.video:first').data('autoplay') === 'True'
-        ) {
-            this.videoPlayer.play();
+
+        var duration = this.videoPlayer.duration(),
+            time = this.videoPlayer.figureOutStartingTime(duration);
+
+        if (time > 0 && this.videoPlayer.goToStartTime) {
+            this.videoPlayer.seekTo(time);
         }
-        */
+
+        this.el.trigger('ready', arguments);
     }
 
     function onStateChange(event) {
@@ -691,6 +707,9 @@ function (HTML5Video, Resizer) {
                 break;
             case this.videoPlayer.PlayerState.CUED:
                 this.el.addClass('is-cued');
+                if (this.isFlashMode()) {
+                    this.videoPlayer.play();
+                }
                 break;
         }
     }
@@ -765,30 +784,6 @@ function (HTML5Video, Resizer) {
         var videoPlayer = this.videoPlayer,
             duration = this.videoPlayer.duration(),
             youTubeId;
-
-        if (duration > 0 && videoPlayer.goToStartTime && !skip_seek) {
-            videoPlayer.goToStartTime = false;
-
-            // The duration might have changed. Update the start-end time region to
-            // reflect this fact.
-            this.trigger(
-                'videoProgressSlider.updateStartEndTimeRegion',
-                {
-                    duration: duration
-                }
-            );
-
-            time = videoPlayer.figureOutStartingTime(duration);
-
-            // When the video finishes playing, we will start from the
-            // start-time, or from the beginning (rather than from the remembered
-            // position).
-            this.config.savedVideoPosition = 0;
-
-            if (time > 0) {
-                videoPlayer.seekTo(time);
-            }
-        }
 
         this.trigger(
             'videoProgressSlider.updatePlayTime',
