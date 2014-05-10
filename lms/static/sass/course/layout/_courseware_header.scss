@@ -19,7 +19,7 @@ nav.course-material {
     margin-left: 10px;
 
     li {
-      float: left;
+      float: $left;
       list-style: none;
       margin-right: 6px;
 
@@ -156,7 +156,7 @@ header.global.slim {
   h2 {
     display: block;
     width: 700px;
-    float: left;
+    float: $left;
     font-size: 0.9em;
     font-weight: 600;
     color: $lighter-base-font-color;
@@ -168,6 +168,7 @@ header.global.slim {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    text-align: $left;
 
     .provider {
       font: inherit;

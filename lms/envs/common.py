@@ -37,7 +37,7 @@ from lms.lib.xblock.mixin import LmsBlockMixin
 
 ################################### FEATURES ###################################
 # The display name of the platform to be used in templates/emails/etc.
-PLATFORM_NAME = "Daress"
+PLATFORM_NAME = "'دارِس'"
 CC_MERCHANT_NAME = PLATFORM_NAME
 
 COURSEWARE_ENABLED = True
@@ -894,6 +894,12 @@ PIPELINE_CSS = {
         ],
         'output_filename': 'css/lms-style-course.css',
     },
+    'semantic-ui': {
+        'source_filenames': [
+            'css/vendor/semantic-ui/css/semantic.css',
+        ],
+        'output_filename': 'css/semantic.css',
+    },
 }
 
 
@@ -965,6 +971,12 @@ PIPELINE_JS = {
         'source_filenames': instructor_dash_js,
         'output_filename': 'js/instructor_dash.js',
         'test_order': 9,
+    },
+    'semantic-ui': {
+        'source_filenames': [
+            'css/vendor/semantic-ui/javaScript/semantic.js',
+        ],
+        'output_filename': 'js/semantic.js',
     },
 }
 

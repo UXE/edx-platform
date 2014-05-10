@@ -108,7 +108,7 @@ site_status_msg = get_site_status_msg(course_id)
           </li>
           % else:
           <li class="nav-global-04">
-            <a class="cta cta-register" href="/register">${_("Register Now")}</a>
+            <a class="huge circular purple ui label register" href="/register">انضم إلى دارِس</a>
           </li>
           % endif
       % endif
@@ -120,7 +120,7 @@ site_status_msg = get_site_status_msg(course_id)
           % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
           <a class="cta cta-login" href="${reverse('course-specific-login', args=[course.id])}${login_query()}">${_("Log in")}</a>
           % else:
-          <a class="cta cta-login" href="/login${login_query()}">${_("Log in")}</a>
+          <a class="huge circular purple ui label login" href="/login${login_query()}">أدخل إلى حسابك</a>
           % endif
       % endif
     </li>

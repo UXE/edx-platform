@@ -32,11 +32,11 @@ header.global {
 
   ol {
     &.left {
-      float: left;
+      float: $left;
     }
 
     &.guest {
-      float: right;
+      float: $right;
     }
 
     > li {
@@ -109,7 +109,7 @@ header.global {
     }
 
     &.user {
-      float: right;
+      float: $right;
       margin-top: 4px;
 
       > li.primary {
@@ -282,7 +282,7 @@ header.global {
   }
 
   .nav-courseware {
-    float: right;
+    float: $right;
     margin-top: ($baseline/4);
     list-style: none;
 
@@ -326,5 +326,5 @@ header.global {
 header.global {
   border-bottom: none;
   box-shadow: none;
-  background: $orange-v0;
+  background: $orange-v3;
 }

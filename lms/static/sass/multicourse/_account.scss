@@ -197,14 +197,14 @@
   }
 
   .content {
-    margin-right: ($baseline*2);
+    margin-left: ($baseline*2);
     width: 600px;
-    float: left;
+    float: $left;
   }
 
   aside {
     width: 280px;
-    float: left;
+    float: $left;
 
     p, ol, ul {
       font-size: 14px !important;
@@ -259,7 +259,7 @@
 
       .field {
         display: block;
-        float: left;
+        float: $left;
         border-bottom: none;
         margin: 0 ($baseline*1.5) 0 0;
         padding-bottom: 0;
