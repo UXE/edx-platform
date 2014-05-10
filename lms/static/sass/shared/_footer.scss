@@ -35,15 +35,17 @@
     .colophon {
       margin-right: flex-gutter();
       width: flex-grid(8,12);
-      float: left;
+      float: $left;
 
       .nav-colophon {
         @include clearfix();
         margin: $footer_margin;
 
         li {
-          float: left;
-          margin-right: ($baseline*0.75);
+          float: $left;
+          margin-left: ($baseline*0.75);
+          text-align: $left;
+          font-size: em(11);
 
           a {
             color: tint($black, 20%);
@@ -54,7 +56,7 @@
           }
 
           &:last-child {
-            margin-right: 0;
+            margin-left: 0;
           }
         }
       }
@@ -64,18 +66,19 @@
 
         img {
           width: 68px;
-          height: 34px;
+          // height: 34px;
           margin-right: 0;
-          float: left;
+          float: $left;
         }
 
         p {
-          float: left;
+          float: $left;
           width: flex-grid(6,8);
-          margin-left: $baseline;
-          padding-left: $baseline;
+          margin-right: $baseline;
+          padding-right: $baseline;
           font-size: em(13);
-          background: transparent url(/static/images/bg-footer-divider.jpg) 0 0 no-repeat;
+          background: transparent url(/static/images/bg-footer-divider.jpg) $left 0 no-repeat;
+          text-align: $left;
         }
       }
     }
@@ -84,11 +87,11 @@
     .references {
       margin: -10px 0 0 0;
       width: flex-grid(4,12);
-      float: right;
+      float: $right;
 
       .nav-social {
         margin: 0;
-        text-align: right;
+        text-align: $right;
 
         li {
           display: inline-block;
@@ -115,12 +118,12 @@
         margin: -2px 0 8px 0;
         font-size: em(11);
         color: tint($m-gray,50%);
-        text-align: right;
+        text-align: $right;
       }
 
       .nav-legal {
         @include clearfix();
-        text-align: right;
+        text-align: $right;
 
         li {
           display: inline-block;
@@ -154,4 +157,10 @@
       margin-top: ($baseline*1.5);
     }
   }
+}
+
+// DOLP overrides
+.wrapper-footer {
+  box-shadow: none;
+  border-top: none;
 }

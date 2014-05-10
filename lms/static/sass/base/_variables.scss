@@ -24,7 +24,7 @@ $fg-min-width: 810px;
 
 // FONTS
 
-$sans-serif: 'Droid Arabic Kufi', 'Open Sans', $verdana, sans-serif;
+$sans-serif: 'Open Sans', $verdana, sans-serif;
 $monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
 $body-font-family: $sans-serif;
 $serif: $georgia;
@@ -118,10 +118,6 @@ $green-s3: saturate($green,45%);
 $green-u1: desaturate($green,15%);
 $green-u2: desaturate($green,30%);
 $green-u3: desaturate($green,45%);
-
-// DOLP custom specific colors
-$orange-v0: #FF5E5E;
-$orange-v1: #FD4545;
 
 // TODO: both blue and yellow variables differ from CMS rgb value, need to confirm change to CMS variable is ok in current platform uses before switching.
 $blue: rgb(29,157,217);
@@ -394,3 +390,10 @@ $f-monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
 
 $msg-bg: $action-primary-bg;
 
+// DOLP overrides
+$sans-serif: 'Droid Arabic Kufi', 'Open Sans', $verdana, sans-serif;
+
+// DOLP custom specific colors
+$orange-v0: #FF5E5E;
+$orange-v1: #FD4545;
+$footer-bg: #FDF7F7;

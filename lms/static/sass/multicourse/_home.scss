@@ -22,11 +22,19 @@
     .outer-wrapper {
       @extend .animation-home-header-pop-up;
       margin: 0 auto;
-      padding: 240px 10px 0px;
+      padding: 110px 10px 0px;
       position: relative;
       max-width: 1200px;
       min-width: 760px;
       @include clearfix;
+    }
+
+    .home-landing {
+      background: transparent url(/static/images/large-mark-white-text.png) center center no-repeat;
+      width: 387px;
+      height: 154px;
+      text-align: center;
+      margin: 0 auto;
     }
 
     .title {

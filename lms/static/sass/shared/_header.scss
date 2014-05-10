@@ -17,12 +17,16 @@ header.global {
   }
 
   h1.logo {
-    float: flip(left, right);
+    float: $left;
     margin: flip(-2px 39px 0 0, -2px 0 0 39px);
     position: relative;
 
     a {
       display: block;
+
+      img {
+        height: 47px;
+      }
     }
   }
 
@@ -139,7 +143,7 @@ header.global {
         position: relative;
         text-transform: none;
         font-size: 14px;
-        font-weight: bold;
+        font-weight: normal;
         letter-spacing: 0;
 
         .avatar {
@@ -242,7 +246,7 @@ header.global {
       display: inline-block;
       margin: 0 $baseline+1 0 0;
       font-size: em(14);
-      font-weight: 600;
+      font-weight: 300;
       text-transform: uppercase;
       letter-spacing: 0 !important;
 
@@ -254,7 +258,7 @@ header.global {
         display:block;
         padding: ($baseline/4);
         color: $lighter-base-font-color;
-        font-weight: 600;
+        font-weight: 300;
 
         &:hover, &:focus, &:active {
           text-decoration: none;
