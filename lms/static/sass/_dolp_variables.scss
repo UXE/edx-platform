@@ -1,0 +1,14 @@
+// this file will contain all DOLP specific variables to make it easy to change them quickly and even remove them
+
+// imports
+//==========
+// import Droid kufi font face
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+//variables
+//===========
+$sans-serif: 'Droid Arabic Kufi', 'Open Sans', $verdana, sans-serif;
+
+// DOLP custom specific colors
+$orange-v0: #FF5E5E;
+$orange-v1: #FD4545;

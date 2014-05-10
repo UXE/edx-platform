@@ -510,3 +510,13 @@
     }
   }
 }
+
+// DOLP overrides
+
+.home {
+  > header{
+  background-color: $orange-v1;
+  box-shadow: none;
+  border-bottom: none;
+  }
+}

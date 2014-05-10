@@ -316,3 +316,11 @@ header.global {
     color: $link-color !important;
   }
 }
+
+
+// DOLP overrides
+header.global {
+  border-bottom: none;
+  box-shadow: none;
+  background: $orange-v0;
+}

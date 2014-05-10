@@ -119,6 +119,10 @@ $green-u1: desaturate($green,15%);
 $green-u2: desaturate($green,30%);
 $green-u3: desaturate($green,45%);
 
+// DOLP custom specific colors
+$orange-v0: #FF5E5E;
+$orange-v1: #FD4545;
+
 // TODO: both blue and yellow variables differ from CMS rgb value, need to confirm change to CMS variable is ok in current platform uses before switching.
 $blue: rgb(29,157,217);
 $yellow: rgb(255, 252, 221);
