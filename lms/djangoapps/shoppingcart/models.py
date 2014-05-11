@@ -631,10 +631,10 @@ class PaymentAprrovalRequest(models.Model):
     cart = models.ForeignKey(Order)
 
     # needed for queries on requests view
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, related_name="bank_payments_requests")
     paid_course_registrations = models.ManyToManyField(PaidCourseRegistration)
     request_details = models.TextField()
-    approved_by = models.ForeignKey(User, blank=True, null=True)
+    approved_by = models.ForeignKey(User, blank=True, null=True, related_name="requests_approved_by_user")
     is_approved = models.BooleanField(default=False)
     message = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
