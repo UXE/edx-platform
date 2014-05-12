@@ -27,12 +27,12 @@
   }
 
   .wrapper-l {
-    float: $left;
+    float: left;
     width: flex-grid(7,12);
   }
 
   .wrapper-r {
-    float: $right;
+    float: right;
     width: flex-grid(4,12);
     text-align: right;
   }
