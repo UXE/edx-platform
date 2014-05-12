@@ -349,3 +349,12 @@ header.global .nav-courseware .login {
 .view-register header.global .nav-global .register {
   display: none
 }
+
+// DOLP overides
+//==============
+
+@if $rtl {
+  body {
+    text-align: right;
+  }
+}

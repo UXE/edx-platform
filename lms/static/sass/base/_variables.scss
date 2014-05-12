@@ -372,8 +372,8 @@ $homepage__header--background: lighten($blue, 15%);
 // IMAGES: backgrounds
 $homepage-bg-image: none;
 
-$login-banner-image: url(../images/bg-banner-account.png);
-$register-banner-image: url(../images/bg-banner-account.png);
+//$login-banner-image: url(../images/bg-banner-account.png);
+//$register-banner-image: url(../images/bg-banner-account.png);
 
 $video-thumb-url: '../images/courses/video-thumb.jpg';
 
@@ -393,7 +393,8 @@ $msg-bg: $action-primary-bg;
 // DOLP overrides
 $sans-serif: 'Droid Arabic Kufi', 'Open Sans', $verdana, sans-serif;
 
-// DOLP custom specific colors
+// DOLP custom specific variables
+//============================
 $orange-v0: #FF5E5E;
 $orange-v1: #FD4545;
 $orange-v2: #FD7777;

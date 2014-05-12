@@ -6,7 +6,7 @@
 
 // page-level
 .view-register, .view-login, .view-passwordreset {
-  background: $container-bg;
+  background: $orange-v2;
 
 
 
@@ -109,6 +109,10 @@
     width: 960px;
     background: $container-bg;
   }
+  .introduction {
+    width: flex-grid(12);
+    background: $orange-v2;
+  }
 
   .container {
     padding: $baseline $baseline ($baseline*2) $baseline;
@@ -119,20 +123,22 @@
 
     header {
       position: relative;
+      width: flex-grid(8, 12);
+      margin: 0 auto;
 
       // CASE: normal typographical headings
       h1 {
         @extend %heading-2;
         margin-bottom: $baseline;
         padding-bottom: $baseline;
-        text-align: left;
+        text-align: $left;
       }
 
       // CASE: marketing/imageery-based headings
       .title {
         position: absolute;
         top: ($baseline*2.5);
-        left:($baseline*1.5);
+        right: 0;
 
         .title-super, .title-sub {
           @extend %t-weight1;
@@ -422,7 +428,7 @@
     @include clearfix();
 
     button[type="submit"] {
-      @extend %m-btn-primary;
+      //@extend %m-btn-primary;
 
       &:disabled, &.is-disabled {
         opacity: 0.3;
@@ -537,8 +543,9 @@
 
     header {
       height: 120px;
-      border-bottom: 1px solid $m-gray;
-      background: transparent $login-banner-image 0 0 no-repeat;
+      //border-bottom: 1px solid $m-gray;
+      //background: transparent $login-banner-image 0 0 no-repeat;
+      background: $orange-v2;
     }
   }
 }
@@ -551,8 +558,10 @@
 
     header {
       height: 120px;
-      border-bottom: 1px solid $m-gray;
-      background: transparent $register-banner-image 0 0 no-repeat;
+      //border-bottom: 1px solid $m-gray;
+      //background: transparent $register-banner-image 0 0 no-repeat;
+      width: flex-grid(8,12);
+      margin: 0 auto;
     }
   }
 }
