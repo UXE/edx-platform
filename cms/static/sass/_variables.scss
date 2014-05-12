@@ -14,9 +14,12 @@ $fg-min-width: 900px;
 
 // ====================
 
+// import Droid kufi font face
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
 // fonts
 $f-serif: 'Bree Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
-$f-sans-serif: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+$f-sans-serif: 'Droid Arabic Kufi', 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
 $f-decorative: '';
 $f-monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
 

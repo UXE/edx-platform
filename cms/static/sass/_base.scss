@@ -7,6 +7,9 @@ html {
   overflow-y: scroll;
 }
 
+// import Droid kufi font face
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
 body {
   @extend %t-copy-base;
   min-width: $fg-min-width;
@@ -15,7 +18,7 @@ body {
 }
 
 body, input, button {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Droid Arabic Kufi', 'Open Sans', sans-serif;
 }
 
 a {
