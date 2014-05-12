@@ -896,7 +896,7 @@ PIPELINE_CSS = {
     },
     'semantic-ui': {
         'source_filenames': [
-            'css/vendor/semantic-ui/css/semantic.css',
+            'semantic-ui/css/semantic.css',
         ],
         'output_filename': 'css/semantic.css',
     },
@@ -974,7 +974,7 @@ PIPELINE_JS = {
     },
     'semantic-ui': {
         'source_filenames': [
-            'css/vendor/semantic-ui/javaScript/semantic.js',
+            'semantic-ui/javaScript/semantic.js',
         ],
         'output_filename': 'js/semantic.js',
     },
