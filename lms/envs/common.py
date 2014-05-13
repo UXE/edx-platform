@@ -894,12 +894,12 @@ PIPELINE_CSS = {
         ],
         'output_filename': 'css/lms-style-course.css',
     },
-    'semantic-ui': {
-        'source_filenames': [
-            'semantic-ui/css/semantic.css',
-        ],
-        'output_filename': 'css/semantic.css',
-    },
+    # 'semantic-ui': {
+    #     'source_filenames': [
+    #         'semantic-ui/css/semantic.css',
+    #     ],
+    #     'output_filename': 'css/semantic.css',
+    # },
 }
 
 
@@ -972,12 +972,12 @@ PIPELINE_JS = {
         'output_filename': 'js/instructor_dash.js',
         'test_order': 9,
     },
-    'semantic-ui': {
-        'source_filenames': [
-            'semantic-ui/javaScript/semantic.js',
-        ],
-        'output_filename': 'js/semantic.js',
-    },
+    # 'semantic-ui': {
+    #     'source_filenames': [
+    #         'semantic-ui/javaScript/semantic.js',
+    #     ],
+    #     'output_filename': 'js/semantic.js',
+    # },
 }
 
 PIPELINE_DISABLE_WRAPPER = True
