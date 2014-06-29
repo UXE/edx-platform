@@ -1,0 +1,64 @@
+/*
+Syntax error: File to import not found or unreadable: bourbon/bourbon.
+              Load paths:
+                /edx/app/edxapp/edx-platform (DEPRECATED)
+                /edx/app/edxapp/edx-platform/lms/static/sass
+        on line 6 of lms/static/sass/course.scss
+
+1: /*
+2:  * This file is dynamically generated and ignored by Git.
+3:  * DO NOT MAKE CHANGES HERE. Instead, go edit its template:
+4:  * /edx/app/edxapp/edx-platform/lms/static/sass/course.scss.mako
+5:  *\/
+6: @import 'bourbon/bourbon';
+7: 
+8: @import 'base/reset';
+9: @import 'base/font_face';
+10: @import 'base/variables';
+11: @import 'base/mixins';
+
+Backtrace:
+lms/static/sass/course.scss:6
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/import_node.rb:45:in `import'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/import_node.rb:28:in `imported_file'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/import_node.rb:37:in `css_import?'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:283:in `visit_import'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/stack.rb:79:in `block in with_base'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/stack.rb:79:in `with_base'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `map'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/root_node.rb:20:in `render'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/engine.rb:274:in `render'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `each'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:221:in `watch'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin.rb:108:in `method_missing'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/exec.rb:509:in `watch_or_update'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/exec.rb:346:in `process_result'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/exec.rb:43:in `parse'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/exec.rb:22:in `parse!'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/bin/sass:13:in `<top (required)>'
+/edx/app/edxapp/edx-platform/bin/sass:16:in `load'
+/edx/app/edxapp/edx-platform/bin/sass:16:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: bourbon/bourbon.\A               Load paths:\A                 /edx/app/edxapp/edx-platform (DEPRECATED)\A                 /edx/app/edxapp/edx-platform/lms/static/sass\A         on line 6 of lms/static/sass/course.scss\A \A 1: /*\A 2:  * This file is dynamically generated and ignored by Git.\A 3:  * DO NOT MAKE CHANGES HERE. Instead, go edit its template:\A 4:  * /edx/app/edxapp/edx-platform/lms/static/sass/course.scss.mako\A 5:  */\A 6: @import 'bourbon/bourbon';\A 7: \A 8: @import 'base/reset';\A 9: @import 'base/font_face';\A 10: @import 'base/variables';\A 11: @import 'base/mixins';"; }
