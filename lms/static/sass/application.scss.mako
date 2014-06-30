@@ -27,6 +27,14 @@
   @import '${env.get('THEME_NAME')}';
 % endif
 
+//azza-theme overrides
+//====================
+@import 'azza-theme/variables';
+@import 'azza-theme/layout';
+@import 'azza-theme/main';
+//end of azza-theme overrides
+
+
 @import 'base/base';
 
 // base - assets
