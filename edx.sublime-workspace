@@ -1,0 +1,903 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"ent",
+				"entry-title"
+			],
+			[
+				"_s",
+				"_slide_title"
+			],
+			[
+				"_sl",
+				"_slide_img_src"
+			],
+			[
+				"sli",
+				"slides_img_srcs"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"lin",
+				"link-text"
+			],
+			[
+				"we",
+				"widget-title"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"skin",
+				"skin-bootstrap"
+			],
+			[
+				"vi",
+				"views"
+			],
+			[
+				"vot",
+				"votes_trial_counter"
+			],
+			[
+				"vote",
+				"votes_trial_counter"
+			],
+			[
+				"mo",
+				"models"
+			],
+			[
+				"mod",
+				"Model"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"me",
+				"membership_serial_1"
+			],
+			[
+				"on",
+				"ON_OPENSHIFT"
+			],
+			[
+				"cha",
+				"charge_id"
+			],
+			[
+				"pay",
+				"payment"
+			],
+			[
+				"log",
+				"login_view"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"erro",
+				"errors_view"
+			],
+			[
+				"tr",
+				"try	Try/Except"
+			],
+			[
+				"s",
+				"self"
+			],
+			[
+				"__",
+				"__repr__"
+			],
+			[
+				"for",
+				"format"
+			],
+			[
+				"ex",
+				"exception"
+			],
+			[
+				"sub",
+				"submit"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 243.0,
+		"selected_items":
+		[
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inspaca",
+				"Package Control: Install Package"
+			],
+			[
+				"pacins",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 146.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/views/courses/index.php",
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/views/courses/view.php",
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/controller/students.php",
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/views/students/index.php",
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/model/course.php",
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/controller/courses.php",
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/views/instructor/courses.php",
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/controller/payments.php",
+		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/model/student.php",
+		"/media/ahmad/alfa/Syasi/lms/index.php",
+		"/home/ahmad/edxfork/edx-platform/lms/static/sass/application-extend2.scss.mako",
+		"/home/ahmad/edxfork/edx-platform/lms/static/sass/application-extend1.scss.mako",
+		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_variables.scss",
+		"/home/ahmad/edxfork/edx-platform/Gemfile",
+		"/home/ahmad/edxfork/edx-platform/lms/static/sass/application.scss",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/main.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/index.html",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/pipeline_mako/templates/static_content.html",
+		"/home/ahmad/edxfork/edx-platform/common/lib/xmodule/xmodule/x_module.py",
+		"/home/ahmad/edxfork/edx-platform/common/lib/xmodule/xmodule/static_content.py",
+		"/home/ahmad/edxfork/edx-platform/lms/startup.py",
+		"/home/ahmad/edxfork/edx-platform/common/lib/html_to_text.py",
+		"/home/ahmad/edxfork/edx-platform/common/lib/django_startup.py",
+		"/home/ahmad/edxfork/edx-platform/cms/startup.py",
+		"/tmp/fz3temp-1/app.css",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/last-3-posts/last-3-posts.php",
+		"/var/www/wp/shrpost/wp-content/plugins/crumina_slider/cruminaslider.php",
+		"/tmp/fz3temp-1/topmenu.css",
+		"/tmp/fz3temp-1/sections.css",
+		"/tmp/fz3temp-1/blocks.css",
+		"/var/www/wp/shrpost/wp-content/themes/sharkiapost.wordpress.2014-03-17.xml",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/app.css",
+		"/var/www/wp/shrpost/wp-content/plugins/crumina_slider/css/crumina_slider.css",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/news-row/news-row.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/head.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/parts/blocks.css",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/options/options.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/functions.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/style.css",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/menu.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/cleanup.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/actions.php",
+		"/var/www/wp/shrpost/wp-admin/admin.php",
+		"/var/www/wp/noofoz/index.php",
+		"/home/ahmad/.cache/.fr-EjHRxv/noofoz/db/inc.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider-www-data/page-left-sidebar.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/content.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/post-video.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/page-right-sidebar.php",
+		"/var/www/wp/shrpost/wp-content/plugins/siteorigin-panels/css/front.css",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/responsive.css",
+		"/var/www/wp/shrpost/wp-content/themes/Glider-www-data/templates/entry-meta.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider-www-data/templates/entry-meta-mini.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/entry-meta-mini.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/entry-meta.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider-www-data/templates/dopinfo.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/dopinfo.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/css/styles.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/one-gallery/one-gallery.php",
+		"/var/www/wp/shrpost/wp-content/plugins/crumina_slider/js/crumina_slider_content.js",
+		"/home/ahmad/angular-phonecat/app/css/app.css",
+		"/home/ahmad/angular-phonecat/app/index.html",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/page-left-sidebar.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/parts/sections.css",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/news-row-desc/news-row-desc.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/news-cat/news-cat.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/features-list/features-list.php",
+		"/var/www/wp/shrpost/wp-content/plugins/js_composer/composer/shortcodes_templates/vc_teaser_grid.php",
+		"/var/www/wp/shrpost/wp-content/plugins/js_composer/composer/shortcodes_templates/vc_posts_grid.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/parts/topmenu.css",
+		"/home/ahmad/Desktop/noofoz/index.php",
+		"/home/ahmad/Desktop/noofoz/hello.php",
+		"/home/ahmad/.cache/.fr-hfHifm/noofoz/index.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider-www-data/inc/actions.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/index.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/top-page.php",
+		"/var/www/wp/shrpost/wp-includes/template-loader.php",
+		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/sticky-posts/sticky-posts.php",
+		"/etc/php5/apache2/php.ini",
+		"/var/www/wp/shrpost/wp-config.php",
+		"/home/ahmad/.cache/.fr-oamLkL/Working Files/Chapter 15/api-ajax/speedconvert.php",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/courseware/courseware.html",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/registration/password_reset_email.html",
+		"/home/ahmad/edxdevstack/edx-platform/lms/envs/common.py",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/base.html",
+		"/home/ahmad/edxdevstack/edx-platform/cms/envs/common.py",
+		"/home/ahmad/edxdevstack/edx-platform/cms/envs/aws.py",
+		"/home/ahmad/edxdevstack/edx-platform/lms/envs/aws.py",
+		"/home/ahmad/edxdevstack/edx-platform/lms/djangoapps/instructor_task/views.py",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/emails/activation_email.txt",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/emails/activation_email_subject.txt",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/emails/activation_email.txt",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/index.html",
+		"/home/ahmad/edxdevstack/edx-platform/conf/locale/ar/LC_MESSAGES/django.po",
+		"/home/ahmad/edxdevstack/edx-platform/common/lib/xmodule/xmodule/course_module.py",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/emails/welcome_subject.txt",
+		"/home/ahmad/edxdevstack/edx-platform/conf/locale/ar/LC_MESSAGES/django.mo",
+		"/home/ahmad/edxdevstack/edx-platform/conf/locale/config",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/widgets/header.html",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/widgets/sock.html",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/widgets/footer.html",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/login.html",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/signup.html",
+		"/home/ahmad/edxdevstack/edx-platform/cms/templates/howitworks.html",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/coupons/pay_with_coupon.html",
+		"/home/ahmad/edxdevstack/edx-platform/common/lib/xmodule/xmodule/modulestore/django.py",
+		"/home/ahmad/edxdevstack/edx-platform/cms/djangoapps/contentstore/management/commands/delete_course.py",
+		"/home/ahmad/edxdevstack/edx-platform/cms/djangoapps/contentstore/utils.py",
+		"/home/ahmad/edxdevstack/edx-platform/.tx/config",
+		"/home/ahmad/edxdevstack/edx-platform/conf/locale/babel.cfg",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/courseware/course_about.html",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/course.html",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/index.html",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/navigation.html",
+		"/home/ahmad/edxdevstack/edx-platform/common/static/skins/flat-rtl/css/main.css",
+		"/home/ahmad/edxdevstack/edx-platform/common/lib/xmodule/xmodule/modulestore/mongo/base.py",
+		"/home/ahmad/edxdevstack/edx-platform/cms/djangoapps/contentstore/views/course.py",
+		"/home/ahmad/edxdevstack/edx-platform/common/djangoapps/student/views.py",
+		"/home/ahmad/edxdevstack/edx-platform/common/djangoapps/student/tests/test_authz.py",
+		"/home/ahmad/edxdevstack/edx-platform/lms/startup.py",
+		"/home/ahmad/edxdevstack/edx-platform/common/djangoapps/student/models.py",
+		"/home/ahmad/edxdevstack/edx-platform/lms/urls.py",
+		"/home/ahmad/edxdevstack/edx-platform/requirements/edx/base.txt",
+		"/home/ahmad/edxdevstack/edx-platform/lms/djangoapps/dashboard/sysadmin_urls.py",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/footer.html",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/register.html",
+		"/home/ahmad/edxdevstack/edx-platform/lms/envs/cms/microsite_test.py",
+		"/home/ahmad/edxdevstack/edx-platform/lms/templates/university_profile/edge.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"",
+			"project,/home/ahmad/syasi/syasi/main",
+			"project",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"set($",
+			"$course->id",
+			"course",
+			"ids",
+			"action_export",
+			"get_student_list()",
+			"span5",
+			"get_student_list()",
+			"this",
+			"background: red;",
+			"$blue",
+			"250",
+			"$body-bg",
+			"outer-container()",
+			"bourbon/bourbon",
+			"neat/neat",
+			"$column ",
+			" $column ",
+			"$column",
+			"Sass::Plugin.options",
+			"course",
+			"@import \"bourbon\";",
+			"class=\"logo\"",
+			"SEGMENT_IO_LMS",
+			"css_overrides_file",
+			"EDX_ROOT_URL",
+			"static_content.html",
+			"load_classes",
+			"XModuleDescriptor",
+			"write_descriptor_js",
+			"XMODULES",
+			"platform",
+			"autostartup",
+			"article .entry-thumb, .single-post article.post .entry-thumb",
+			"entry-thumb",
+			"entry",
+			"بواسطة",
+			"icon-format",
+			"icon icon-format",
+			"icon-format",
+			"six categ-all columns featured-news",
+			".main-slider-block .item",
+			"#header .menu .current-menu-item > span .link-text",
+			"class=\"more-button\"",
+			"color: rgb(16, 65, 1); font-style:normal; padding-top: 5px; display:inline-block; width: 67%;float: left;",
+			".slider-nav a",
+			"footer {",
+			".active ",
+			".active",
+			"E0",
+			".icon-format",
+			"#header ",
+			"#header .menu>li",
+			"login_enqueue_scripts",
+			"slider-nav-thumb",
+			"bullets",
+			"options",
+			"nav",
+			"button",
+			"button5",
+			"button4",
+			"my_custom_field",
+			"button3",
+			"button2",
+			"button3",
+			"button2",
+			"button1",
+			"fastSave",
+			"$button2",
+			"displayButton",
+			"validate_callback_function",
+			"displayed",
+			"fastSave",
+			"crumina.net",
+			"Warning",
+			"unauthorized theme version",
+			"class=\"updated\"",
+			"<h2>Warning</h2>",
+			"All rights for the theme are reserved. Currently you are using the unauthorized theme version, which conflicts with theme license agreement and the laws of almost all countries in the world. ",
+			"class=\"post-social\"",
+			"<aside class=\"four columns\" id=\"left-sidebar\">",
+			"four columns",
+			"<section id=\"main-content\" role=\"main\" class=\"nine columns\">",
+			"<div class=\"blog-section sidebar-left\">",
+			"h3",
+			"title",
+			"ovh",
+			"class=\"blog-section sidebar-left\"",
+			"class=\"entry-content\"",
+			"<div class=\"ovh\">",
+			"article",
+			"<section id=\"main-content\" role=\"main\" class=\"nine columns\">",
+			"id=\"main-content\"",
+			"echo __('in', 'crum')",
+			"class=\"post-tags\"",
+			"echo __('By', 'crum')",
+			"byline author vcard",
+			"dopinfo.php",
+			"class=\"dopinfo\"",
+			"mini-news",
+			".panel-grid",
+			"panel-grid",
+			"block-news-feature",
+			".block-news-feature",
+			"extra",
+			"before_title",
+			"widget_title",
+			"extra-links",
+			"widget_crum_galleries_widget",
+			"widget widget_crum_galleries_widget",
+			"panel widget widget_crum_galleries_widget",
+			"row block-news-feature",
+			"numberSlides",
+			"i",
+			"slider-nav",
+			"60",
+			"150",
+			"150x150",
+			"liMarkup",
+			"active",
+			"slider-nav",
+			"active",
+			"slider-nav",
+			"active",
+			"$data_img_html",
+			"class=\"main-slider-block\"",
+			"main-slider-block",
+			"hover-box"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"echo __('وسوم', 'crum')",
+			"echo __('بواسطة', 'crum')",
+			"my_courses",
+			"href=\"{% url 'user_courses' %}\">My courses<",
+			"% if request.user.is_authenticated %}\n<li class=\"dropdown\">\n  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">User <b class=\"caret\"></b></a>\n  <ul class=\"dropdown-menu\">\n    <li><a href=\"#\">Action</a></li>\n    <li class=\"divider\"></li>\n    <li><a href=\"{% url 'logout' %}\">logout</a></li>\n  </ul>\n</li>\n{% else %}\n<li><a href=\"{% url 'login' %}\">login</a></li>\n{% endif %}",
+			"href=\"{% url 'logout' %}\">logout<"
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"static_cont",
+				"common/djangoapps/pipeline_mako/templates/static_content.html"
+			],
+			[
+				"admin",
+				"wp-admin/admin.php"
+			],
+			[
+				"bl",
+				"wp-content/themes/Glider/assets/css/parts/blocks.css"
+			],
+			[
+				"fron",
+				"wp-content/plugins/siteorigin-panels/css/front.css"
+			],
+			[
+				"head",
+				"wp-content/themes/Glider/templates/head.php"
+			],
+			[
+				"block",
+				"wp-content/themes/Glider/assets/css/parts/blocks.css"
+			],
+			[
+				"slider.c",
+				"wp-content/plugins/crumina_slider/css/crumina_slider.css"
+			],
+			[
+				"app.css",
+				"wp-content/themes/Glider/assets/css/app.css"
+			],
+			[
+				"topmen",
+				"wp-content/themes/Glider/assets/css/parts/topmenu.css"
+			],
+			[
+				"sections",
+				"wp-content/themes/Glider/assets/css/parts/sections.css"
+			],
+			[
+				"jquery.payment.js",
+				"edx-platform/lms/static/js/vendor/jquery.payment.js"
+			],
+			[
+				"main.cs",
+				"edx-platform/common/static/skins/flat-rtl/css/main.css"
+			],
+			[
+				"cmshead",
+				"edx-platform/cms/templates/widgets/header.html"
+			],
+			[
+				"modulestore/django.py",
+				"edx-platform/common/lib/xmodule/xmodule/modulestore/django.py"
+			],
+			[
+				"confcon",
+				"edx-platform/conf/locale/config"
+			],
+			[
+				"course_ab",
+				"edx-platform/lms/templates/courseware/course_about.html"
+			],
+			[
+				"cours",
+				"edx-platform/lms/templates/course.html"
+			],
+			[
+				"index",
+				"edx-platform/lms/templates/index.html"
+			],
+			[
+				"inde",
+				"edx-platform/cms/templates/index.html"
+			],
+			[
+				"navig",
+				"edx-platform/lms/templates/navigation.html"
+			],
+			[
+				"main.css",
+				"edx-platform/common/static/skins/flat-rtl/css/main.css"
+			],
+			[
+				"mongo/base.py",
+				"edx-platform/common/lib/xmodule/xmodule/modulestore/mongo/base.py"
+			],
+			[
+				"contentstore/views/course.py",
+				"edx-platform/cms/djangoapps/contentstore/views/course.py"
+			],
+			[
+				"studenvie",
+				"edx-platform/common/djangoapps/student/views.py"
+			],
+			[
+				"pay_w",
+				"edx-platform/lms/templates/coupons/pay_with_coupon.html"
+			],
+			[
+				"requiba",
+				"edx-platform/requirements/edx/base.txt"
+			],
+			[
+				"lmscom",
+				"edx-platform/lms/envs/common.py"
+			],
+			[
+				"lmsaw",
+				"edx-platform/lms/envs/aws.py"
+			],
+			[
+				"lmsurl",
+				"edx-platform/lms/urls.py"
+			],
+			[
+				"stuvi",
+				"edx-platform/common/djangoapps/student/views.py"
+			],
+			[
+				"commstumo",
+				"edx-platform/common/djangoapps/student/models.py"
+			],
+			[
+				"cmscomm",
+				"edx-platform/cms/envs/common.py"
+			],
+			[
+				"nav",
+				"edx-platform/lms/templates/navigation.html"
+			],
+			[
+				"aws",
+				"edx-platform/lms/envs/aws.py"
+			],
+			[
+				"main",
+				"edx-platform/lms/templates/main.html"
+			],
+			[
+				"regis",
+				"edx-platform/lms/templates/register.html"
+			],
+			[
+				"foo",
+				"edx-platform/lms/templates/footer.html"
+			],
+			[
+				"main.",
+				"edx-platform/lms/templates/main.html"
+			],
+			[
+				"capa_ba",
+				"edx-platform/common/lib/xmodule/xmodule/capa_base.py"
+			],
+			[
+				"course-r",
+				"edx-platform/lms/static/sass/course-rtl.scss"
+			],
+			[
+				"course-rtl",
+				"edx-platform/lms/static/sass/course-rtl.css"
+			],
+			[
+				"modulesto__in",
+				"edx-platform/common/lib/xmodule/xmodule/modulestore/__init__.py"
+			],
+			[
+				"acces",
+				"edx-platform/lms/djangoapps/courseware/access.py"
+			],
+			[
+				"comm",
+				"edx-platform/lms/envs/common.py"
+			],
+			[
+				"devst",
+				"edx-platform/lms/envs/devstack.py"
+			],
+			[
+				"forg",
+				"edx-platform/lms/templates/forgot_password_modal.html"
+			],
+			[
+				"lmscomm",
+				"edx-platform/lms/envs/common.py"
+			],
+			[
+				"ltimod",
+				"edx-platform/common/lib/xmodule/xmodule/lti_module.py"
+			],
+			[
+				"rtl",
+				"edx-platform/lms/static/admin/css/rtl.css"
+			],
+			[
+				"studenvi",
+				"edx-platform/common/djangoapps/student/views.py"
+			],
+			[
+				"shoppmo",
+				"edx-platform/lms/djangoapps/shoppingcart/models.py"
+			],
+			[
+				"shopi",
+				"edx-platform/lms/djangoapps/shoppingcart/__init__.py"
+			],
+			[
+				"commo",
+				"edx-platform/cms/envs/common.py"
+			],
+			[
+				"courseabou",
+				"edx-platform/lms/templates/courseware/course_about.html"
+			],
+			[
+				"about",
+				"edx-platform/lms/templates/static_templates/about.html"
+			],
+			[
+				"regist",
+				"edx-platform/lms/templates/register.html"
+			],
+			[
+				"paywith",
+				"edx-platform/lms/templates/coupons/pay_with_coupon.html"
+			],
+			[
+				"course_a",
+				"edx-platform/lms/templates/courseware/course_about.html"
+			],
+			[
+				"tempcours",
+				"edx-platform/lms/templates/course.html"
+			],
+			[
+				"base",
+				"ora/base_requirements.txt"
+			],
+			[
+				"devs",
+				"edx-platform/lms/envs/devstack.py"
+			],
+			[
+				"dash",
+				"edx-platform/lms/templates/dashboard.html"
+			],
+			[
+				"reg",
+				"edx-platform/lms/templates/register.html"
+			],
+			[
+				"comm.py",
+				"edx-platform/lms/envs/common.py"
+			],
+			[
+				"logi",
+				"edx-platform/lms/templates/login.html"
+			],
+			[
+				"login",
+				"edx-platform/cms/templates/login.html"
+			],
+			[
+				"foot",
+				"edx-platform/lms/templates/footer.html"
+			],
+			[
+				"tempmain",
+				"edx-platform/lms/templates/main.html"
+			],
+			[
+				"cours_a",
+				"lms/templates/courseware/course_about.html"
+			],
+			[
+				"backbone",
+				"common/static/js/vendor/backbone-min.js"
+			],
+			[
+				"cmscontsvius",
+				"cms/djangoapps/contentstore/views/user.py"
+			],
+			[
+				"cmscontenstoruti",
+				"cms/djangoapps/contentstore/utils.py"
+			],
+			[
+				"modulestore/_in",
+				"common/lib/xmodule/xmodule/modulestore/__init__.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/ahmad/git-repos/ask/ask-git-repos.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 260.0,
+	"status_bar_visible": true
+}

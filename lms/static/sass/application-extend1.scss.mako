@@ -6,6 +6,7 @@
 
 // libs and resets *do not edit*
 @import 'bourbon/bourbon'; // lib - bourbon
+@import 'neat/neat'; // lib - neat
 
 // BASE  *default edX offerings*
 // ====================
@@ -30,8 +31,6 @@
 
 //azza-theme overrides
 //====================
-@import 'azza-theme/variables';
-@import 'azza-theme/layout';
 @import 'azza-theme/main';
 //end of azza-theme overrides
 
