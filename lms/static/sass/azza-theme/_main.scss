@@ -21,6 +21,7 @@ header.global{
 //===========
 .home>header {
 	background-color: Crimson;
+	border-bottom: 0;
 
 	.outer-wrapper {
 		padding: 0;
@@ -38,3 +39,50 @@ header.global{
 	}
 }
 
+
+//footer overrides
+//================
+.wrapper-footer {
+	border-top: 0;
+	background-color: SteelBlue;
+	color: #c4c5c7;
+
+	footer .colophon {
+		float: right;
+		margin-left: flex-gutter();
+
+		.nav-colophon li {
+			float: right;
+			margin-left: 15px;
+
+			:hover {
+				color: #777;
+			}
+		}
+
+		.colophon-about p {
+			float: right;
+			margin-right: 20px;
+			padding-right: 20px;
+			text-align: right;
+			background: transparent url(/static/images/bg-footer-divider.jpg) 100% 0 no-repeat;
+		}
+
+		.colophon-about img {
+			float: right;
+		}
+	}
+
+	footer .references {
+		float: left;
+
+		.nav-social {
+		text-align: left;
+		}
+
+		.nav-legal, 
+		.copyright {
+			text-align: left;
+		}
+	}
+}
