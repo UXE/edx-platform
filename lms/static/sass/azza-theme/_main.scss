@@ -1,0 +1,40 @@
+//variables
+//=========
+$default-layout-direction: RTL;
+
+
+//header overrides
+//================
+header.global{
+	border-bottom: 0;
+
+	h1.logo {
+		float: right;
+	}
+
+	.nav-courseware {
+		float: left;
+	}
+}
+
+//home page
+//===========
+.home>header {
+	background-color: Crimson;
+
+	.outer-wrapper {
+		padding: 0;
+		@include outer-container();
+
+		.call-to-action.sign-up {
+			@include span-columns(6);
+			text-align: center;
+		}
+
+		.call-to-action.log-in {
+			@include span-columns(6);
+			text-align: center;
+		}
+	}
+}
+
