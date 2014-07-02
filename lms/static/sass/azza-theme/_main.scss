@@ -1,7 +1,9 @@
+
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
 //variables
 //=========
 $default-layout-direction: RTL;
-
+$sans-serif: 'Droid Arabic Kufi', 'Open Sans', $verdana, sans-serif;
 
 //header overrides
 //================
@@ -14,13 +16,43 @@ header.global{
 
 	.nav-courseware {
 		float: left;
+
+		li .cta {
+			@include button(flat);
+		}
 	}
 }
 
 //home page
 //===========
+
+.home-section {
+	min-height: 500px;
+	@include fill-parent();
+
+	>div {
+		@include outer-container();
+	}
+
+	.content {
+		@include outer-container();
+	}
+}
+
+.ivory {
+	background-color: ivory;
+}
+
+.crimson {
+	background-color: crimson;
+}
+
+.palegreen {
+	background-color: palegreen;
+}
+
 .home>header {
-	background-color: Crimson;
+	background-color: crimson;
 	border-bottom: 0;
 
 	.outer-wrapper {
