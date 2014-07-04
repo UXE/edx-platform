@@ -23,9 +23,14 @@ header.global{
 	}
 }
 
+//general
+//=========
+.hide {
+	display: none;
+}
+
 //home page
 //===========
-
 .home-section {
 	min-height: 500px;
 	@include fill-parent();
@@ -71,13 +76,35 @@ header.global{
 	}
 }
 
+//login page
+//=============
+.view-login {
+	.content-wrapper {
+		padding: 100px 0;
+		background: transparent url(/static/images/2048.jpg) center center no-repeat fixed;
+		background-size: cover;
+	}
+
+	.login {
+		&.container {
+			background: none;
+		}
+		.content {
+			width: 600px;
+			float: none;
+			margin: 0 auto;
+			padding: 30px;
+			background-color: rgba(255, 255, 255, 0.4);
+		}
+	}
+}
 
 //footer overrides
 //================
 .wrapper-footer {
 	border-top: 0;
 	background-color: SteelBlue;
-	color: #c4c5c7;
+	color: darkslategrey;
 
 	footer .colophon {
 		float: right;
