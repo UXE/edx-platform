@@ -29,6 +29,8 @@ header.global{
 	display: none;
 }
 
+
+
 //home page
 //===========
 .home-section {
@@ -98,6 +100,38 @@ header.global{
 		}
 	}
 }
+
+#login-form {
+	text-align: right;
+}
+
+//register page
+//=============
+.view-register {
+	.content-wrapper {
+		padding: 100px 0;
+		background: transparent url(/static/images/2048.jpg) center center no-repeat fixed;
+		background-size: cover;
+	}
+
+	.register {
+		&.container {
+			background: none;
+		}
+		.content {
+			width: 600px;
+			float: none;
+			margin: 0 auto;
+			padding: 30px;
+			background-color: rgba(255, 255, 255, 0.4);
+		}
+	}
+}
+
+#register-form {
+	text-align: right;
+}
+
 
 //footer overrides
 //================
