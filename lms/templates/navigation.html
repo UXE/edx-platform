@@ -47,19 +47,10 @@ site_status_msg = get_site_status_msg(course_id)
     </h1>
 
     % if course:
-    <h2><span class="provider">${course.display_org_with_default | h}:</span> ${course.display_number_with_default | h} ${course.display_name_with_default}</h2>
+    <h2><span class="provider hide">${course.display_org_with_default | h}:</span > <span class="hide">${course.display_number_with_default | h}</span> ${course.display_name_with_default}</h2>
     % endif
 
     % if user.is_authenticated():
-    <ol class="left nav-global authenticated">
-      <%block name="navigation_global_links_authenticated">
-        % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-          <li class="nav-global-01">
-            <a href="${marketing_link('COURSES')}">${_('Find Courses')}</a>
-          </li>
-        % endif
-      </%block>
-    </ol>
     <ol class="user">
       <li class="primary">
         <a href="${reverse('dashboard')}" class="user-link">
@@ -79,6 +70,16 @@ site_status_msg = get_site_status_msg(course_id)
         </ul>
       </li>
     </ol>
+    <ol class="left nav-global authenticated">
+      <%block name="navigation_global_links_authenticated">
+        % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+          <li class="nav-global-01">
+            <a href="${marketing_link('COURSES')}">${_('Find Courses')}</a>
+          </li>
+        % endif
+      </%block>
+    </ol>
+    
       % if display_shopping_cart: # see shoppingcart.context_processor.user_has_cart_context_processor
         <ol class="user">
           <li class="primary">

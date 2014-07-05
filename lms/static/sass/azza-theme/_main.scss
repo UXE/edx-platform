@@ -5,13 +5,18 @@
 $default-layout-direction: RTL;
 $sans-serif: 'Droid Arabic Kufi', 'Open Sans', $verdana, sans-serif;
 
-//header overrides
+//navigation overrides
 //================
-header.global{
+header.global {
 	border-bottom: 0;
 
 	h1.logo {
 		float: right;
+
+		img {
+			width: 50px;
+			height: 58px;
+		}
 	}
 
 	.nav-courseware {
@@ -19,6 +24,36 @@ header.global{
 
 		li .cta {
 			@include button(flat);
+		}
+	}
+	ol.user {
+		float: left;
+	}
+
+	&.slim {
+		nav h2 {
+			float: right;
+			text-align: right;
+		}
+		.logo {
+			margin: 0 13px 0 10px;
+			padding-right: 0;
+			padding-left: 20px;
+
+			&:before {
+    		  position: absolute;
+    		  left: 0;
+    		}
+
+    		&:after {
+    		  position: absolute;
+    		  left: 0;
+    		}
+
+			img {
+				height: 30px;
+				width: 27px;
+			}
 		}
 	}
 }
@@ -33,7 +68,7 @@ header.global{
 
 //home page
 //===========
-.home-section {
+.section-block {
 	min-height: 500px;
 	@include fill-parent();
 
@@ -163,6 +198,7 @@ header.global{
 
 		.colophon-about img {
 			float: right;
+			height: 74px;
 		}
 	}
 
@@ -177,5 +213,57 @@ header.global{
 		.copyright {
 			text-align: left;
 		}
+	}
+}
+
+
+//course profile
+//================
+
+#intro-inner-wrapper {
+	background-color: rgba(255, 255, 255, 0.7);
+	border: none;
+}
+
+.course-info {
+	header.course-profile {
+		.intro-inner-wrapper .intro>hgroup h1 {
+			text-align: right;
+		}
+	}
+	.header-info {
+		@include outer-container();
+		background-color: rgba(0, 0, 0, 0.3);
+		padding: 20px 0;
+
+		h1 {
+			color: #FFFFF0;
+			text-shadow: 1px 1px #222;
+			padding: 20px 150px 0 150px;
+			letter-spacing: -1px;
+		}
+
+		.play-icon {
+            @include background-image(linear-gradient(-90deg, rgba(0,0,0, 0.65), rgba(0,0,0, 0.75)));
+            border-radius: 4px;
+            box-shadow: 0 1px 12px 0 rgba(0,0,0, 0.4);
+            border: 1px solid rgba(255,255,255, 0.8);
+            height: 80px;
+            margin-top: 10px;
+			margin-left: auto;
+			margin-right: auto;
+            width: 80px;
+
+            &::after {
+              color: rgba(255,255,255, 0.8);
+              content: "\25B6";
+              display: block;
+              font: normal 2em/1em $sans-serif;
+              margin-left: 30px;
+			  margin-right: auto;
+			  margin-top: 20px;
+              text-shadow: 0 -1px rgba(0,0,0, 0.8);
+            }
+        }	
 	}
 }

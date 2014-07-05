@@ -122,15 +122,24 @@
 <%block name="pagetitle">${_("About {course.display_number_with_default}").format(course=course) | h}</%block>
 
 <section class="course-info">
-  <header class="course-profile">
-    <div class="intro-inner-wrapper">
+  <header class="course-profile section-block" style="background: url(${course_image_url(course)}) center center no-repeat, url(/static/images/2048.jpg) center center no-repeat aliceblue;background-size: cover, cover;">
+    <div class="header-info hide">
+      % if get_course_about_section(course, "video"):
+        <a href="#video-modal" class="media" rel="leanModal">
+          <div class="play-icon"></div>
+        </a>
+      % endif
+      <h1>${get_course_about_section(course, "title")}</h1>
+    </div>
+
+    <div class="intro-inner-wrapper" id="intro-inner-wrapper">
       <div class="table">
       <section class="intro">
         <hgroup>
           <h1>
-            ${course.display_number_with_default | h}: ${get_course_about_section(course, "title")}
+            <span class="hide">${course.display_number_with_default | h}:</span> ${get_course_about_section(course, "title")}
             % if not self.theme_enabled():
-              <a href="#">${get_course_about_section(course, "university")}</a>
+              <a href="#" class="hide">${get_course_about_section(course, "university")}</a>
             % endif
           </h1>
         </hgroup>
@@ -144,7 +153,7 @@
           <span class="register disabled">${_("You are registered for this course")}</span>
 
           %if show_courseware_link:
-            <strong>${_("View Courseware")}</strong>
+            <strong>${_(u"إستعراض المقرر")}</strong>
             </a>
           %endif
 
