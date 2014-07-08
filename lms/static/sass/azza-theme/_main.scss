@@ -60,6 +60,15 @@ header.global {
 
 //general
 //=========
+body {
+	background-color: ivory;
+
+}
+
+#content {
+	background-color: #e9eaed;
+}
+
 .hide {
 	display: none;
 }
@@ -117,6 +126,7 @@ header.global {
 //=============
 .view-login {
 	.content-wrapper {
+		background-color: aliceblue;
 		padding: 100px 0;
 		background: transparent url(/static/images/2048.jpg) center center no-repeat fixed;
 		background-size: cover;
@@ -144,6 +154,7 @@ header.global {
 //=============
 .view-register {
 	.content-wrapper {
+		background-color: aliceblue;
 		padding: 100px 0;
 		background: transparent url(/static/images/2048.jpg) center center no-repeat fixed;
 		background-size: cover;
@@ -227,6 +238,8 @@ header.global {
 
 .course-info {
 	header.course-profile {
+		border-bottom: none;
+
 		.intro-inner-wrapper .intro>hgroup h1 {
 			text-align: right;
 		}
@@ -265,5 +278,45 @@ header.global {
               text-shadow: 0 -1px rgba(0,0,0, 0.8);
             }
         }	
+	}
+
+	.container {
+		background: #fff;
+		margin-top: 30px;
+		border: 1px solid #d3d6db;
+		border-radius: 3px;
+	}
+}
+
+//course listing
+//================
+body .highlighted-courses .courses .courses-listing .courses-listing-item, 
+.find-courses .courses .courses-listing .courses-listing-item {
+	float: right;
+}
+
+//student-dashboard
+//=================
+.dashboard {
+	.my-courses {
+		text-align: right;
+
+		.course .info>hgroup .university {
+			text-align: left;
+		}
+		.listing-courses {
+			.course-item {
+				background-color: #fff;
+				border: 1px solid #d3d6db;
+				padding: 20px;
+				border-radius: 3px;
+
+				&:last-child {
+					padding-bottom: 20px;
+					border-bottom: 1px solid #d3d6db;					
+				}
+			}
+
+		}
 	}
 }
