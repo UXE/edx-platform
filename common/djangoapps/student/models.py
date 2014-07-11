@@ -736,7 +736,7 @@ class CourseEnrollment(models.Model):
                 log.exception('Unable to emit event %s for user %s and course %s', event_name, self.user.username, self.course_id)
 
     @classmethod
-    def enroll(cls, user, course_key, mode="honor"):
+    def enroll(cls, user, course_key, mode="honor", is_active=True):
         """
         Enroll a user in a course. This saves immediately.
 
@@ -757,7 +757,7 @@ class CourseEnrollment(models.Model):
         verified the user authentication and access.
         """
         enrollment = cls.get_or_create_enrollment(user, course_key)
-        enrollment.update_enrollment(is_active=True, mode=mode)
+        enrollment.update_enrollment(mode=mode, is_active=is_active)
         return enrollment
 
     @classmethod

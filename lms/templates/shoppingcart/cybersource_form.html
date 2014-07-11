@@ -1,6 +1,7 @@
-        <form action="${action}" method="post">
+        <form action="/shoppingcart/bank_payment/" method="post">
             % for pk, pv in params.iteritems():
                 <input type="hidden" name="${pk}" value="${pv}" />
             % endfor
+            	<input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
                 <input type="submit" value="Check Out" />
         </form>

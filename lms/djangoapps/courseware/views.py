@@ -631,6 +631,7 @@ def course_about(request, course_id):
     # Note: this is a flow for payment for course registration, not the Verified Certificate flow.
     registration_price = 0
     in_cart = False
+    is_waiting_approval = False
     reg_then_add_to_cart_link = ""
     if (settings.FEATURES.get('ENABLE_SHOPPING_CART') and
         settings.FEATURES.get('ENABLE_PAID_COURSE_REGISTRATION')):

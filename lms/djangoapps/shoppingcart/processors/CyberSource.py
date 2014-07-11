@@ -102,6 +102,8 @@ def render_purchase_form_html(cart):
     """
     Renders the HTML of the hidden POST form that must be used to initiate a purchase with CyberSource
     """
+
+    # TODO: remove disable fake payment
     return render_to_string('shoppingcart/cybersource_form.html', {
         'action': get_purchase_endpoint(),
         'params': get_signed_purchase_params(cart),

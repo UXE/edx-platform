@@ -1,6 +1,7 @@
 import logging
 import datetime
 import pytz
+import json
 from django.conf import settings
 from django.contrib.auth.models import Group
 from django.http import (HttpResponse, HttpResponseRedirect, HttpResponseNotFound,
@@ -9,6 +10,7 @@ from django.utils.translation import ugettext as _
 from django.views.decorators.http import require_POST
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
+from django_future.csrf import ensure_csrf_cookie
 from django.contrib.auth.decorators import login_required
 from edxmako.shortcuts import render_to_response
 from opaque_keys.edx.locations import SlashSeparatedCourseKey
@@ -94,6 +96,29 @@ def remove_item(request):
     except OrderItem.DoesNotExist:
         log.exception('Cannot remove cart OrderItem id={0}. DoesNotExist or item is already purchased'.format(item_id))
     return HttpResponse('OK')
+
+@require_POST
+@login_required
+def bank_payment(request):
+    params = request.POST.dict()
+    user = request.user
+    order = Order.get_cart_for_user(user)
+    order.purchase(
+        first=params.get('billTo_firstName', ''),
+        last=params.get('billTo_lastName', ''),
+        street1=params.get('billTo_street1', ''),
+        street2=params.get('billTo_street2', ''),
+        city=params.get('billTo_city', ''),
+        state=params.get('billTo_state', ''),
+        country=params.get('billTo_country', ''),
+        postalcode=params.get('billTo_postalCode', ''),
+        ccnum='',
+        cardtype='',
+        processor_reply_dump=json.dumps(params),
+        waiting_approval=True
+    )
+
+    return HttpResponseRedirect(reverse('shoppingcart.views.show_receipt', args=[order.id]))
 
 
 @csrf_exempt

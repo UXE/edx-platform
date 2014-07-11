@@ -40,6 +40,7 @@ log = logging.getLogger("shoppingcart")
 ORDER_STATUSES = (
     ('cart', 'cart'),
     ('purchased', 'purchased'),
+    ('waiting_approval', 'waiting_approval'),
     ('refunded', 'refunded'),
 )
 
@@ -118,7 +119,7 @@ class Order(models.Model):
         self.orderitem_set.all().delete()
 
     def purchase(self, first='', last='', street1='', street2='', city='', state='', postalcode='',
-                 country='', ccnum='', cardtype='', processor_reply_dump=''):
+                 country='', ccnum='', cardtype='', processor_reply_dump='', waiting_approval=None):
         """
         Call to mark this order as purchased.  Iterates through its OrderItems and calls
         their purchased_callback
@@ -134,11 +135,16 @@ class Order(models.Model):
         `ccnum` - last 4 digits of the credit card number of the credit card billed (e.g. 1111)
         `cardtype` - 3-digit code representing the card type used (e.g. 001)
         `processor_reply_dump` - all the parameters returned by the processor
+        `waiting_approval` - indicating that this order and its items needs admin approval 
+            and this is used for now for approving classical bank transactions
 
         """
         if self.status == 'purchased':
             return
-        self.status = 'purchased'
+        if waiting_approval:
+            self.status = 'waiting_approval'
+        else:
+            self.status == 'purchased'
         self.purchase_time = datetime.now(pytz.utc)
         self.bill_to_first = first
         self.bill_to_last = last
@@ -160,7 +166,11 @@ class Order(models.Model):
         # subclasses
         orderitems = OrderItem.objects.filter(order=self).select_subclasses()
         for item in orderitems:
-            item.purchase_item()
+            if waiting_approval:
+                item.request_purchase_item()
+            else:
+                item.purchase_item()
+            
 
         # send confirmation e-mail
         subject = _("Order Payment Confirmation")
@@ -256,10 +266,28 @@ class OrderItem(models.Model):
         self.fulfilled_time = datetime.now(pytz.utc)
         self.save()
 
+    @transaction.commit_on_success
+    def request_purchase_item(self):
+        """
+        This is basically a wrapper around request_purchase_item_callback that handles
+        modifying the OrderItem itself
+        """
+        self.request_purchase_item_callback()
+        self.status = 'waiting_approval'
+        self.fulfilled_time = datetime.now(pytz.utc)
+        self.save()
+
     def purchased_callback(self):
         """
         This is called on each inventory item in the shopping cart when the
         purchase goes through.
+        """
+        raise NotImplementedError
+
+    def request_purchase_item_callback(self):
+        """
+        This is called on each inventory item in the shopping cart when the
+        classical bank bayment transactions needs approval before completing purchase.
         """
         raise NotImplementedError
 
@@ -389,6 +417,23 @@ class PaidCourseRegistration(OrderItem):
         CourseEnrollment.enroll(user=self.user, course_key=self.course_id, mode=self.mode)
 
         log.info("Enrolled {0} in paid course {1}, paid ${2}"
+                 .format(self.user.email, self.course_id, self.line_cost))  # pylint: disable=E1101
+
+    def request_purchase_item_callback(self):
+        """
+        When requesting purchase approval, this should do `is_active=False` enrollment for the user in the course.  
+        We are assuming that course settings for enrollment date are configured such that only if the (
+        user.email, course_id) pair is found in CourseEnrollmentAllowed will the user be allowed to enroll.  
+        Otherwise requiring payment would in fact be quite silly since there's a clear back door.
+        """
+        if not modulestore().has_course(self.course_id):
+            raise PurchasedCallbackException(
+                "The customer requested purchase Course {0}, but that course doesn't exist!".format(self.course_id))
+
+        CourseEnrollment.enroll(user=self.user, course_key=self.course_id, mode=self.mode, is_active=False)
+        self.report_comments += """===============================
+                                    Request approval for this item"""
+        log.info("Created inactive inrollment for {0} in paid course {1}, paid ${2}"
                  .format(self.user.email, self.course_id, self.line_cost))  # pylint: disable=E1101
 
     def generate_receipt_instructions(self):
