@@ -118,7 +118,7 @@ def bank_payment(request):
         waiting_approval=True
     )
 
-    return HttpResponseRedirect(reverse('shoppingcart.views.show_receipt', args=[order.id]))
+    return HttpResponseRedirect(reverse('dashboard'))
 
 
 @csrf_exempt

@@ -319,6 +319,25 @@
       </section>
     % endif
 
+    <header>
+      <h2>${_("Waiting Approval Courses")}</h2>
+    </header>
+
+    % if len(waiting_orders_with_items) > 0:
+      <ul class="listing-courses">
+        % for order, items in waiting_orders_with_items:
+          <li class="course-item">
+            <h2> ${order.id}</h2>
+            % for item in items:
+              <ol>
+                <h3>${item.course_id}</h3>
+              </ol>
+            % endfor
+          </li>
+        % endfor
+
+    % endif    
+
     % if staff_access and len(errored_courses) > 0:
       <div id="course-errors">
         <h2>${_("Course-loading errors")}</h2>

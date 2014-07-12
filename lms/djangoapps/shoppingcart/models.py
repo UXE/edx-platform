@@ -111,6 +111,25 @@ class Order(models.Model):
         Does the cart have any items in it?
         """
         return self.orderitem_set.exists()  # pylint: disable=E1101
+    @classmethod
+    def get_orders_with_items_for_status(cls, user, status):
+        """
+        gets all orders for a specific user with a specific status
+        returns list of tuples each contains 'order' and 'order items' 
+        """
+        # TODO: should be a more synced way with ORDER_STATUSES to check for allowed statuses        
+        allowed_statuses = ('cart', 'purchased', 'waiting_approval', 'refunded')
+        if status not in allowed_statuses:
+            return None
+        orders = cls.objects.filter(user=user, status=status)
+        orders_with_items = [(order, order.get_order_items()) for order in orders]
+        return orders_with_items
+
+    def get_order_items(self):
+        """
+        right now the concern is about 'paidcourseregistration'
+        """
+        return self.orderitem_set.all().select_subclasses("paidcourseregistration")
 
     def clear(self):
         """
@@ -346,6 +365,18 @@ class PaidCourseRegistration(OrderItem):
         """
         return course_id in [item.paidcourseregistration.course_id
                              for item in order.orderitem_set.all().select_subclasses("paidcourseregistration")]
+
+    @classmethod
+    def is_waiting_approval(cls, user, course_id):
+        """
+        check if this item is recorded as waiting_approval so it shouldn't be added to cart until the first 
+        request get approved or denied
+        """
+        try:
+            cls.objects.get(user=user, course_id=course_id, status="waiting_approval")
+            return True
+        except ObjectDoesNotExist:
+            return False
 
     @classmethod
     @transaction.commit_on_success

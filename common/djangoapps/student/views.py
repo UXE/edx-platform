@@ -438,6 +438,8 @@ def dashboard(request):
     # enrollments, because it could have been a data push snafu.
     course_enrollment_pairs = list(get_course_enrollment_pairs(user, course_org_filter, org_filter_out_set))
 
+    # get orders related to this student with status 'waiting_approval'so he can upload docs to it or cancel it
+    waiting_orders_with_items = shoppingcart.models.Order.get_orders_with_items_for_status(user=user, status='waiting_approval')
     course_optouts = Optout.objects.filter(user=user).values_list('course_id', flat=True)
 
     message = ""
@@ -508,6 +510,7 @@ def dashboard(request):
 
     context = {
         'course_enrollment_pairs': course_enrollment_pairs,
+        'waiting_orders_with_items': waiting_orders_with_items,
         'course_optouts': course_optouts,
         'message': message,
         'external_auth_map': external_auth_map,
