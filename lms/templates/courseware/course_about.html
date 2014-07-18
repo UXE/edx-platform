@@ -9,6 +9,8 @@
       cart_link = reverse('shoppingcart.views.show_cart')
   else:
       cart_link = ""
+
+  dashboard_link = reverse('dashboard')
 %>
 <%namespace name='static' file='../static_content.html'/>
 <%! from microsite_configuration import microsite %>
@@ -163,7 +165,7 @@
           </span>
         %elif is_waiting_approval:
           <span class="add-to-cart">
-            ${_('This course is waiting approval <a href="{cart_link}">cart</a>.').format(cart_link=cart_link)}
+            ${_('This course is waiting approval <a href="{dashboard_link}">Dashboard</a>.').format(dashboard_link=dashboard_link)}
           </span>
         %elif settings.FEATURES.get('ENABLE_PAID_COURSE_REGISTRATION') and registration_price:
           <%

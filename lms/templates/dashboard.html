@@ -324,18 +324,38 @@
     </header>
 
     % if len(waiting_orders_with_items) > 0:
-      <ul class="listing-courses">
+      <ul class="listing-courses orders-listing">
         % for order, items in waiting_orders_with_items:
-          <li class="course-item">
-            <h2> ${order.id}</h2>
+          <li class="course-item order-item" id="${order.id*7}">
+            <header>
+              <h3> ${_(u"طلب رقم")} : ${order.id*7}</h3>
+              <span>${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
+              <section class="order-actions">
+                <button>${_("update")}</button>
+                <button>${_("cancel")}</button>
+              </section>
+            </header>
+            
+            <section class="items-in-order">
+            <h3>${_("Items in this Order")}</h3>
             % for item in items:
-              <ol>
-                <h3>${item.course_id}</h3>
-              </ol>
+              <div>
+                <h3>${item.line_desc}</h3>
+                <span>${_("Cost")} : ${item.unit_cost} ${item.currency}</span>
+                <section class="item-actions">
+                  <button>${_("update")}</button>
+                  <button>${_("cancel")}</button>
+                </section>
+              </div>
             % endfor
+            </section>
           </li>
         % endfor
-
+      </ul>
+    % else:
+      <section class="empty-dashboard-message">
+        <p>${_("Looks like you haven't registered for any courses yet.")}</p>
+      </section>
     % endif    
 
     % if staff_access and len(errored_courses) > 0:

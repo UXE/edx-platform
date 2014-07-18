@@ -98,6 +98,13 @@ if settings.FEATURES["ENABLE_SYSADMIN_DASHBOARD"]:
         url(r'^sysadmin/', include('dashboard.sysadmin_urls')),
     )
 
+# manager dashboard, a new site wide management dashboard [finance, enrollment, staffing, statistics] 
+if settings.FEATURES["ENABLE_MANAGER_DASHBOARD"]:
+    urlpatterns += (
+        url(r'^manager/$', 'manager.views.index', name="manager_dasboard"),
+        url(r'^upload_test/$', 'manager.views.upload', name="upload_test"),
+    )
+
 urlpatterns += (
     url(r'support/', include('dashboard.support_urls')),
 )

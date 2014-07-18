@@ -98,7 +98,8 @@ FEATURES = {
 
     'ENABLE_MASQUERADE': True,  # allow course staff to change to student view of courseware
 
-    'ENABLE_SYSADMIN_DASHBOARD': False,  # sysadmin dashboard, to see what courses are loaded, to delete & load courses
+    'ENABLE_SYSADMIN_DASHBOARD': True,  # sysadmin dashboard, to see what courses are loaded, to delete & load courses
+    'ENABLE_MANAGER_DASHBOARD': True,  # manager dashboard, new site wide management dashboard [finance, enrollment staffing, statistics]
 
     'DISABLE_LOGIN_BUTTON': False,  # used in systems where login is automatic, eg MIT SSL
 
@@ -170,7 +171,7 @@ FEATURES = {
     'ENABLE_INSTRUCTOR_BACKGROUND_TASKS': True,
 
     # Enable instructor to assign individual due dates
-    'INDIVIDUAL_DUE_DATES': False,
+    'INDIVIDUAL_DUE_DATES': True,
 
     # Enable legacy instructor dashboard
     'ENABLE_INSTRUCTOR_LEGACY_DASHBOARD': True,
@@ -1288,6 +1289,12 @@ INSTALLED_APPS = (
 
     # Monitoring functionality
     'monitoring',
+
+    # Manager Dashboard
+    'manager',
+
+    # uploadcare app
+    'pyuploadcare.dj',
 )
 
 ######################### MARKETING SITE ###############################
@@ -1316,7 +1323,7 @@ VERIFY_STUDENT = {
 }
 
 ### This enables the Metrics tab for the Instructor dashboard ###########
-FEATURES['CLASS_DASHBOARD'] = False
+FEATURES['CLASS_DASHBOARD'] = True
 if FEATURES.get('CLASS_DASHBOARD'):
     INSTALLED_APPS += ('class_dashboard',)
 

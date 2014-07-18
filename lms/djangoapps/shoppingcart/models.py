@@ -112,16 +112,21 @@ class Order(models.Model):
         """
         return self.orderitem_set.exists()  # pylint: disable=E1101
     @classmethod
-    def get_orders_with_items_for_status(cls, user, status):
+    def get_orders_with_items_for_status(cls, user=None, status='waiting_approval'):
         """
-        gets all orders for a specific user with a specific status
+        gets all orders for a specific user if a user object is passed Otherwise get for all user
+        ,with the specified status,
         returns list of tuples each contains 'order' and 'order items' 
         """
         # TODO: should be a more synced way with ORDER_STATUSES to check for allowed statuses        
         allowed_statuses = ('cart', 'purchased', 'waiting_approval', 'refunded')
         if status not in allowed_statuses:
             return None
-        orders = cls.objects.filter(user=user, status=status)
+        if user == None:
+            orders = cls.objects.filter(status=status)
+        else:
+            orders = cls.objects.filter(user=user, status=status)
+
         orders_with_items = [(order, order.get_order_items()) for order in orders]
         return orders_with_items
 

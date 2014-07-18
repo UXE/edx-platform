@@ -1,0 +1,93 @@
+<%! from django.utils.translation import ugettext as _ %>
+
+<%!
+  from django.core.urlresolvers import reverse
+  import waffle
+%>
+
+
+<%inherit file="main.html" />
+
+<%namespace name='static' file='static_content.html'/>
+
+<%block name="pagetitle">${_("Manager")}</%block>
+<%block name="bodyclass">view-dashboard is-authenticated</%block>
+<%block name="nav_skip">#my-courses</%block>
+
+<%block name="js_extra">
+   $(function () {
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        success: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo(document.body);
+            });
+        }
+    });
+});
+</%block>
+
+<section class="container dashboard" id="dashboard-main" aria-hidden="false">
+
+  <section class="my-courses" id="my-courses">
+  <div id="fileupload">
+    <form action="${reverse('upload_test')}" method="POST" enctype="multipart/form-data">
+        <div class="fileupload-buttonbar">
+            <label class="fileinput-button">
+                <span>Add files...</span>
+                <input type="file" name="files[]" multiple>
+            </label>
+            <button type="submit" class="start">Start upload</button>
+            <button type="reset" class="cancel">Cancel upload</button>
+            <button type="button" class="delete">Delete files</button>
+            <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+        </div>
+    </form>
+    <div class="fileupload-content">
+        <table class="files"></table>
+        <div class="fileupload-progressbar"></div>
+    </div>
+</div>
+    <header>
+      <h2>${_("All Waiting Approval Courses")}</h2>
+    </header>
+
+    % if len(all_waiting_orders) > 0:
+      <ul class="listing-courses orders-listing">
+        % for order, items in all_waiting_orders:
+          <li class="course-item order-item" id="${order.id}">
+            <header>
+              <h3> ${_("Courses Basket ID: ")} ${order.id*7}</h3>
+              <h2>${_("Ordered by: ")} ${order.user}</h2>
+              <span>${_("Total Cost")} : ${order.total_cost} ${order.currency}</span>
+              <section class="order-actions">
+                <button>${_("update")}</button>
+                <button>${_("cancel")}</button>
+              </section>
+            </header>
+            
+            <section class="items-in-order">
+            <h3>${_("Items in this Order")}</h3>
+            % for item in items:
+              <div>
+                <h3>${item.line_desc}</h3>
+                <span>${_("Cost")} : ${item.unit_cost} ${item.currency}</span>
+                <section class="item-actions">
+                  <button>${_("update")}</button>
+                  <button>${_("cancel")}</button>
+                </section>
+              </div>
+            % endfor
+            </section>
+          </li>
+        % endfor
+      </ul>
+    % else:
+      <section class="empty-dashboard-message">
+        <p>${_("Looks like you haven't registered for any courses yet.")}</p>
+      </section>
+    % endif    
+
+  </section>
+</section>
+
