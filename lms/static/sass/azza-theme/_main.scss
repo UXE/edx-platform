@@ -73,8 +73,6 @@ body {
 	display: none;
 }
 
-
-
 //home page
 //===========
 .section-block {
@@ -298,7 +296,17 @@ body {
 //================
 body .highlighted-courses .courses .courses-listing .courses-listing-item, 
 .find-courses .courses .courses-listing .courses-listing-item {
-	float: right;
+	float: left;
+}
+
+.highlighted-courses .courses .courses-listing .courses-listing-item:nth-child(3n+3), 
+.find-courses .courses .courses-listing .courses-listing-item:nth-child(3n+3) {
+	margin-right: 0;
+}
+
+.highlighted-courses .courses .course .meta-info, 
+.find-courses .courses .course .meta-info {
+	display: none;
 }
 
 //student-dashboard
@@ -326,3 +334,4 @@ body .highlighted-courses .courses .courses-listing .courses-listing-item,
 		}
 	}
 }
+

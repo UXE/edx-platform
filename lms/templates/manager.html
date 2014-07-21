@@ -15,22 +15,16 @@
 <%block name="nav_skip">#my-courses</%block>
 
 <%block name="js_extra">
-   $(function () {
-    $('#fileupload').fileupload({
-        dataType: 'json',
-        success: function (e, data) {
-            $.each(data.result.files, function (index, file) {
-                $('<p/>').text(file.name).appendTo(document.body);
-            });
-        }
-    });
-});
 </%block>
 
 <section class="container dashboard" id="dashboard-main" aria-hidden="false">
 
   <section class="my-courses" id="my-courses">
   <div id="fileupload">
+    ${form.media}
+    <form>
+    ${form}
+    </form>
     <form action="${reverse('upload_test')}" method="POST" enctype="multipart/form-data">
         <div class="fileupload-buttonbar">
             <label class="fileinput-button">

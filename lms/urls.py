@@ -72,6 +72,9 @@ urlpatterns = ('',  # nopep8
 
     # Feedback Form endpoint
     url(r'^submit_feedback$', 'util.views.submit_feedback'),
+
+    # user uploads
+    url(r'^upload_payment_verification$', 'user_uploads.views.upload_payment_verification', name="upload_payment_verification"),
 )
 
 # if settings.FEATURES.get("MULTIPLE_ENROLLMENT_ROLES"):
@@ -102,7 +105,6 @@ if settings.FEATURES["ENABLE_SYSADMIN_DASHBOARD"]:
 if settings.FEATURES["ENABLE_MANAGER_DASHBOARD"]:
     urlpatterns += (
         url(r'^manager/$', 'manager.views.index', name="manager_dasboard"),
-        url(r'^upload_test/$', 'manager.views.upload', name="upload_test"),
     )
 
 urlpatterns += (

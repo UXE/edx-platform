@@ -132,7 +132,7 @@ class Order(models.Model):
 
     def get_order_items(self):
         """
-        right now the concern is about 'paidcourseregistration'
+        right now the concern is about 'paidcourseregistration', but it should evntually support specific subclasses
         """
         return self.orderitem_set.all().select_subclasses("paidcourseregistration")
 

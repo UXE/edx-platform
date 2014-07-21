@@ -172,6 +172,11 @@ XQUEUE_INTERFACE = {
     'basic_auth': None,
 }
 
+######################## uploadcare settings ###########################
+UPLOADCARE = {
+    'pub_key': 'demopublickey',
+    'secret': 'demoprivatekey',
+}
 
 ################################# Middleware ###################################
 # List of finder classes that know how to find static files in

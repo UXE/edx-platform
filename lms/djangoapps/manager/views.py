@@ -11,7 +11,6 @@ from edxmako.shortcuts import render_to_response
 import shoppingcart
 
 
-
 @login_required
 @ensure_csrf_cookie
 def index(request):
@@ -31,18 +30,13 @@ def index(request):
         'platform_name': settings.PLATFORM_NAME,
     }
 
+    from user_uploads import forms
+
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = forms.PaymentRequestUploadForm(request.POST)
+    else:
+        form = forms.PaymentRequestUploadForm()
+        context['form'] = form
+
     return render_to_response('manager.html', context)
-
-@require_POST
-def upload(request):
-    if not request.FILES:
-                return HttpResponseBadRequest('Must upload a file')
-
-    file = request.FILES[u'files[]']
-
-    return JsonResponse({
-                "name": file.name,
-                "size": file.size,
-                "type": file.content_type
-                }
-            )

@@ -1293,6 +1293,9 @@ INSTALLED_APPS = (
     # Manager Dashboard
     'manager',
 
+    # managing user uploads and its relations with courses
+    'user_uploads',
+
     # uploadcare app
     'pyuploadcare.dj',
 )
@@ -1326,6 +1329,12 @@ VERIFY_STUDENT = {
 FEATURES['CLASS_DASHBOARD'] = True
 if FEATURES.get('CLASS_DASHBOARD'):
     INSTALLED_APPS += ('class_dashboard',)
+
+######################## uploadcare settings ###########################
+UPLOADCARE = {
+    'pub_key': 'demopublickey',
+    'secret': 'demoprivatekey',
+}
 
 ######################## CAS authentication ###########################
 

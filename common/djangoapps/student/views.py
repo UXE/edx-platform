@@ -67,6 +67,7 @@ import external_auth.views
 
 from bulk_email.models import Optout, CourseAuthorization
 import shoppingcart
+from user_uploads.forms import PaymentRequestUploadForm
 from user_api.models import UserPreference
 from lang_pref import LANGUAGE_KEY
 
@@ -440,6 +441,7 @@ def dashboard(request):
 
     # get orders related to this student with status 'waiting_approval'so he can upload docs to it or cancel it
     waiting_orders_with_items = shoppingcart.models.Order.get_orders_with_items_for_status(user=user, status='waiting_approval')
+    upload_form = PaymentRequestUploadForm()
     course_optouts = Optout.objects.filter(user=user).values_list('course_id', flat=True)
 
     message = ""
@@ -510,6 +512,7 @@ def dashboard(request):
 
     context = {
         'course_enrollment_pairs': course_enrollment_pairs,
+        'upload_form': upload_form,
         'waiting_orders_with_items': waiting_orders_with_items,
         'course_optouts': course_optouts,
         'message': message,
