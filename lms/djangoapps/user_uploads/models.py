@@ -10,7 +10,7 @@ class PaymentRquestUpload(models.Model):
     This is the model for storing uploads related to payment request.
     """
     user = models.ForeignKey(User, db_index=True)
-    payment_request = models.ForeignKey(PaidCourseRegistration)
+    payment_request = models.ForeignKey(PaidCourseRegistration, related_name='uploads')
     title = models.CharField(blank=True, null=True, max_length=255)
     img = ImageField()
     description = models.TextField(blank=True, null=True)

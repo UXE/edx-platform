@@ -19,6 +19,9 @@ def upload_payment_verification(request):
 		return HttpResponseBadRequest('no course_registration_id provided')
 
 	course_registration = PaidCourseRegistration.objects.get(pk=course_registration_id)
+	if course_registration.user != request.user:
+		return HttpResponseBadRequest('You can only upload to the payment requests you own!')
+
 	upload = PaymentRquestUpload(user=request.user, payment_request=course_registration, title='Upladed image by user')
 	form = PaymentRequestUploadForm(request.POST, instance=upload)
 	form.save()

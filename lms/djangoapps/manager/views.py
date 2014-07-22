@@ -16,7 +16,7 @@ import shoppingcart
 def index(request):
     user = request.user
 
-    if not user.is_staff:
+    if not user.is_superuser:
     	raise Http404()
 
     # get all waiting orders

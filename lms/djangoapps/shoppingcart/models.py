@@ -40,6 +40,8 @@ log = logging.getLogger("shoppingcart")
 ORDER_STATUSES = (
     ('cart', 'cart'),
     ('purchased', 'purchased'),
+    ('canceled', 'canceled'),
+    ('declined', 'declined'),
     ('waiting_approval', 'waiting_approval'),
     ('refunded', 'refunded'),
 )
@@ -217,6 +219,24 @@ class Order(models.Model):
         except (smtplib.SMTPException, BotoServerError):  # sadly need to handle diff. mail backends individually
             log.error('Failed sending confirmation e-mail for order %d', self.id)  # pylint: disable=E1101
 
+    def cancel(self):
+        """
+        cancel order and all its items which will change statuses to 'canceled'...
+
+        this fuction assumes checking authentication and checking order status etc.
+        """
+        self.status = 'canceled'
+
+        # save these changes on the order, then we can tell when we are in an
+        # inconsistent state
+        self.save()
+
+        orderitems = OrderItem.objects.filter(order=self).select_subclasses()
+        for item in orderitems:
+            item.cancel()
+
+        self.save()
+
     def generate_receipt_instructions(self):
         """
         Call to generate specific instructions for each item in the order.  This gets displayed on the receipt
@@ -301,6 +321,13 @@ class OrderItem(models.Model):
         self.fulfilled_time = datetime.now(pytz.utc)
         self.save()
 
+    def cancel(self):
+        """
+        cancel item status to 'canceled'
+        """
+        self.status = 'canceled'
+        self.save()
+
     def purchased_callback(self):
         """
         This is called on each inventory item in the shopping cart when the
@@ -362,6 +389,10 @@ class PaidCourseRegistration(OrderItem):
     """
     course_id = CourseKeyField(max_length=128, db_index=True)
     mode = models.SlugField(default=CourseMode.DEFAULT_MODE_SLUG)
+
+    # def __unicode__(self):
+    #     # pylint: disable=no-member
+    #     return u"id:{}, user: {}, status:{}".format(self.id, self.user, self.status)
 
     @classmethod
     def contained_in_order(cls, order, course_id):
@@ -438,6 +469,10 @@ class PaidCourseRegistration(OrderItem):
         log.info("User {} added course registration {} to cart: order {}"
                  .format(order.user.email, course_id, order.id))
         return item
+
+    def get_payment_approval_uploads(self):
+        
+        return self.uploads.all()
 
     def purchased_callback(self):
         """

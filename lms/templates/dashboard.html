@@ -331,8 +331,16 @@
               <h3> ${_(u"طلب رقم")} : ${order.id*7}</h3>
               <span>${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
               <section class="order-actions">
-                <button>${_("update")}</button>
-                <button>${_("cancel")}</button>
+                <form action="" method="post">
+                  <input type="hidden" name="order_id" value="${order.id}">
+                  <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                  <input type="submit" value="${_("Update")}">
+                </form>
+                <form action="${reverse('cancel_order')}" method="post">
+                  <input type="hidden" name="order_id" value="${order.id}">
+                  <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                  <input type="submit" value="${_("Cancel")}">
+                </form>
               </section>
             </header>
             
@@ -342,13 +350,23 @@
               <div>
                 <h3>${item.line_desc}</h3>
                 <span>${_("Cost")} : ${item.unit_cost} ${item.currency}</span>
+                <div class="uploads">
+                % for upload in item.get_payment_approval_uploads():
+                  <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
+                % endfor
+                </div>
                 <section class="item-actions">
+                  <form action="${reverse('cancel_item')}" method="post">
+                    <input type="hidden" name="item_id" value="${item.id}">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                    <input type="submit" value="${_("Cancel")}">
+                  </form>
                   ${upload_form.media}
                   <form action="${reverse('upload_payment_verification')}" method="post">
                     ${upload_form}
                     <input type="hidden" name="course_registration_id" value="${item.id}">
                     <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                    <input type="submit">
+                    <input type="submit" value="${_('Upload')}">
                   </form>
                 </section>
               </div>

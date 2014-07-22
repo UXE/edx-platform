@@ -20,28 +20,6 @@
 <section class="container dashboard" id="dashboard-main" aria-hidden="false">
 
   <section class="my-courses" id="my-courses">
-  <div id="fileupload">
-    ${form.media}
-    <form>
-    ${form}
-    </form>
-    <form action="${reverse('upload_test')}" method="POST" enctype="multipart/form-data">
-        <div class="fileupload-buttonbar">
-            <label class="fileinput-button">
-                <span>Add files...</span>
-                <input type="file" name="files[]" multiple>
-            </label>
-            <button type="submit" class="start">Start upload</button>
-            <button type="reset" class="cancel">Cancel upload</button>
-            <button type="button" class="delete">Delete files</button>
-            <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-        </div>
-    </form>
-    <div class="fileupload-content">
-        <table class="files"></table>
-        <div class="fileupload-progressbar"></div>
-    </div>
-</div>
     <header>
       <h2>${_("All Waiting Approval Courses")}</h2>
     </header>
@@ -66,6 +44,11 @@
               <div>
                 <h3>${item.line_desc}</h3>
                 <span>${_("Cost")} : ${item.unit_cost} ${item.currency}</span>
+                <div class="uploads">
+                % for upload in item.get_payment_approval_uploads():
+                  <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
+                % endfor
+                </div>
                 <section class="item-actions">
                   <button>${_("update")}</button>
                   <button>${_("cancel")}</button>

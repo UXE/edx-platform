@@ -85,7 +85,6 @@ def clear_cart(request):
     cart.clear()
     return HttpResponse('Cleared')
 
-
 @login_required
 def remove_item(request):
     item_id = request.REQUEST.get('id', '-1')
@@ -96,6 +95,50 @@ def remove_item(request):
     except OrderItem.DoesNotExist:
         log.exception('Cannot remove cart OrderItem id={0}. DoesNotExist or item is already purchased'.format(item_id))
     return HttpResponse('OK')
+
+@require_POST
+@login_required
+def cancel_order(request):
+    order_id = request.POST.get('order_id', None)
+    if not order_id:
+        return HttpResponseBadRequest('you have to define order to be canceled!')
+
+    try:
+        order = Order.objects.get(id=order_id)
+    except Order.DoesNotExist:
+        raise Http404('Order not found!')
+
+    if order.status != 'waiting_approval':
+        return HttpResponseBadRequest('inconcistence action!!')
+
+    if request.user.is_superuser or request.user == order.user:
+        order.cancel()
+    else:
+        return HttpResponseBadRequest('Only superusers or order owners can do this action')
+    
+    return HttpResponseRedirect(reverse('root'))
+
+@require_POST
+@login_required
+def cancel_item(request):
+    item_id = request.POST.get('item_id', None)
+    if not item_id:
+        return HttpResponseBadRequest('you have to define item to be canceled!')
+
+    try:
+        item = OrderItem.objects.get(id=item_id)
+    except OrderItem.DoesNotExist:
+        raise Http404('OrderItem not found!')
+
+    if item.status != 'waiting_approval':
+        return HttpResponseBadRequest('inconcistence action!!')
+
+    if request.user.is_superuser or request.user == order.user:
+        item.cancel()
+    else:
+        return HttpResponseBadRequest('Only superusers or order owners can do this action')
+    
+    return HttpResponseRedirect(reverse('root'))
 
 @require_POST
 @login_required
