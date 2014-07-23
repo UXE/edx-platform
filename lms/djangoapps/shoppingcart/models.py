@@ -41,7 +41,7 @@ ORDER_STATUSES = (
     ('cart', 'cart'),
     ('purchased', 'purchased'),
     ('canceled', 'canceled'),
-    ('declined', 'declined'),
+    ('rejected', 'rejected'),
     ('waiting_approval', 'waiting_approval'),
     ('refunded', 'refunded'),
 )
@@ -125,7 +125,7 @@ class Order(models.Model):
         if status not in allowed_statuses:
             return None
         if user == None:
-            orders = cls.objects.filter(status=status)
+            orders = cls.objects.filter(status=status).order_by('-id')
         else:
             orders = cls.objects.filter(user=user, status=status)
 
@@ -136,7 +136,7 @@ class Order(models.Model):
         """
         right now the concern is about 'paidcourseregistration', but it should evntually support specific subclasses
         """
-        return self.orderitem_set.all().select_subclasses("paidcourseregistration")
+        return self.orderitem_set.all().select_subclasses("paidcourseregistration").order_by('-id')
 
     def clear(self):
         """
@@ -145,7 +145,7 @@ class Order(models.Model):
         self.orderitem_set.all().delete()
 
     def purchase(self, first='', last='', street1='', street2='', city='', state='', postalcode='',
-                 country='', ccnum='', cardtype='', processor_reply_dump='', waiting_approval=None):
+                 country='', ccnum='', cardtype='', processor_reply_dump='', wait_admin_approve=False):
         """
         Call to mark this order as purchased.  Iterates through its OrderItems and calls
         their purchased_callback
@@ -167,10 +167,12 @@ class Order(models.Model):
         """
         if self.status == 'purchased':
             return
-        if waiting_approval:
+
+        if wait_admin_approve:
             self.status = 'waiting_approval'
         else:
-            self.status == 'purchased'
+            self.status = 'purchased'
+
         self.purchase_time = datetime.now(pytz.utc)
         self.bill_to_first = first
         self.bill_to_last = last
@@ -188,11 +190,12 @@ class Order(models.Model):
         # save these changes on the order, then we can tell when we are in an
         # inconsistent state
         self.save()
+
         # this should return all of the objects with the correct types of the
         # subclasses
         orderitems = OrderItem.objects.filter(order=self).select_subclasses()
         for item in orderitems:
-            if waiting_approval:
+            if wait_admin_approve:
                 item.request_purchase_item()
             else:
                 item.purchase_item()
@@ -485,7 +488,8 @@ class PaidCourseRegistration(OrderItem):
             raise PurchasedCallbackException(
                 "The customer purchased Course {0}, but that course doesn't exist!".format(self.course_id))
 
-        CourseEnrollment.enroll(user=self.user, course_key=self.course_id, mode=self.mode)
+        ce = CourseEnrollment.enroll(user=self.user, course_key=self.course_id, mode=self.mode)
+        print '============', ce, '====', ce.is_active, '========='
 
         log.info("Enrolled {0} in paid course {1}, paid ${2}"
                  .format(self.user.email, self.course_id, self.line_cost))  # pylint: disable=E1101

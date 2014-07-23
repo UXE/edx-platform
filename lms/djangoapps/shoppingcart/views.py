@@ -142,6 +142,29 @@ def cancel_item(request):
 
 @require_POST
 @login_required
+def approve_order(request):
+
+    if not request.user.is_superuser:
+        return HttpResponseBadRequest('You are not allowed to approve orders!')
+
+    order_id = request.POST.get('order_id', None)
+    if not order_id:
+        return HttpResponseBadRequest('you have to define order to be canceled!')
+
+    try:
+        order = Order.objects.get(id=order_id)
+    except Order.DoesNotExist:
+        raise Http404('Order not found!')
+
+    if order.status != 'waiting_approval':
+        return HttpResponseBadRequest('inconcistence action!!')
+
+    order.purchase(wait_admin_approve=False)
+
+    return HttpResponseRedirect(reverse('root'))
+
+@require_POST
+@login_required
 def bank_payment(request):
     params = request.POST.dict()
     user = request.user
@@ -158,7 +181,7 @@ def bank_payment(request):
         ccnum='',
         cardtype='',
         processor_reply_dump=json.dumps(params),
-        waiting_approval=True
+        wait_admin_approve=True
     )
 
     return HttpResponseRedirect(reverse('dashboard'))

@@ -21,7 +21,6 @@ def index(request):
 
     # get all waiting orders
     all_waiting_orders = shoppingcart.models.Order.get_orders_with_items_for_status(status='waiting_approval')
-    print all_waiting_orders
    
     context = {
         'all_waiting_orders': all_waiting_orders,

@@ -33,8 +33,16 @@
               <h2>${_("Ordered by: ")} ${order.user}</h2>
               <span>${_("Total Cost")} : ${order.total_cost} ${order.currency}</span>
               <section class="order-actions">
-                <button>${_("update")}</button>
-                <button>${_("cancel")}</button>
+                <form action="${reverse('approve_order')}" method="post">
+                  <input type="hidden" name="order_id" value="${order.id}">
+                  <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                  <input type="submit" value="${_("Approve")}">
+                </form>
+                <form action="${reverse('cancel_order')}" method="post">
+                  <input type="hidden" name="order_id" value="${order.id}">
+                  <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                  <input type="submit" value="${_("Decline")}">
+                </form>
               </section>
             </header>
             
