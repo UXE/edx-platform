@@ -439,6 +439,12 @@ class PaidCourseRegistration(OrderItem):
                         .format(order.user.email, course_id, order.id))
             raise ItemAlreadyInCartException
 
+        # only for extra securing the case of adding courses already is waiting won't get added again
+        if cls.is_waiting_approval(order.user, course_id):
+            log.warning("User {} tried to add PaidCourseRegistration for course {}, already is waiting approval"
+                        .format(order.user.email, course_id))
+            raise ItemAlreadyInCartException
+
         if CourseEnrollment.is_enrolled(user=order.user, course_key=course_id):
             log.warning("User {} trying to add course {} to cart id {}, already registered"
                         .format(order.user.email, course_id, order.id))

@@ -640,6 +640,10 @@ def change_enrollment(request):
         # the user to the shopping cart page always, where they can reasonably discern the status of their cart,
         # whether things got added, etc
 
+        # we should check if this course is waiting approval for this user so we do not add it again
+        if shoppingcart.models.PaidCourseRegistration.is_waiting_approval(user, course_id):
+            return HttpResponse(reverse("dashboard"))
+
         shoppingcart.views.add_course_to_cart(request, course_id.to_deprecated_string())
         return HttpResponse(
             reverse("shoppingcart.views.show_cart")

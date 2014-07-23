@@ -52,6 +52,11 @@ def add_course_to_cart(request, course_id):
     if not request.user.is_authenticated():
         log.info("Anon user trying to add course {} to cart".format(course_id))
         return HttpResponseForbidden(_('You must be logged-in to add to a shopping cart'))
+
+    # although we make sure that "change_enrollment" view won't add course alreday is_waiting_approval, I prefere to sanitize this as well
+    if PaidCourseRegistration.is_waiting_approval(request.user, course_id):
+        return HttpResponse(_("Course alreday contained in order that is waiting approval"))
+
     cart = Order.get_cart_for_user(request.user)
     course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
     # All logging from here handled by the model
