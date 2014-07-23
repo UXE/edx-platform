@@ -53,12 +53,14 @@ def add_course_to_cart(request, course_id):
         log.info("Anon user trying to add course {} to cart".format(course_id))
         return HttpResponseForbidden(_('You must be logged-in to add to a shopping cart'))
 
+    course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
+
     # although we make sure that "change_enrollment" view won't add course alreday is_waiting_approval, I prefere to sanitize this as well
-    if PaidCourseRegistration.is_waiting_approval(request.user, course_id):
+    if PaidCourseRegistration.is_waiting_approval(request.user, course_key):
         return HttpResponse(_("Course alreday contained in order that is waiting approval"))
 
     cart = Order.get_cart_for_user(request.user)
-    course_key = SlashSeparatedCourseKey.from_deprecated_string(course_id)
+    
     # All logging from here handled by the model
     try:
         PaidCourseRegistration.add_to_order(cart, course_key)
@@ -138,10 +140,10 @@ def cancel_item(request):
     if item.status != 'waiting_approval':
         return HttpResponseBadRequest('inconcistence action!!')
 
-    if request.user.is_superuser or request.user == order.user:
+    if request.user.is_superuser or request.user == item.user:
         item.cancel()
     else:
-        return HttpResponseBadRequest('Only superusers or order owners can do this action')
+        return HttpResponseBadRequest('Only superusers or item owners can do this action')
     
     return HttpResponseRedirect(reverse('root'))
 
@@ -166,7 +168,7 @@ def approve_order(request):
 
     order.purchase(wait_admin_approve=False)
 
-    return HttpResponseRedirect(reverse('root'))
+    return HttpResponseRedirect(reverse('manager_dasboard'))
 
 @require_POST
 @login_required

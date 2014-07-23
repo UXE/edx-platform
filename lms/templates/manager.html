@@ -32,6 +32,11 @@
               <h3> ${_("Courses Basket ID: ")} ${order.id*7}</h3>
               <h2>${_("Ordered by: ")} ${order.user}</h2>
               <span>${_("Total Cost")} : ${order.total_cost} ${order.currency}</span>
+              <div class="uploads">
+                % for upload in order.get_order_approval_uploads():
+                  <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
+                % endfor
+              </div>
               <section class="order-actions">
                 <form action="${reverse('approve_order')}" method="post">
                   <input type="hidden" name="order_id" value="${order.id}">

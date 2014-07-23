@@ -138,6 +138,10 @@ class Order(models.Model):
         """
         return self.orderitem_set.all().select_subclasses("paidcourseregistration").order_by('-id')
 
+    def get_order_approval_uploads(self):
+        
+        return self.uploads.all()
+
     def clear(self):
         """
         Clear out all the items in the cart

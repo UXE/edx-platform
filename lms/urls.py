@@ -75,6 +75,7 @@ urlpatterns = ('',  # nopep8
 
     # user uploads
     url(r'^upload_payment_verification$', 'user_uploads.views.upload_payment_verification', name="upload_payment_verification"),
+    url(r'^upload_order_verification$', 'user_uploads.views.upload_order_verification', name="upload_order_verification"),
 )
 
 # if settings.FEATURES.get("MULTIPLE_ENROLLMENT_ROLES"):
