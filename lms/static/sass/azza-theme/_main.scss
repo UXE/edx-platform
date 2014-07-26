@@ -69,10 +69,142 @@ body {
 	background-color: #e9eaed;
 }
 
+
+//utilities
+//=========
 .hide {
 	display: none;
 }
 
+$tiny-rad: 3px;
+.tiny-rad {
+	border-radius: $tiny-rad;
+
+	.shaded-area.top {
+       	border-radius: 3px 3px 0 0px;
+    }
+    .shaded-area.bottom {
+    	border-radius:  0 0 3px 3px;
+    }
+}
+
+//cards
+//=========
+$card-padding: 12px;
+
+.vertical-card-listing {
+	@extend %ui-no-list;
+
+	.card {
+		background: #fff;
+		color: #37404e !important;
+        margin-bottom: 18px;
+        border: 1px solid;
+        //#d3d6db
+        border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+        padding: $card-padding;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .shaded-area {
+        	margin: -$card-padding;
+        	padding: $card-padding/2;
+
+        	&.top {
+        		margin-bottom: $card-padding;
+        		border-bottom: 1px solid #e1e2e3;
+        	}
+
+        	&.bottom {
+        		margin-top: $card-padding;
+        		border-top: 1px solid #e1e2e3;
+        	}
+        }
+
+    }
+}
+
+.shaded-area {
+	background-color: #f6f7f8;
+	width: auto;
+}
+
+
+//payments orders
+//===============
+.order-info {
+	display: inline-block;
+	float: right;
+
+	.order-number {
+		border-left: 1px solid #e1e2e3;
+		padding-left: 5px;
+	}
+}
+
+.item-info {
+	display: inline-block;
+	float: right;
+
+	.item-description {
+		border-left: 1px solid #e1e2e3;
+		padding-left: 5px;
+	}
+}
+
+.order-actions, .item-actions {
+	display: inline-block;
+	float: left;
+}
+
+.include-files-toggle, .cancel-order, .decline-order, .approve-order {
+	display: inline-block;
+}
+
+.include-files-toggle{
+	margin-top: $card-padding/2;
+}
+
+
+//forms
+//=========
+input[type="submit"].d-btn {
+	background-color: #4294f0;
+	border-radius: 3px;
+	border: none;
+	color: #fff;
+	display: inline-block;
+	font-size: inherit;
+	font-weight: bold;
+	padding: 0;
+	text-decoration: none;
+	background-clip: padding-box;
+	box-shadow: 0 2px 1px 0 #0a4a67;
+
+	&:hover:not(:disabled) {
+		background-color: #4781C2;
+		cursor: pointer;
+	}
+
+	&:active:not(:disabled), &:focus:not(:disabled) {
+		background-color: #3F77B6;
+		cursor: pointer;
+		outline: none;
+		box-shadow: 0 1px 1px 0 #0a4a67;
+	}
+
+	&:disabled, &.is-disabled, &.disabled, &.disable {
+		pointer-events: none;
+    	opacity: 0.5;
+    	cursor: not-allowed;
+	}
+
+	&.small-padding {
+		padding: 0px 6px;
+	}
+}
 //home page
 //===========
 .section-block {

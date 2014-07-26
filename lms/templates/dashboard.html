@@ -295,7 +295,7 @@
     </header>
 
     % if len(course_enrollment_pairs) > 0:
-      <ul class="listing-courses">
+      <ul class="vertical-card-listing">
         % for course, enrollment in course_enrollment_pairs:
             <% show_courseware_link = (course.id in show_courseware_links_for) %>
             <% cert_status = cert_statuses.get(course.id) %>
@@ -324,57 +324,78 @@
     </header>
 
     % if len(waiting_orders_with_items) > 0:
-      <ul class="listing-courses orders-listing">
+      
+      <ul class="vertical-card-listing">
         % for order, items in waiting_orders_with_items:
-          <li class="course-item order-item" id="${order.id*7}">
-            <header>
-              <h3> ${_(u"طلب رقم")} : ${order.id*7}</h3>
-              <span>${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
-              <div class="uploads">
+          <li class="card tiny-rad" id="${order.id*7}">
+            <header class="top shaded-area">
+              <div class="clearfix">
+                <div class="order-info">
+                  <span class="order-number"> ${_(u"طلب رقم")} : ${order.id*7}</span>
+                  <span class="order-cost">${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
+                </div>
+                <section class="order-actions">
+                  <form class="cancel-order" action="${reverse('cancel_order')}" method="post">
+                    <input type="hidden" name="order_id" value="${order.id}">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                    <input type="submit" class="d-btn small-padding" value="${_("Cancel")}">
+                  </form>
+                  <a href="#" class="include-files-toggle">إرفاق ملفات</a>
+                </section>
+              </div>
+              <form action="${reverse('upload_order_verification')}" method="post">
+                ${payment_request_upload_form}
+                <input type="hidden" name="order_id" value="${order.id}">
+                <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                <input type="submit" class="d-btn small-padding" value="${_("Upload")}">
+              </form>
+            </header>
+            <section class="uploads">
+              % if len(order.get_order_approval_uploads()) > 0:
                 % for upload in order.get_order_approval_uploads():
                   <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
                 % endfor
-              </div>
-              <section class="order-actions">
-                <form action="${reverse('upload_order_verification')}" method="post">
-                  ${payment_request_upload_form}
-                  <input type="hidden" name="order_id" value="${order.id}">
-                  <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                  <input type="submit" value="${_("Upload")}">
-                </form>
-                <form action="${reverse('cancel_order')}" method="post">
-                  <input type="hidden" name="order_id" value="${order.id}">
-                  <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                  <input type="submit" value="${_("Cancel")}">
-                </form>
-              </section>
-            </header>
+              % else:
+                <span>لم تقم بإرفاق إثبات الدفع</span>
+              % endif
+            </section>
             
-            <section class="items-in-order">
-            <h3>${_("Items in this Order")}</h3>
+            <section class="items-in-order vertical-card-listing">
+            <span>المقررات المطلوب التسجيل بها</span>
             % for item in items:
-              <div>
-                <h3>${item.line_desc}</h3>
-                <span>${_("Cost")} : ${item.unit_cost} ${item.currency}</span>
-                <div class="uploads">
-                % for upload in item.get_payment_approval_uploads():
-                  <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
-                % endfor
-                </div>
-                <section class="item-actions">
-                  <form action="${reverse('cancel_item')}" method="post">
-                    <input type="hidden" name="item_id" value="${item.id}">
-                    <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                    <input type="submit" value="${_("Cancel")}">
-                  </form>
-                  ${payment_request_upload_form.media}
+              <div class="card tiny-rad">
+                <header class="top shaded-area">
+                  <div class="clearfix">
+                    <div class="item-info">
+                      <span class="item-description">${item.line_desc}</span>
+                      <span class="item-cost">${_(u"الإجمالي")} : ${item.unit_cost} ${item.currency}</span>
+                    </div>
+                    <section class="item-actions">
+                      <form action="${reverse('cancel_item')}" method="post">
+                        <input type="hidden" name="item_id" value="${item.id}">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                        <input type="submit" class="d-btn small-padding" value="${_("Cancel")}">
+                      </form>
+                    </section>
+                  </div>
                   <form action="${reverse('upload_payment_verification')}" method="post">
+                    ${payment_request_upload_form.media}
                     ${payment_request_upload_form}
                     <input type="hidden" name="course_registration_id" value="${item.id}">
                     <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                    <input type="submit" value="${_('Upload')}">
+                    <input type="submit" class="d-btn small-padding" value="${_('Upload')}">
                   </form>
-                </section>
+                </header>
+                <div class="uploads">
+                  % if len(order.get_order_approval_uploads()) > 0:
+                    % for upload in order.get_order_approval_uploads():
+                      <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
+                    % endfor
+                  % else:
+                    <span>لم تقم بإرفاق إثبات الدفع</span>
+                  % endif
+                </div>
+
               </div>
             % endfor
             </section>

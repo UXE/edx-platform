@@ -25,48 +25,67 @@
     </header>
 
     % if len(all_waiting_orders) > 0:
-      <ul class="listing-courses orders-listing">
+
+      <ul class="vertical-card-listing">
         % for order, items in all_waiting_orders:
-          <li class="course-item order-item" id="${order.id}">
-            <header>
-              <h3> ${_("Courses Basket ID: ")} ${order.id*7}</h3>
-              <h2>${_("Ordered by: ")} ${order.user}</h2>
-              <span>${_("Total Cost")} : ${order.total_cost} ${order.currency}</span>
-              <div class="uploads">
+          <li class="card tiny-rad" id="${order.id*7}">
+            <header class="top shaded-area">
+              <div class="clearfix">
+                <div class="order-info">
+                  <span class="order-number"> ${_(u"طلب رقم")} : ${order.id*7}</span>
+                  <span class="ordered-by">${_("Ordered by: ")} ${order.user}</span>
+                  <span class="order-cost">${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
+                </div>
+                <section class="order-actions">
+                  <form class="approve-order" action="${reverse('approve_order')}" method="post">
+                    <input type="hidden" name="order_id" value="${order.id}">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                    <input type="submit" class="d-btn small-padding" value="${_("Approve")}">
+                  </form>
+                  <form class="decline-order" action="${reverse('cancel_order')}" method="post">
+                    <input type="hidden" name="order_id" value="${order.id}">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+                    <input type="submit" class="d-btn small-padding" value="${_("Decline")}">
+                  </form>
+                  <a href="#" class="include-files-toggle">المفات المرفقة</a>
+              </section>
+              </div>
+            </header>
+            <div class="uploads">
+              % if len(order.get_order_approval_uploads()) > 0:
                 % for upload in order.get_order_approval_uploads():
                   <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
                 % endfor
-              </div>
-              <section class="order-actions">
-                <form action="${reverse('approve_order')}" method="post">
-                  <input type="hidden" name="order_id" value="${order.id}">
-                  <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                  <input type="submit" value="${_("Approve")}">
-                </form>
-                <form action="${reverse('cancel_order')}" method="post">
-                  <input type="hidden" name="order_id" value="${order.id}">
-                  <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                  <input type="submit" value="${_("Decline")}">
-                </form>
-              </section>
-            </header>
+              % else:
+                <span>هذا الطالب لم يقم بإرفاق أي ملفات</span>
+              % endif
+            </div>
             
-            <section class="items-in-order">
-            <h3>${_("Items in this Order")}</h3>
+            <section class="items-in-order vertical-card-listing">
+            <span>${_("Items in this Order")}</span>
             % for item in items:
-              <div>
-                <h3>${item.line_desc}</h3>
-                <span>${_("Cost")} : ${item.unit_cost} ${item.currency}</span>
+              <div class="card tiny-rad">
+                <header class="top shaded-area">
+                  <div class="clearfix">
+                    <div class="item-info">
+                      <span class="item-description">${_(item.line_desc)}</span>
+                      <span class="item-cost">${_(u"الإجمالي")} : ${item.unit_cost} دولار</span>
+                    </div>
+                    <section class="item-actions">
+                      <input type="submit" class="d-btn small-padding" value="${_("Cancel")}">
+                    </section>
+                  </div>
+                </header>
                 <div class="uploads">
-                % for upload in item.get_payment_approval_uploads():
-                  <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
-                % endfor
+                  % if len(order.get_order_approval_uploads()) > 0:
+                    % for upload in order.get_order_approval_uploads():
+                      <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
+                    % endfor
+                  % else:
+                    <span>هذا الطالب لم يقم بإرفاق أي ملفات</span>
+                  % endif
+                  </div>
                 </div>
-                <section class="item-actions">
-                  <button>${_("update")}</button>
-                  <button>${_("cancel")}</button>
-                </section>
-              </div>
             % endfor
             </section>
           </li>
@@ -74,7 +93,7 @@
       </ul>
     % else:
       <section class="empty-dashboard-message">
-        <p>${_("Looks like you haven't registered for any courses yet.")}</p>
+        <p>${_("Looks like there is no requests yet.")}</p>
       </section>
     % endif    
 
