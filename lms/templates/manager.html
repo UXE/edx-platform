@@ -77,8 +77,8 @@
                   </div>
                 </header>
                 <div class="uploads">
-                  % if len(order.get_order_approval_uploads()) > 0:
-                    % for upload in order.get_order_approval_uploads():
+                  % if len(item.get_payment_approval_uploads()) > 0:
+                    % for upload in item.get_payment_approval_uploads():
                       <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
                     % endfor
                   % else:
