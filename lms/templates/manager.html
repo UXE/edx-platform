@@ -71,14 +71,17 @@
                       <span class="item-description">${_(item.line_desc)}</span>
                       <span class="item-cost">${_(u"الإجمالي")} : ${item.unit_cost} دولار</span>
                     </div>
+                    <!--
                     <section class="item-actions">
                       <input type="submit" class="d-btn small-padding" value="${_("Cancel")}">
                     </section>
+                    -->
                   </div>
                 </header>
+                <!--
                 <div class="uploads">
-                  % if len(item.get_payment_approval_uploads()) > 0:
-                    % for upload in item.get_payment_approval_uploads():
+                  % if len(item.get_payment_approval_uploads()  ) > 0:
+                    % for upload in item.get_payment_approval_uploads() :
                       <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
                     % endfor
                   % else:
@@ -86,6 +89,7 @@
                   % endif
                   </div>
                 </div>
+                -->
             % endfor
             </section>
           </li>

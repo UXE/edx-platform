@@ -555,7 +555,6 @@ ROOT_URLCONF = 'lms.urls'
 # NOTE: Please set ALLOWED_HOSTS to some sane value, as we do not allow the default '*'
 
 # Platform Email
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'registration@example.com'
 DEFAULT_FEEDBACK_EMAIL = 'feedback@example.com'
 SERVER_EMAIL = 'devops@example.com'
@@ -667,6 +666,15 @@ USE_L10N = True
 LOCALE_PATHS = (REPO_ROOT + '/conf/locale',)  # edx-platform/conf/locale/
 # Messages
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+#################################### Email Configurations #######################################
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST =  "smtp.mandrillapp.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mygooglizer@gmail.com'
+EMAIL_HOST_PASSWORD = 'IOMJ1icgpC2bJilyoQMw0A'
 
 #################################### GITHUB #######################################
 # gitreload is used in LMS-workflow to pull content from github
@@ -1135,7 +1143,8 @@ BULK_EMAIL_EMAILS_PER_TASK = 100
 
 # Initial delay used for retrying tasks.  Additional retries use
 # longer delays.  Value is in seconds.
-BULK_EMAIL_DEFAULT_RETRY_DELAY = 30
+# BULK_EMAIL_DEFAULT_RETRY_DELAY = 30
+BULK_EMAIL_DEFAULT_RETRY_DELAY = 3
 
 # Maximum number of retries per task for errors that are not related
 # to throttling.
@@ -1143,7 +1152,8 @@ BULK_EMAIL_MAX_RETRIES = 5
 
 # Maximum number of retries per task for errors that are related to
 # throttling.  If this is not set, then there is no cap on such retries.
-BULK_EMAIL_INFINITE_RETRY_CAP = 1000
+# BULK_EMAIL_INFINITE_RETRY_CAP = 1000
+BULK_EMAIL_INFINITE_RETRY_CAP = 20
 
 # We want Bulk Email running on the high-priority queue, so we define the
 # routing key that points to it.  At the moment, the name is the same.
@@ -1151,7 +1161,7 @@ BULK_EMAIL_ROUTING_KEY = HIGH_PRIORITY_QUEUE
 
 # Flag to indicate if individual email addresses should be logged as they are sent
 # a bulk email message.
-BULK_EMAIL_LOG_SENT_EMAILS = False
+BULK_EMAIL_LOG_SENT_EMAILS = True
 
 # Delay in seconds to sleep between individual mail messages being sent,
 # when a bulk email task is retried for rate-related reasons.  Choose this

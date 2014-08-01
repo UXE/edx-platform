@@ -135,3 +135,6 @@ git+https://github.com/mitocw/django-cas.git
 
 # edX packages
 edx-submissions==0.0.2
+
+# daress specific
+pyuploadcare

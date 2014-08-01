@@ -27,7 +27,17 @@ for pkg_name in ['track.contexts', 'track.middleware', 'dd.dogapi']:
 
 ################################ EMAIL ########################################
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#################################### Email Configurations ###########################
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST =  "smtp.mandrillapp.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mygooglizer@gmail.com'
+EMAIL_HOST_PASSWORD = 'IOMJ1icgpC2bJilyoQMw0A'
+
+
 FEATURES['ENABLE_INSTRUCTOR_EMAIL'] = True     # Enable email for all Studio courses
 FEATURES['REQUIRE_COURSE_EMAIL_AUTH'] = False  # Give all courses email (don't require django-admin perms)
 

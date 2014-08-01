@@ -370,6 +370,7 @@
                       <span class="item-description">${item.line_desc}</span>
                       <span class="item-cost">${_(u"الإجمالي")} : ${item.unit_cost} ${item.currency}</span>
                     </div>
+                    <!--
                     <section class="item-actions">
                       <form action="${reverse('cancel_item')}" method="post">
                         <input type="hidden" name="item_id" value="${item.id}">
@@ -377,7 +378,9 @@
                         <input type="submit" class="d-btn small-padding" value="${_("Cancel")}">
                       </form>
                     </section>
+                    -->
                   </div>
+                  <!--
                   <form action="${reverse('upload_payment_verification')}" method="post">
                     ${payment_request_upload_form.media}
                     ${payment_request_upload_form}
@@ -385,7 +388,9 @@
                     <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
                     <input type="submit" class="d-btn small-padding" value="${_('Upload')}">
                   </form>
+                  -->
                 </header>
+                <!--
                 <div class="uploads">
                   % if len(item.get_payment_approval_uploads()) > 0:
                     % for upload in item.get_payment_approval_uploads():
@@ -395,7 +400,7 @@
                     <span>لم تقم بإرفاق إثبات الدفع</span>
                   % endif
                 </div>
-
+                -->
               </div>
             % endfor
             </section>

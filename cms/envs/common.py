@@ -271,13 +271,25 @@ SITE_NAME = "localhost:8001"
 HTTPS = 'on'
 ROOT_URLCONF = 'cms.urls'
 
-# Email
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 25
-EMAIL_USE_TLS = False
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+#################################### Email Configurations #######################################
+# # Email
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 25
+# EMAIL_USE_TLS = False
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST =  "smtp.mandrillapp.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mygooglizer@gmail.com'
+EMAIL_HOST_PASSWORD = 'IOMJ1icgpC2bJilyoQMw0'
+
+#################################################################################
+
 DEFAULT_FROM_EMAIL = 'registration@example.com'
 DEFAULT_FEEDBACK_EMAIL = 'feedback@example.com'
 SERVER_EMAIL = 'devops@example.com'
