@@ -326,6 +326,7 @@
     % if len(waiting_orders_with_items) > 0:
       
       <ul class="vertical-card-listing">
+      ${payment_request_upload_form.media}
         % for order, items in waiting_orders_with_items:
           <li class="card tiny-rad" id="${order.id*7}">
             <header class="top shaded-area">
