@@ -1080,7 +1080,10 @@ def _do_create_account(post_vars):
         log.exception("UserProfile creation failed for user {id}.".format(id=user.id))
         raise
 
-    UserPreference.set_preference(user, LANGUAGE_KEY, get_language())
+    if settings.FEATURES.get('FORCE_DEFAULT_LANGUAGE', None):
+        UserPreference.set_preference(user, LANGUAGE_KEY, settings.LANGUAGE_CODE)
+    else:
+        UserPreference.set_preference(user, LANGUAGE_KEY, get_language())
 
     return (user, profile, registration)
 

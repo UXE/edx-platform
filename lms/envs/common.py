@@ -259,6 +259,10 @@ FEATURES = {
     # Show a "Download your certificate" on the Progress page if the lowest
     # nonzero grade cutoff is met
     'SHOW_PROGRESS_SUCCESS_BUTTON': False,
+
+    # force using LANGUAGE_CODE defined in settings as default language preference in UserPreference for 
+    # newly created users, but he can change it later.
+    'FORCE_DEFAULT_LANGUAGE': True,
 }
 
 # Used for A/B testing
