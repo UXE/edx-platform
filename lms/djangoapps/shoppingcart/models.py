@@ -205,26 +205,27 @@ class Order(models.Model):
                 item.purchase_item()
             
 
-        # send confirmation e-mail
-        subject = _("Order Payment Confirmation")
-        message = render_to_string(
-            'emails/order_confirmation_email.txt',
-            {
-                'order': self,
-                'order_items': orderitems,
-                'has_billing_info': settings.FEATURES['STORE_BILLING_INFO']
-            }
-        )
-        try:
-            from_address = microsite.get_value(
-                'email_from_address',
-                settings.DEFAULT_FROM_EMAIL
+        if not wait_admin_approve:
+            # send confirmation e-mail
+            subject = _("Order Payment Confirmation")
+            message = render_to_string(
+                'emails/order_confirmation_email.txt',
+                {
+                    'order': self,
+                    'order_items': orderitems,
+                    'has_billing_info': settings.FEATURES['STORE_BILLING_INFO']
+                }
             )
-
-            send_mail(subject, message,
-                      from_address, [self.user.email])  # pylint: disable=E1101
-        except (smtplib.SMTPException, BotoServerError):  # sadly need to handle diff. mail backends individually
-            log.error('Failed sending confirmation e-mail for order %d', self.id)  # pylint: disable=E1101
+            try:
+                from_address = microsite.get_value(
+                    'email_from_address',
+                    settings.DEFAULT_FROM_EMAIL
+                )
+                print self.user.email
+                send_mail(subject, message, from_address, [self.user.email])  # pylint: disable=E1101
+                log.info("Sent 'Order Payment Confirmation' email to {0}".format(self.user.email))
+            except (smtplib.SMTPException, BotoServerError):  # sadly need to handle diff. mail backends individually
+                log.error('Failed sending confirmation e-mail for order %d', self.id)  # pylint: disable=E1101
 
     def cancel(self):
         """

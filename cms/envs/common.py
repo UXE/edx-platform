@@ -64,16 +64,18 @@ FEATURES = {
     # Don't autoplay videos for course authors
     'AUTOPLAY_VIDEOS': False,
 
-    # If set to True, new Studio users won't be able to author courses unless
+    # any of BOTH If set to True, new Studio users won't be able to author courses unless
     # edX has explicitly added them to the course creator group.
-    'ENABLE_CREATOR_GROUP': False,
+    'DISABLE_COURSE_CREATION': True,
+
+    'ENABLE_CREATOR_GROUP': True,
 
     # whether to use password policy enforcement or not
     'ENFORCE_PASSWORD_POLICY': False,
 
     # If set to True, Studio won't restrict the set of advanced components
     # to just those pre-approved by edX
-    'ALLOW_ALL_ADVANCED_COMPONENTS': False,
+    'ALLOW_ALL_ADVANCED_COMPONENTS': True,
 
     # Turn off account locking if failed login attempts exceeds a limit
     'ENABLE_MAX_FAILED_LOGIN_ATTEMPTS': False,
@@ -94,7 +96,7 @@ FEATURES = {
     'USE_MICROSITES': False,
 
     # Allow creating courses with non-ascii characters in the course id
-    'ALLOW_UNICODE_COURSE_ID': False,
+    'ALLOW_UNICODE_COURSE_ID': True,
 
     # Prevent concurrent logins per user
     'PREVENT_CONCURRENT_LOGINS': False,
