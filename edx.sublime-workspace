@@ -244,14 +244,6 @@
 	"buffers":
 	[
 		{
-			"file": "cms/djangoapps/contentstore/views/course.py",
-			"settings":
-			{
-				"buffer_size": 35548,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "cms/djangoapps/contentstore/course_info_model.py",
 			"settings":
 			{
@@ -279,15 +271,15 @@
 			"file": "lms/templates/dashboard.html",
 			"settings":
 			{
-				"buffer_size": 25440,
+				"buffer_size": 25483,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lms/djangoapps/shoppingcart/models.py",
+			"file": "lms/djangoapps/user_uploads/views.py",
 			"settings":
 			{
-				"buffer_size": 32641,
+				"buffer_size": 2055,
 				"line_ending": "Unix"
 			}
 		},
@@ -303,23 +295,7 @@
 			"file": "lms/templates/manager.html",
 			"settings":
 			{
-				"buffer_size": 4275,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lms/envs/devstack.py",
-			"settings":
-			{
-				"buffer_size": 3344,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "cms/envs/devstack.py",
-			"settings":
-			{
-				"buffer_size": 3213,
+				"buffer_size": 4271,
 				"line_ending": "Unix"
 			}
 		},
@@ -327,15 +303,7 @@
 			"file": "lms/envs/common.py",
 			"settings":
 			{
-				"buffer_size": 53906,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "cms/envs/common.py",
-			"settings":
-			{
-				"buffer_size": 19167,
+				"buffer_size": 54108,
 				"line_ending": "Unix"
 			}
 		},
@@ -352,6 +320,46 @@
 			"settings":
 			{
 				"buffer_size": 17986,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "common/djangoapps/student/views.py",
+			"settings":
+			{
+				"buffer_size": 75804,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "common/djangoapps/user_api/admin.py",
+			"settings":
+			{
+				"buffer_size": 168,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lms/djangoapps/shoppingcart/views.py",
+			"settings":
+			{
+				"buffer_size": 12906,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<div>\n	<?php $upload_baseurl = ( $upload_dir['baseurl'] ); ?>\n	<span>\n		<a href=\"#\">\n			<img src=\"http://sharkiapost.com/wp-content/uploads/general/train-small.png\">\n		</a>\n	</span>\n	<span>\n		<a href=\"#\">\n			<img src=\"http://sharkiapost.com/wp-content/uploads/general/diamond-small.png\">\n		</a>\n	</span>\n	<span>\n		<a href=\"#\">\n			<img src=\"http://sharkiapost.com/wp-content/uploads/general/mosque-small.png\">\n		</a>\n	</span>\n	<span>\n		<a href=\"#\">\n			<img src=\"http://sharkiapost.com/wp-content/uploads/general/weather-small.png\">\n		</a>\n	</span>\n</div>",
+			"settings":
+			{
+				"buffer_size": 553,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ahmad/edxfork/scripts/server-vars.yml",
+			"settings":
+			{
+				"buffer_size": 1416,
 				"line_ending": "Unix"
 			}
 		}
@@ -399,7 +407,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 449.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -416,6 +424,15 @@
 	},
 	"file_history":
 	[
+		"/home/ahmad/edxfork/scripts/server-vars.yml",
+		"/home/ahmad/edxfork/edx-platform/cms/envs/common.py",
+		"/home/ahmad/edxfork/edx-platform/.gitignore",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/models.py",
+		"/home/ahmad/edxfork/edx-platform/cms/startup.py",
+		"/home/ahmad/edxfork/edx-platform/cms/djangoapps/contentstore/views/course.py",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/user_api/models.py",
+		"/home/ahmad/edxfork/edx-platform/lms/envs/devstack.py",
+		"/home/ahmad/edxfork/edx-platform/cms/envs/devstack.py",
 		"/home/ahmad/edxfork/edx-platform/requirements/edx/post.txt",
 		"/home/ahmad/edxfork/edx-platform/requirements/edx/base.txt",
 		"/home/ahmad/edxfork/edx-platform/requirements/edx-sandbox/post.txt",
@@ -428,7 +445,6 @@
 		"/home/ahmad/edxfork/edx-platform/cms/urls.py",
 		"/home/ahmad/edxfork/edx-platform/cms/static/js/views/course_info_update.js",
 		"/home/ahmad/edxfork/edx-platform/cms/templates/course_info.html",
-		"/home/ahmad/edxfork/edx-platform/cms/envs/common.py",
 		"/home/ahmad/edxfork/edx-platform/lms/envs/common.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/views.py",
 		"/home/ahmad/edxfork/edx-platform/cms/static/sass/_variables.scss",
@@ -444,13 +460,10 @@
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_variables.scss",
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_extends.scss",
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_mixins.scss",
-		"/home/ahmad/edxfork/edx-platform/cms/envs/devstack.py",
 		"/home/ahmad/edxfork/edx-platform/lms/envs/aws.py",
-		"/home/ahmad/edxfork/edx-platform/lms/envs/devstack.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/forms.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/models.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/urls.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/models.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/views.py",
 		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/views.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/manager/views.py",
@@ -468,7 +481,6 @@
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/manager/urls.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/instructor/views/api.py",
 		"/home/ahmad/edxfork/edx-platform/lms/templates/courseware/course_about.html",
-		"/home/ahmad/edxfork/edx-platform/cms/djangoapps/contentstore/views/course.py",
 		"/home/ahmad/edxfork/edx-platform/cms/templates/overview.html",
 		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/models.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/class_dashboard/views.py",
@@ -513,7 +525,6 @@
 		"/home/ahmad/edxfork/edx-platform/lms/startup.py",
 		"/home/ahmad/edxfork/edx-platform/common/lib/html_to_text.py",
 		"/home/ahmad/edxfork/edx-platform/common/lib/django_startup.py",
-		"/home/ahmad/edxfork/edx-platform/cms/startup.py",
 		"/tmp/fz3temp-1/app.css",
 		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/last-3-posts/last-3-posts.php",
 		"/var/www/wp/shrpost/wp-content/plugins/crumina_slider/cruminaslider.php",
@@ -540,10 +551,7 @@
 		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/post-video.php",
 		"/var/www/wp/shrpost/wp-content/themes/Glider/page-right-sidebar.php",
 		"/var/www/wp/shrpost/wp-content/plugins/siteorigin-panels/css/front.css",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/responsive.css",
-		"/var/www/wp/shrpost/wp-content/themes/Glider-www-data/templates/entry-meta.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider-www-data/templates/entry-meta-mini.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/entry-meta-mini.php"
+		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/responsive.css"
 	],
 	"find":
 	{
@@ -551,7 +559,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"",
@@ -565,6 +573,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"/wp-content/uploads/general/",
+			"btn",
+			"default",
+			"REGISTRATION_EXTRA_FIELDS",
+			"creat",
+			"create",
+			"DISABLE_COURSE_CREATION",
+			"example.com",
+			"EDXAPP_LMS_BASE",
+			"class ",
+			"testcase",
+			"class ",
+			"class",
+			"log",
+			"EMAIL_HOST",
+			"purchase",
+			"PaymentOrderUploadForm",
+			"payment_request_upload_form",
+			"rquest_form",
+			"form",
+			"force_d",
+			"language_code",
+			"set_pre",
+			"settings",
+			"uploads",
+			"features",
+			"settings",
+			"language",
+			"LANGUAGE_CODE",
 			"CONFIG_ROOT",
 			"ENV_TOKENS",
 			"LANGUAGES",
@@ -663,36 +700,7 @@
 			"waiting_approval=False",
 			"waiting_approval=True",
 			"waiting_approval",
-			"approve",
-			"waiting_approval=True",
-			"=============\"",
-			"============='",
-			"=============",
-			"cancel_order",
-			"approve_order",
-			"record_purchase",
-			"cancel_order",
-			"reverse",
-			"items",
-			"bank_payment",
-			"home",
-			"doesnotexi",
-			"cancel",
-			"unicode",
-			"DATABASES = {",
-			"database",
-			"(3n+3)",
-			"left",
-			"{\n",
-			"courses-listing-item",
-			"HttpResponseBadRequest",
-			"item",
-			"revers",
-			"item",
-			"upload_fo",
-			"shoppingca",
-			"files",
-			"upload"
+			"approve"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -716,39 +724,11 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 13,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "cms/djangoapps/contentstore/views/course.py",
-					"settings":
-					{
-						"buffer_size": 35548,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17896,
-								17896
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6551.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "cms/djangoapps/contentstore/course_info_model.py",
 					"settings":
 					{
@@ -759,8 +739,8 @@
 						"selection":
 						[
 							[
-								2969,
-								2969
+								681,
+								681
 							]
 						],
 						"settings":
@@ -770,13 +750,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 634.0,
+						"translation.y": 79.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "lms/djangoapps/instructor/views/api.py",
 					"settings":
 					{
@@ -804,7 +784,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "lms/djangoapps/instructor/views/instructor_dashboard.py",
 					"settings":
 					{
@@ -815,8 +795,8 @@
 						"selection":
 						[
 							[
-								4820,
-								4820
+								2869,
+								2869
 							]
 						],
 						"settings":
@@ -826,25 +806,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1354.0,
+						"translation.y": 724.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "lms/templates/dashboard.html",
 					"settings":
 					{
-						"buffer_size": 25440,
+						"buffer_size": 25483,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15955,
-								15955
+								0,
+								0
 							]
 						],
 						"settings":
@@ -854,41 +834,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5501.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "lms/djangoapps/shoppingcart/models.py",
+					"buffer": 4,
+					"file": "lms/djangoapps/user_uploads/views.py",
 					"settings":
 					{
-						"buffer_size": 32641,
+						"buffer_size": 2055,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5856,
-								5856
+								406,
+								406
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1789.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "lms/djangoapps/user_uploads/models.py",
 					"settings":
 					{
@@ -916,19 +895,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "lms/templates/manager.html",
 					"settings":
 					{
-						"buffer_size": 4275,
+						"buffer_size": 4271,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3404,
-								3404
+								3996,
+								3996
 							]
 						],
 						"settings":
@@ -938,125 +917,41 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 791.0,
+						"translation.y": 701.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "lms/envs/common.py",
+					"settings":
+					{
+						"buffer_size": 54108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46858,
+								46858
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 20296.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "lms/envs/devstack.py",
-					"settings":
-					{
-						"buffer_size": 3344,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								320,
-								320
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 146.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "cms/envs/devstack.py",
-					"settings":
-					{
-						"buffer_size": 3213,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								660,
-								660
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 116.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "lms/envs/common.py",
-					"settings":
-					{
-						"buffer_size": 53906,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								41456,
-								41456
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 17449.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "cms/envs/common.py",
-					"settings":
-					{
-						"buffer_size": 19167,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10176,
-								10176
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3911.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
 					"file": "lms/djangoapps/instructor_task/api.py",
 					"settings":
 					{
@@ -1078,13 +973,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2963.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 9,
 					"file": "lms/envs/aws.py",
 					"settings":
 					{
@@ -1095,8 +990,8 @@
 						"selection":
 						[
 							[
-								828,
-								828
+								3970,
+								3970
 							]
 						],
 						"settings":
@@ -1106,7 +1001,142 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2115.0,
+						"translation.y": 4808.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "common/djangoapps/student/views.py",
+					"settings":
+					{
+						"buffer_size": 75804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45405,
+								45405
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 16156.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "common/djangoapps/user_api/admin.py",
+					"settings":
+					{
+						"buffer_size": 168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								168
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "lms/djangoapps/shoppingcart/views.py",
+					"settings":
+					{
+						"buffer_size": 12906,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6514,
+								6514
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2119.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"settings":
+					{
+						"buffer_size": 553,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								553,
+								553
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/home/ahmad/edxfork/scripts/server-vars.yml",
+					"settings":
+					{
+						"buffer_size": 1416,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1164,6 +1194,22 @@
 		"selected_items":
 		[
 			[
+				"comm",
+				"cms/envs/common.py"
+			],
+			[
+				"shopmod",
+				"lms/djangoapps/shoppingcart/models.py"
+			],
+			[
+				"shopvie",
+				"lms/djangoapps/shoppingcart/views.py"
+			],
+			[
+				"studenviews.p",
+				"common/djangoapps/student/views.py"
+			],
+			[
 				"aws",
 				"lms/envs/aws.py"
 			],
@@ -1178,10 +1224,6 @@
 			[
 				"util",
 				"lms/djangoapps/django_comment_client/utils.py"
-			],
-			[
-				"comm",
-				"cms/envs/common.py"
 			],
 			[
 				"devs",
@@ -1561,7 +1603,7 @@
 		[
 			[
 				"",
-				"/home/ahmad/git-repos/ask/ask-git-repos.sublime-project"
+				"/var/www/wp/shrpost/shrpost.sublime-project"
 			]
 		],
 		"width": 380.0

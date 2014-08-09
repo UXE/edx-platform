@@ -1380,8 +1380,8 @@ REGISTRATION_EXTRA_FIELDS = {
     'mailing_address': 'optional',
     'goals': 'optional',
     'honor_code': 'required',
-    'city': 'hidden',
-    'country': 'hidden',
+    'city': 'optional',
+    'country': 'required',
 }
 
 ########################## CERTIFICATE NAME ########################
