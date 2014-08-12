@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="slick-slider/slick/slick.css">
+</head>
+
+<body class="landing-page rtl" dir="rtl">
+    <section class="page-container">
+        <header class="upper-part">
+            <section class="big-branding">
+                <div class="big-logo">
+                    <img src="images/blue-logo.png">
+                </div>
+                <div class="message">
+                    <h1>إعادة صياغة التعليم الإكتروني في العالم العربي</h1>
+                </div>
+            </section>
+            <section id="navigation" class="navigation">
+                <div class="navigation-container">
+                    <div class="navigation-logo">
+                        <img src="images/white-logo.png" alt="دارِس">
+                    </div>
+                    <nav class="header-horizontal-menu">
+                        <ul>
+                            <li><a href="#">تصفح المقررات</a>
+                            </li>
+                            <li><a href="#">عن سياسي</a>
+                            </li>
+                            <li><a href="#">أسئلة شائعة</a>
+                            </li>
+                            <li><a href="#">المدونة</a>
+                            </li>
+                            <li><a href="#">تواصل معنا</a>
+                            </li>
+                            <li><a href="#">التسجيل</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </header>
+        <div class="lower-part">
+            <section id="vision" class="branding-section vision">
+                <button class="play-yt">play</button>
+                <div id="player"></div>
+                <h2>نطمح إلى الوصول إلى جيل من الشباب القادر على ممارسة السياسة بحرفية و وعي</h2>
+            </section>
+            <section id="staff" class="branding-section staff clearfix">
+                <div class="section-title right">
+                    <div>
+                        <img src="images/glasses.png">
+                        <h3>طاقم التدريس</h3>
+                    </div>
+                </div>
+                <div class="section-content right">
+                    <div class="staff-cards">
+                        <div class="card">card</div>
+                        <div class="card">card</div>
+                        <div class="card">card</div>
+                        <div class="card">card</div>
+                        <div class="card">card</div>
+                    </div>
+                </div>
+            </section>
+            <section id="courses-show" class="call-to-action-section courses-show">
+                <div class="course-cards">
+                    <div class="card">card</div>
+                    <div class="card">card</div>
+                    <div class="card">card</div>
+                    <div class="card">card</div>
+                    <div class="card">card</div>
+                </div>
+                <button class="browse-courses">تصفح جميع المقررات</button>
+            </section>
+            <section id="quote" class="branding-section quote">
+                <div class="author">
+                    عبد الوهاب المسيري
+                </div>
+                <blockquote class="quote-cite">
+                    إن تأخير تكوين المثقف في العالم العربي أمر يؤثر في التنمية فهذا يعني أن الكثيرين يتساقطون في أثناء العملية التربوية ، وإن من يخرج سليما منها فإن سنين العطاء عنده تكون محدودة للغاية
+                </blockquote>
+                
+            </section>
+        </div>
+        <footer>
+
+        </footer>
+    </section>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript" src="slick-slider/slick/slick.js"></script>
+    <script src="http://www.youtube.com/player_api"></script>
+
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.course-cards').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            rtl: true,
+            draggable: true,
+            infinite: false
+        });
+
+        $('.staff-cards').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            rtl: true,
+            draggable: true,
+            infinite: false
+        });
+    });
+    </script>
+
+
+    <script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '450',
+            width: '800',
+            videoId: 'WGlS5oamhcI',
+            playerVars: {
+                theme: 'light',
+                showinfo: 0,
+                color: 'white',
+                rel: 0
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        $('.play-yt').on('click', function() {
+            $(this).hide();
+            $('#player').show();
+            event.target.playVideo();
+            $('html, body').animate({
+                scrollTop: $("#navigation").offset().top
+            }, 500);
+        });
+
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+
+    function onPlayerStateChange(event) {
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+        //     setTimeout(stopVideo, 6000);
+        //     done = true;
+        // }
+        if (event.data === 0) {
+            $('html, body').animate({
+                scrollTop: $("#staff").offset().top
+            }, 500);
+        }
+    }
+
+    function stopVideo() {
+        player.stopVideo();
+    }
+    </script>
+</body>
+
+</html>
