@@ -129,7 +129,7 @@ table {
     /*border-bottom: 1px solid;*/
 }
 .branding-section.vision {
-    background: #f6e9d8;
+    background: #fff;
     /*height: 400px;*/
     padding: 20px 0;
 }
@@ -263,4 +263,19 @@ table {
 footer {
     height: 200px;
     background: #addadd;
+    padding-top: 30px;
+}
+
+footer .pages, footer .social {
+    list-style: none;
+    width: 350px;
+    margin: 10px auto;
+}
+
+footer .page {
+}
+
+footer .pages li, footer .social li {
+    display: inline-block;
+    margin-left: 20px;
 }

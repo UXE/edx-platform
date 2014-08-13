@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7 lte9 lte8 lte7" lang="${LANGUAGE_CODE}"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="${LANGUAGE_CODE}"><![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="${LANGUAGE_CODE}"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="${LANGUAGE_CODE}"><!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<%page cached="False"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%! from microsite_configuration import microsite %>
+<%! from microsite_configuration import page_title_breadcrumbs %>
+<%! from django.core.urlresolvers import reverse %>
+<%! from courseware.courses import course_image_url, get_course_about_section %>
+
+<%namespace name='static' file='static_content.html'/>
+<%! from django.utils import html %>
+<%page cached="False"/>
+## Define a couple of helper functions to make life easier when
+## embedding theme conditionals into templates. All inheriting
+## templates have access to these functions, and we can import these
+## into non-inheriting templates via the %namespace tag.
+<%def name="theme_enabled()">
+  <% return settings.FEATURES.get("USE_CUSTOM_THEME", False) %>
+</%def>
+
+<%def name="stanford_theme_enabled()">
+  <%
+    if not theme_enabled():
+      return False
+
+    return getattr(settings, "THEME_NAME", None) == "stanford"
+  %>
+</%def>
+
+## this needs to be here to prevent the title from mysteriously appearing in the body, in one case
+<%def name="pagetitle()" />
+  <%block name="title">
+      <title>
+       ${page_title_breadcrumbs(self.pagetitle())}
+      </title>
+  </%block>
+
+  <script type="text/javascript">
+    /* immediately break out of an iframe if coming from the marketing website */
+    (function(window) {
+      if (window.location !== window.top.location) {
+        window.top.location = window.location;
+      }
+    })(this);
+  </script>
+
+  <script type="text/javascript" src="/jsi18n/"></script>
+
+  <link rel="icon" type="image/x-icon" href="${static.url(microsite.get_value('favicon_path', settings.FAVICON_PATH))}" />
+
+  <%static:css group='style-vendor'/>
+  <%static:css group='style-app'/>
+  <%static:css group='style-app-extend1'/>
+  <%static:css group='style-app-extend2'/>
+
+  <%static:js group='main_vendor'/>
+
+  <%block name="headextra"/>
+
+<%
+  if theme_enabled():
+    header_extra_file = 'theme-head-extra.html'
+    header_file = 'theme-header.html'
+    google_analytics_file = 'theme-google-analytics.html'
+    footer_file = 'theme-footer.html'
+
+    style_overrides_file = None
+
+  else:
+    header_extra_file = None
+    header_file = microsite.get_template_path('navigation.html')
+    google_analytics_file = microsite.get_template_path('google_analytics.html')
+    footer_file = microsite.get_template_path('footer.html')
+
+    style_overrides_file = microsite.get_value('css_overrides_file')
+%>
+
+  % if header_extra_file:
+    <%include file="${header_extra_file}" />
+  % endif
+
+  <!--[if lt IE 9]>
+    <script src="${static.url('js/html5shiv.js')}"></script>
+  <![endif]-->
+
+  <meta name="path_prefix" content="${EDX_ROOT_URL}">
+  <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY" />
+
+  % if not course:
+    <%include file="${google_analytics_file}" />
+  % endif
+
+  <%include file="widgets/segment-io.html" />
+
+ <link rel="stylesheet" type="text/css" href="${static.url('js/vendor/slick-slider/slick/slick.css')}" />
+ <link rel="stylesheet" type="text/css" href="${static.url('css/daress_landing.css')}" />
+</head>
+
+<body class="<%block name='bodyclass'/> lang_${LANGUAGE_CODE}" dir='rtl'>
+  <div class="content-wrapper" id="content">
+        <section class="page-container">
+        <header class="upper-part">
+            <section class="big-branding container">
+                <div class="big-logo">
+                    <img src="${static.url('images/blue-logo.png')}">
+                </div>
+                <div class="message">
+                    <h1>إعادة صياغة التعليم الإلكتروني في العالم العربي</h1>
+                </div>
+            </section>
+            <section id="navigation" class="navigation">
+                <div class="navigation-container">
+                    <div class="navigation-logo">
+                        <img src="${static.url('images/white-logo.png')}" alt="دارِس">
+                    </div>
+                    <nav class="header-horizontal-menu">
+                        <ul>
+                            <li><a href="${reverse('courses')}">تصفح المقررات</a>
+                            </li>
+                            <li><a href="${marketing_link('ABOUT')}">عن سياسي</a>
+                            </li>
+                            <li><a href="${marketing_link('FAQ')}">أسئلة شائعة</a>
+                            </li>
+                            <li><a href="#">المدونة</a>
+                            </li>
+                            <li><a href="${marketing_link('CONTACT')}">تواصل معنا</a>
+                            </li>
+                            <li><a href="#">التسجيل</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </header>
+        <div class="lower-part">
+            <section id="vision" class="branding-section vision">
+                <div class="play-yt"></div>
+                <div id="player"></div>
+                <h2>نطمح إلى الوصول إلى جيل من الشباب القادر على ممارسة السياسة بحرفية و وعي</h2>
+            </section>
+            <section id="staff" class="branding-section staff clearfix">
+                <div class="section-title right">
+                    <div>
+                        <img src="${static.url('images/glasses.png')}">
+                        <h3>طاقم التدريس</h3>
+                    </div>
+                </div>
+                <div class="section-content right">
+                    <div class="staff-cards">
+                        <div class="card">
+                          <div class="photo"><img src="${static.url('images/daress_landing/hypatia.jpg')}" /></div>
+                          <div class="about">
+                            <h4 class="name">د.هبة رؤوف عزت</h4>
+                            <p> ناشطة سياسية وكاتبة صحفية ومدرس العلوم السياسية - كلية الاقتصاد والعلوم السياسية - جامعة القاهرة. مواليد 25 مايو 1965</p>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="photo"><img src="${static.url('images/glasses.png')}" /></div>
+                          <div class="about">
+                            <h4 class="name">إسم المدرس</h4>
+                            <p>كلمتين عن المدرس</p>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="photo"><img src="${static.url('images/glasses.png')}" /></div>
+                          <div class="about">
+                            <h4 class="name">إسم المدرس</h4>
+                            <p>كلمتين عن المدرس</p>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="photo"><img src="${static.url('images/glasses.png')}" /></div>
+                          <div class="about">
+                            <h4 class="name">إسم المدرس</h4>
+                            <p>كلمتين عن المدرس</p>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="photo"><img src="${static.url('images/glasses.png')}" /></div>
+                          <div class="about">
+                            <h4 class="name">إسم المدرس</h4>
+                            <p>كلمتين عن المدرس</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="courses-show" class="call-to-action-section courses-show">
+                <div class="course-cards container">
+                    %for item in courses:
+                      <div class="card">
+                        <a href="${reverse('about_course', args=[item.id.to_deprecated_string()])}">
+                          <img src="${course_image_url(item)}" alt="${item.display_number_with_default | h} ${get_course_about_section(item, 'title')} Cover Image" />
+                          <h4>${get_course_about_section(item, 'title')}</h4>
+                          </a>
+                      </div>
+                    %endfor
+                </div>
+                <div class="browse-courses">
+                  <a class="button" href="${reverse('courses')}}">تصفح جميع المقررات </a>
+                </div>
+            </section>
+            <section id="quote" class="branding-section quote">
+                <div class="author container">
+                    عبد الوهاب المسيري
+                </div>
+                <blockquote class="quote-cite">
+                    إن تأخير تكوين المثقف في العالم العربي أمر يؤثر في التنمية فهذا يعني أن الكثيرين يتساقطون في أثناء العملية التربوية ، وإن من يخرج سليما منها فإن سنين العطاء عنده تكون محدودة للغاية
+                </blockquote>
+                
+            </section>
+        </div>
+        <footer>
+            <ul class="pages">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">شروط الإستخدام</a></li>
+                <li><a href="#">عن سياسي</a></li>
+                <li><a href="#">طاقم التدريس</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="#">الأسئلة الشائعة</a></li>
+            </ul>
+            <ul class="social">
+                <li><a href="#">المدونة</a></li>
+                <li><a href="#">فيس بوك</a></li>
+                <li><a href="#">تويتر</a></li>
+                <li><a href="#">يوتيوب</a></li>
+            </ul>
+        </footer>
+    </section>
+    <script type="text/javascript" src="${static.url('js/vendor/slick-slider/slick/slick.js')}"></script>
+    <script src="http://www.youtube.com/player_api"></script>
+
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.course-cards').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            rtl: true,
+            draggable: true,
+            infinite: false
+        });
+
+        $('.staff-cards').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            rtl: true,
+            draggable: true,
+            infinite: false
+        });
+    });
+    </script>
+
+
+    <script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '450',
+            width: '800',
+            videoId: 'WGlS5oamhcI',
+            playerVars: {
+                theme: 'light',
+                showinfo: 0,
+                color: 'white',
+                rel: 0
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        $('.play-yt').on('click', function() {
+            $(this).hide();
+            $('#player').show();
+            event.target.playVideo();
+            $('html, body').animate({
+                scrollTop: $("#navigation").offset().top
+            }, 500);
+        });
+
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+
+    function onPlayerStateChange(event) {
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+        //     setTimeout(stopVideo, 6000);
+        //     done = true;
+        // }
+        if (event.data === 0) {
+            $('html, body').animate({
+                scrollTop: $("#staff").offset().top
+            }, 500);
+        }
+    }
+
+    function stopVideo() {
+        player.stopVideo();
+    }
+    </script>
+    <%block name="bodyextra"/>
+  </div>
+
+  <script>window.baseUrl = "${settings.STATIC_URL}";</script>
+  <%static:js group='application'/>
+  <%static:js group='module-js'/>
+
+  <%block name="js_extra"/>
+</body>
+</html>
+
+<%def name="login_query()">${
+  u"?course_id={0}&enrollment_action={1}".format(
+    html.escape(course_id),
+    html.escape(enrollment_action)
+  ) if course_id and enrollment_action else ""
+}</%def>
+
+
