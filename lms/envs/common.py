@@ -977,7 +977,7 @@ PIPELINE_CSS = {
         'source_filenames': [
             'css/daress_landing.css',
         ],
-        'output_filename': 'css/daress-landing.css',
+        'output_filename': 'css/daress_landing.css',
     },
 }
 
