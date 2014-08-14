@@ -973,6 +973,12 @@ PIPELINE_CSS = {
         ],
         'output_filename': 'css/lms-style-course.css',
     },
+    'style-daress-landing': {
+        'source_filenames': [
+            'css/daress_landing.css',
+        ],
+        'output_filename': 'css/daress-landing.css',
+    },
 }
 
 
