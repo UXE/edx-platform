@@ -373,6 +373,10 @@ input[type="submit"].d-btn {
 		.intro-inner-wrapper .intro>hgroup h1 {
 			text-align: right;
 		}
+
+		.media .hero img{
+			height: 183px;
+		}
 	}
 	.header-info {
 		@include outer-container();

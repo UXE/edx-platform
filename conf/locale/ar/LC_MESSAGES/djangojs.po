@@ -292,7 +292,7 @@ msgid ""
 "SequenceModule. Please contact the course staff."
 msgstr ""
 "خطأ في التسلسل! ليس بالإمكان الانتقال إلى علامة التبويب %(tab_name)s في "
-"الـSequenceModule الحالي. الرجاء الاتصال بطاقم المساق."
+"الـSequenceModule الحالي. الرجاء الاتصال بطاقم المقرر."
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 msgid "Volume"
@@ -661,7 +661,7 @@ msgstr "مجهول"
 #: common/static/coffee/src/discussion/views/response_comment_show_view.js
 #: common/static/coffee/src/discussion/views/thread_response_show_view.js
 msgid "staff"
-msgstr "طاقم المساق"
+msgstr "طاقم المقرر"
 
 #: common/static/coffee/src/discussion/views/response_comment_show_view.js
 #: common/static/coffee/src/discussion/views/thread_response_show_view.js
@@ -825,7 +825,7 @@ msgstr "ملاحظاتي"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 msgid "Instructor"
-msgstr "موجّه المساق"
+msgstr "موجّه المقرر"
 
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: common/static/js/vendor/ova/catch/js/catch.js
@@ -1236,13 +1236,13 @@ msgid ""
 "allowed to enroll once they register:"
 msgstr ""
 "تم بنجاح إرسال بريد إلكتروني حول التسجيل إلى المستخدمين التالية أسماؤهم. "
-"وسيسمح لهم بالالتحاق بالمساق بمجرد قيامهم بالتسجيل:"
+"وسيسمح لهم بالالتحاق بالمقرر بمجرد قيامهم بالتسجيل:"
 
 #. Translators: A list of users appears after this sentence;
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "These users will be allowed to enroll once they register:"
 msgstr ""
-"سيسمح للمستخدمين التالية أسماؤهم بالالتحاق بالمساق بمجرد قيامهم بالتسجيل:"
+"سيسمح للمستخدمين التالية أسماؤهم بالالتحاق بالمقرر بمجرد قيامهم بالتسجيل:"
 
 #. Translators: A list of users appears after this sentence;
 #: lms/static/coffee/src/instructor_dashboard/membership.js
@@ -1251,12 +1251,12 @@ msgid ""
 "enrolled once they register:"
 msgstr ""
 "تم بنجاح إرسال بريد إلكتروني حول التسجيل إلى المستخدمين التالية أسماؤهم. "
-"وسيتم إلحاقهم بالمساق بمجرد قيامهم بالتسجيل:"
+"وسيتم إلحاقهم بالمقرر بمجرد قيامهم بالتسجيل:"
 
 #. Translators: A list of users appears after this sentence;
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "These users will be enrolled once they register:"
-msgstr "سيتم إلحاق المستخدمين التالية أسماؤهم بالمساق بمجرد قيامهم بالتسجيل:"
+msgstr "سيتم إلحاق المستخدمين التالية أسماؤهم بالمقرر بمجرد قيامهم بالتسجيل:"
 
 #. Translators: A list of users appears after this sentence;
 #: lms/static/coffee/src/instructor_dashboard/membership.js
@@ -1265,12 +1265,12 @@ msgid ""
 "course:"
 msgstr ""
 "تم إرسال الرسائل الإلكترونية بنجاح. ولم يعد المستخدمون التالية أسماؤهم "
-"مسجّلون بالمساق:"
+"مسجّلون بالمقرر:"
 
 #. Translators: A list of users appears after this sentence;
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "The following users are no longer enrolled in the course:"
-msgstr "لم يعد المستخدمون التالية أسماؤهم مسجّلون بالمساق:"
+msgstr "لم يعد المستخدمون التالية أسماؤهم مسجّلون بالمقرر:"
 
 #. Translators: A list of users appears after this sentence. This situation
 #. arises when a staff member tries to unenroll a user who is not currently
@@ -1279,7 +1279,7 @@ msgstr "لم يعد المستخدمون التالية أسماؤهم مسجّ�
 msgid ""
 "These users were not affiliated with the course so could not be unenrolled:"
 msgstr ""
-"لم يكن المستخدمون المذكورون لاحقاً منتسبين للمساق ولذلك فلا يمكن إلغاء "
+"لم يكن المستخدمون المذكورون لاحقاً منتسبين للمقرر ولذلك فلا يمكن إلغاء "
 "تسجيلهم فيه:"
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
@@ -1308,7 +1308,7 @@ msgid ""
 "staff or instructor on this course. Is this OK?"
 msgstr ""
 "أنت بصدد إرسال بريد إلكتروني عنوانه ’<%= subject %>‘ إلى جميع الأشخاص "
-"المسجلين ضمن فريق العمل أو التدريس في هذا المساق. هل هذا ما تريد فعله؟ "
+"المسجلين ضمن فريق العمل أو التدريس في هذا المقرر. هل هذا ما تريد فعله؟ "
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid ""
@@ -1316,7 +1316,7 @@ msgid ""
 "is enrolled in this course as student, staff, or instructor). Is this OK?"
 msgstr ""
 "أنت بصدد إرسال بريد إلكتروني عنوانه ’<%= subject %>‘ إلى الجميع (كافة "
-"الأشخاص المسجلين كطلاب أو ضمن فريق العمل أو التدريس في هذا المساق). هل هذا "
+"الأشخاص المسجلين كطلاب أو ضمن فريق العمل أو التدريس في هذا المقرر). هل هذا "
 "ما تريد فعله؟ "
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
@@ -1327,8 +1327,8 @@ msgid ""
 msgstr ""
 "تم بنجاح إدراج رسالتك ضمن قائمة الرسائل التي تنتظر الإرسال. الرجاء أخذ العلم"
 " بأنه في حالة الصفوف الكبيرة، قد يستغرق إرسال كافة الرسائل الإلكترونية ما "
-"يصل إلى الساعة (أو أكثر، في حال كانت المساقات الأخرى تقوم بإرسال رسائل "
-"إلكترونية بالتزامن مع هذا المساق). "
+"يصل إلى الساعة (أو أكثر، في حال كانت المقررات الأخرى تقوم بإرسال رسائل "
+"إلكترونية بالتزامن مع هذا المقرر). "
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Error sending email."
@@ -1336,13 +1336,13 @@ msgstr "خطأ في إرسال البريد الإلكتروني."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "There is no email history for this course."
-msgstr "لا يوجد سجل خاص بالرسائل البريدية المرسلة لهذا المساق."
+msgstr "لا يوجد سجل خاص بالرسائل البريدية المرسلة لهذا المقرر."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "There was an error obtaining email task history for this course."
 msgstr ""
 "حدث خطأ أثناء محاولة الحصول على سجل عن المهمات المتعلّقة بالرسائل البريدية "
-"الخاصة بهذا المساق."
+"الخاصة بهذا المقرر."
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
@@ -1862,7 +1862,7 @@ msgid ""
 "The combined length of the organization, course number, and course run "
 "fields cannot be more than 65 characters."
 msgstr ""
-"الطول الكلي لحقول اسم المؤسسة، ورقم المساق، ورمز تشغيل المنهاج لا يمكن أن "
+"الطول الكلي لحقول اسم المؤسسة، ورقم المقرر، ورمز تشغيل المنهاج لا يمكن أن "
 "تتجاوز 65 حرف. "
 
 #: cms/static/js/index.js
@@ -1895,26 +1895,26 @@ msgstr "أو"
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course must have an assigned start date."
-msgstr "لابد من تعيين تاريخ بدء المساق."
+msgstr "لابد من تعيين تاريخ بدء المقرر."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course end date cannot be before the course start date."
-msgstr "لايمكن أن يسبق تاريخ انتهاء المساق تاريخ ابتدائه."
+msgstr "لايمكن أن يسبق تاريخ انتهاء المقرر تاريخ ابتدائه."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The course start date cannot be before the enrollment start date."
-msgstr "لايمكن أن يسبق تاريخ بدء المساق تاريخ التسجيل فيه."
+msgstr "لايمكن أن يسبق تاريخ بدء المقرر تاريخ التسجيل فيه."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The enrollment start date cannot be after the enrollment end date."
 msgstr ""
-"لا يمكن أن يكون تاريخ بدء التسجيل في المساق بعد تاريخ انتهاء التسجيل في "
-"المساق."
+"لا يمكن أن يكون تاريخ بدء التسجيل في المقرر بعد تاريخ انتهاء التسجيل في "
+"المقرر."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "The enrollment end date cannot be after the course end date."
 msgstr ""
-"لا يمكن أن يكون تاريخ انتهاء التسجيل في المساق بعد تاريخ انتهاء المساق."
+"لا يمكن أن يكون تاريخ انتهاء التسجيل في المقرر بعد تاريخ انتهاء المقرر."
 
 #: cms/static/js/models/settings/course_details.js
 msgid "Key should only contain letters, numbers, _, or -"
@@ -2091,7 +2091,7 @@ msgid ""
 " your courseware's navigation will also be removed."
 msgstr ""
 "لا يمكن الرجوع أو عكس عملية حذف الكتاب، وحال القيام بها سيتم كذلك إزالة أي "
-"مرجعٍ لهذا الكتاب في تصفح محتويات المساق الخاص بك."
+"مرجعٍ لهذا الكتاب في تصفح محتويات المقرر الخاص بك."
 
 #: cms/static/js/views/show_textbook.js
 msgid "Deleting"
@@ -2188,7 +2188,7 @@ msgstr ""
 
 #: cms/static/js/views/settings/main.js
 msgid "Upload your course image."
-msgstr "تحميل الصورة الخاصة بالمساق."
+msgstr "تحميل الصورة الخاصة بالمقرر."
 
 #: cms/static/js/views/settings/main.js
 msgid "Files must be in JPEG or PNG format."
@@ -2236,7 +2236,7 @@ msgstr "إضافة عنصر جديد"
 
 #: cms/templates/js/asset-library.underscore
 msgid "List of uploaded files and assets in this course"
-msgstr "قائمة بالملفات والموجودات المحملة ضمن هذا المساق"
+msgstr "قائمة بالملفات والموجودات المحملة ضمن هذا المقرر"
 
 #: cms/templates/js/asset-library.underscore
 msgid "Embed URL"
@@ -2253,11 +2253,11 @@ msgstr "الإجراءات"
 
 #: cms/templates/js/asset-library.underscore
 msgid "You haven't added any assets to this course yet."
-msgstr "لم تتمّ إضافة أية ملحقات إلى هذا المساق حتّى الآن. "
+msgstr "لم تتمّ إضافة أية ملحقات إلى هذا المقرر حتّى الآن. "
 
 #: cms/templates/js/asset-library.underscore
 msgid "Upload your first asset"
-msgstr "تحميل أولى المواد الملحقة بمساقك"
+msgstr "تحميل أولى المواد الملحقة بمقررك"
 
 #: cms/templates/js/asset-upload-modal.underscore
 msgid "close"
@@ -2378,11 +2378,11 @@ msgstr "رسالة.الخطأ"
 
 #: cms/templates/js/edit-textbook.underscore
 msgid "Textbook information"
-msgstr "معلومات عن الكتاب الخاص بالمساق"
+msgstr "معلومات عن الكتاب الخاص بالمقرر"
 
 #: cms/templates/js/edit-textbook.underscore
 msgid "Textbook Name"
-msgstr "إسم الكتاب الخاص بالمساق"
+msgstr "إسم الكتاب الخاص بالمقرر"
 
 #: cms/templates/js/edit-textbook.underscore
 msgid "Introduction to Cookie Baking"
@@ -2392,7 +2392,7 @@ msgstr "مقدّمة عن صنع الكعك"
 msgid ""
 "provide the title/name of the text book as you would like your students to "
 "see it"
-msgstr "قم بإعطاء عنوان/إسم الكتاب الخاص بالمساق كما ترغب أن يراه طلابّك"
+msgstr "قم بإعطاء عنوان/إسم الكتاب الخاص بالمقرر كما ترغب أن يراه طلابّك"
 
 #: cms/templates/js/edit-textbook.underscore
 msgid "Chapter information"
@@ -2432,7 +2432,7 @@ msgstr "تنزيل"
 
 #: cms/templates/js/no-textbooks.underscore
 msgid "You haven't added any textbooks to this course yet."
-msgstr "لم تقم بإضافة أية كتب إلى هذا المساق حتّى الآن. "
+msgstr "لم تقم بإضافة أية كتب إلى هذا المقرر حتّى الآن. "
 
 #: cms/templates/js/no-textbooks.underscore
 msgid "Add your first textbook"
