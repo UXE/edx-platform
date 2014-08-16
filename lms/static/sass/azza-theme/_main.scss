@@ -445,6 +445,11 @@ body .highlighted-courses .courses .courses-listing .courses-listing-item,
 	display: none;
 }
 
+.highlighted-courses .courses .course header.course-preview hgroup, 
+.find-courses .courses .course header.course-preview hgroup {
+	left: auto;
+}
+
 //student-dashboard
 //=================
 .dashboard {
