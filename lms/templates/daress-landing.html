@@ -108,6 +108,10 @@
         <section class="page-container">
         <header class="upper-part">
             <section class="big-branding container">
+                <div class="users-actions">
+                  <a class="register" href="${reverse('register_user')}">حساب جديد</a>
+                  <a class="login" href="${reverse('signin_user')}">دخول</a>
+                </div>
                 <div class="big-logo">
                     <img src="${static.url('images/syasi-logo.png')}">
                 </div>
@@ -132,7 +136,7 @@
                             </li>
                             <li><a href="${marketing_link('CONTACT')}">تواصل معنا</a>
                             </li>
-                            <li><a href="#">التسجيل</a>
+                            <li><a href="${reverse('register_user')}">التسجيل</a>
                             </li>
                         </ul>
                     </nav>
