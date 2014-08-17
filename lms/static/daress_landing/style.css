@@ -314,7 +314,9 @@ table {
 .staff-cards .card .about {
     float: right;
     width: 540px;
+    height: 100%;
     margin-right: 10px;
+    padding-bottom: 50px;
 }
 .staff-cards .card .about > .name {
     font-size: 30px;
@@ -322,7 +324,13 @@ table {
 }
 .staff-cards .card .about > p {
     text-align: center;
+    font-size: 14px;
+    line-height: 1.6em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px;
 }
+
 [dir="rtl"] .staff-cards .slick-next {
     top: 60%;
     right: -25px !important;
