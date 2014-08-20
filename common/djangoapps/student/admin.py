@@ -2,11 +2,13 @@
 django admin pages for courseware model
 '''
 
-from student.models import UserProfile, UserTestGroup, CourseEnrollmentAllowed
+from student.models import UserProfile, UserTestGroup, CourseEnrollmentAllowed, MigratedUser
 from student.models import CourseEnrollment, Registration, PendingNameChange
 from ratelimitbackend import admin
 
 admin.site.register(UserProfile)
+
+admin.site.register(MigratedUser)
 
 admin.site.register(UserTestGroup)
 

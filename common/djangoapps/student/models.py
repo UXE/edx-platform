@@ -1166,3 +1166,28 @@ def enforce_single_login(sender, request, user, signal, **kwargs):
         else:
             key = None
         user.profile.set_login_session(key)
+
+
+# syasi.org migrated users
+
+class MigratedUser(models.Model):
+    """temporary model to hold migrated users data, so we can check that if the user trying to 
+    login or signup is already old syasi user"""
+    
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
+    email = models.CharField(max_length=255, db_index=True)
+    password = models.CharField(max_length=255, db_index=True)
+    country = models.CharField(max_length=255, null=True, blank=True)
+    gender = models.CharField(max_length=255, null=True, blank=True)
+    birthdate = models.CharField(max_length=255, null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
+    education = models.CharField(max_length=255, null=True, blank=True)
+    reason = models.CharField(max_length=255, null=True, blank=True)
+
+    class Meta:
+        db_table = 'syasi_migrated_users'
+
+    def __unicode__(self):
+        return "%s %s" % (self.first_name, self.last_name)

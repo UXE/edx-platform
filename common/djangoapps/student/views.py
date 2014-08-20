@@ -3,9 +3,9 @@ Student Views
 """
 import datetime
 import logging
-import re
+import re, hashlib
 import uuid
-import time
+import time, random
 from collections import defaultdict
 from pytz import UTC
 
@@ -42,7 +42,7 @@ from student.models import (
     Registration, UserProfile, PendingNameChange,
     PendingEmailChange, CourseEnrollment, unique_id_for_user,
     CourseEnrollmentAllowed, UserStanding, LoginFailures,
-    create_comments_service_user, PasswordHistory
+    create_comments_service_user, PasswordHistory, MigratedUser
 )
 from student.forms import PasswordResetFormNoActive
 
@@ -765,6 +765,59 @@ def login_user(request, error=""):  # pylint: disable-msg=too-many-statements,un
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
+            # check for syasi migrated users
+            # needs refactoring in its own fuction
+            try:
+                migrated_user = MigratedUser.objects.get(email=email)
+                original_password = migrated_user.password
+                salt = original_password[:16]
+                hashed = hashlib.sha256(salt+password).hexdigest()
+                if (salt+hashed) == original_password:
+                    migrated_username = migrated_user.username.split("@")[0].replace(".", "_").replace("+", "_")
+                    if len(migrated_username) > 26:
+                        migrated_username = migrated_username[:26] + '_' + str(random.randint(0, 300))
+                    else:
+                        migrated_username = migrated_username + '_' + str(random.randint(0, 300))
+
+                    post_data = {
+                        'username': migrated_username,
+                        'email': email,
+                        'password': password,
+                        'name': "%s %s" % (migrated_user.first_name, migrated_user.last_name),
+                        'honor_code': u'true',
+                        'terms_of_service': u'true',
+                        'mailing_address': migrated_user.address,
+                        'goals': migrated_user.reason,
+                        'year_of_birth': migrated_user.birthdate,
+                    }
+                    
+                    try:
+                        user, profile, reg = _do_create_account(post_data)
+                        try:
+                            profile.year_of_birth = int(post_data['year_of_birth'])
+                        except (ValueError, KeyError):
+                            # If they give us garbage, just ignore it instead
+                            # of asking them to put an integer.
+                            profile.year_of_birth = None
+
+                        reg.activate()
+                        reg.save()
+                        create_comments_service_user(user)
+
+                        if settings.FEATURES.get('FORCE_DEFAULT_LANGUAGE', None):
+                            UserPreference.set_preference(user, LANGUAGE_KEY, settings.LANGUAGE_CODE)
+                        else:
+                            UserPreference.set_preference(user, LANGUAGE_KEY, get_language())
+
+                    except AccountValidationError as e:
+                        print e.message
+                        user = User.objects.get(email=options['email'])
+                        return JsonResponse({"success": False, "value": 'failed to create UserProfile for Syasi migrated user: {}'.format(user),})
+                else:
+                    return JsonResponse({"success": False, "value": 'Syasi migrated user login Faild, please check your password is correct.',})
+            except MigratedUser.DoesNotExist:
+                pass
+
             if settings.FEATURES['SQUELCH_PII_IN_LOGS']:
                 AUDIT_LOG.warning(u"Login failed - Unknown user email")
             else:
