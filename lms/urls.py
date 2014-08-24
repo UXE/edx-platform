@@ -138,6 +138,8 @@ if not settings.FEATURES["USE_CUSTOM_THEME"]:
             {'template': 'faq.html'}, name="faq_edx"),
         url(r'^help$', 'static_template_view.views.render',
             {'template': 'help.html'}, name="help_edx"),
+        url(r'^staff$', 'static_template_view.views.render',
+            {'template': 'staff.html'}, name="staff_page"),
 
         # TODO: (bridger) The copyright has been removed until it is updated for edX
         # url(r'^copyright$', 'static_template_view.views.render',

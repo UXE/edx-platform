@@ -145,11 +145,47 @@
         </header>
         <div class="lower-part">
             <section id="vision" class="branding-section vision">
+                <div class="video-player container">
+                  <iframe width="800" height="450" frameborder="0" allowfullscreen="1" src="https://www.youtube.com/embed/WGlS5oamhcI?theme=light&showinfo=0&color=white&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8000"></iframe>
+                </div>
+                <!--
                 <div class="play-yt"></div>
                 <div id="player"></div>
+                -->
                 <h2>نطمح إلى الوصول إلى جيل من الشباب القادر على ممارسة السياسة بحرفية و وعي</h2>
             </section>
+
+            <section id="courses-show" class="call-to-action-section courses-show">
+                <div class="course-cards container">
+                  <div class="courses">
+                    %for item in courses:
+                      <div class="card courses-listing-item">
+                        <a href="${reverse('about_course', args=[item.id.to_deprecated_string()])}">
+                          <img src="${course_image_url(item)}" alt="${item.display_number_with_default | h} ${get_course_about_section(item, 'title')}" />
+                          <h4>${get_course_about_section(item, 'title')}</h4>
+                          </a>
+                      </div>
+                    %endfor
+                  </div>
+                </div>
+                <div class="browse-courses">
+                  <a class="button" href="${reverse('courses')}">تصفح جميع المقررات </a>
+                </div>
+            </section>
+            <section id="quote" class="branding-section quote">
+                <div class="author container">
+                    عبد الوهاب المسيري
+                </div>
+                <blockquote class="quote-cite">
+                    إن تأخير تكوين المثقف في العالم العربي أمر يؤثر في التنمية فهذا يعني أن الكثيرين يتساقطون في أثناء العملية التربوية ، وإن من يخرج سليما منها فإن سنين العطاء عنده تكون محدودة للغاية
+                </blockquote>
+                
+            </section>
             <section id="staff" class="branding-section staff clearfix">
+                <div class="browse-courses">
+                  <a class="button" href="${reverse('staff_page')}">تعرف على طاقم التدريس</a>
+                </div>
+            <!--
                 <div class="section-title right">
                     <div>
                         <img src="${static.url('images/glasses.png')}">
@@ -213,30 +249,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <section id="courses-show" class="call-to-action-section courses-show">
-                <div class="course-cards container">
-                    %for item in courses:
-                      <div class="card">
-                        <a href="${reverse('about_course', args=[item.id.to_deprecated_string()])}">
-                          <img src="${course_image_url(item)}" alt="${item.display_number_with_default | h} ${get_course_about_section(item, 'title')} Cover Image" />
-                          <h4>${get_course_about_section(item, 'title')}</h4>
-                          </a>
-                      </div>
-                    %endfor
-                </div>
-                <div class="browse-courses">
-                  <a class="button" href="${reverse('courses')}">تصفح جميع المقررات </a>
-                </div>
-            </section>
-            <section id="quote" class="branding-section quote">
-                <div class="author container">
-                    عبد الوهاب المسيري
-                </div>
-                <blockquote class="quote-cite">
-                    إن تأخير تكوين المثقف في العالم العربي أمر يؤثر في التنمية فهذا يعني أن الكثيرين يتساقطون في أثناء العملية التربوية ، وإن من يخرج سليما منها فإن سنين العطاء عنده تكون محدودة للغاية
-                </blockquote>
-                
+            -->
             </section>
         </div>
         <footer>
@@ -263,13 +276,13 @@
     <script type="text/javascript">
     $(document).ready(function() {
 
-        $('.course-cards').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            rtl: true,
-            draggable: true,
-            infinite: false
-        });
+        //$('.course-cards').slick({
+        //    slidesToShow: 3,
+        //    slidesToScroll: 1,
+        //    rtl: true,
+        //    draggable: true,
+        //    infinite: false
+        //});
 
         $('.staff-cards').slick({
             slidesToShow: 1,
