@@ -86,12 +86,10 @@ table {
     height: 60px !important;
     overflow: hidden;
 }
-
 .big-branding .messages-cards h1 {
     padding-bottom: 20px;
     padding-top: 10px;
 }
-
 .navigation {
     background: #addadd;
     height: 80px;
@@ -150,7 +148,6 @@ table {
     background: firebrick;
     color: #fff;
 }
-
 .news-scroller {
     text-align: center;
     font-size: 14px;
@@ -251,7 +248,7 @@ table {
     color: #fff;
     font-size: 20px;
     line-height: 1.1;
-    padding:10px 10px;
+    padding: 10px 10px;
     border-radius: 0 0 5px 0;
 }
 .browse-courses {

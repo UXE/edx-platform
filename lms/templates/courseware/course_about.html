@@ -124,7 +124,7 @@
 <%block name="pagetitle">${_("About {course.display_number_with_default}").format(course=course) | h}</%block>
 
 <section class="course-info">
-  <header class="course-profile section-block" style="background: url(${course_image_url(course)}) center center no-repeat, url(/static/images/2048.jpg) center center no-repeat aliceblue;background-size: cover, cover;">
+  <header class="course-profile section-block" style="background: url(${course_image_url(course)}) center center no-repeat, url(/static/images/lights.jpg) center center no-repeat aliceblue;background-size: cover, cover;">
     <div class="header-info hide">
       % if get_course_about_section(course, "video"):
         <a href="#video-modal" class="media" rel="leanModal">
