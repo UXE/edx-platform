@@ -70,10 +70,28 @@ p, li {
 	font-family: $sans-serif;
 }
 
+.kufi * {
+	font-family: $sans-serif;
+}
+
 #content {
 	background-color: #e9eaed;
 }
 
+//about page
+//===========
+.about {
+	article {
+		margin-bottom: 80px;
+	}
+	.title {
+		border-bottom: 1px solid #c8c8c8;
+	}
+
+	li {
+		line-height: 2em;
+	}
+}
 
 //utilities
 //=========
