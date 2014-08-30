@@ -132,9 +132,9 @@
                             </li>
                             <li><a href="${marketing_link('ABOUT')}">عن سياسي</a>
                             </li>
-                            <li><a href="${marketing_link('FAQ')}">أسئلة شائعة</a>
+                            <li><a href="${reverse('staff_page')}">طاقم التدريس</a>
                             </li>
-                            <li><a href="#">المدونة</a>
+                            <li><a href="#">نظام الدراسة</a>
                             </li>
                             <li><a href="${marketing_link('CONTACT')}">تواصل معنا</a>
                             </li>
@@ -152,7 +152,7 @@
                 <div class="video-player container">
                 <div class="news-scroller container">
                     <div><h1>تم فتح باب التسجيل للفصل الدراسي القادم</h1></div>
-                    <div><h1>و ستبدأ الدراسة لكلا الفصول يوم السبت الموافق السادس من سبتمبر 2014 بإذن الله </h1></div>
+                    <div><h1>و ستبدأ الدراسة كل الفصول يوم السبت الموافق السادس من سبتمبر 2014 بإذن الله </h1></div>
                 </div>
                   <iframe width="800" height="450" frameborder="0" allowfullscreen="1" src="https://www.youtube.com/embed/WGlS5oamhcI?theme=light&showinfo=0&color=white&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8000"></iframe>
                 </div>
@@ -259,18 +259,15 @@
         </div>
         <footer>
             <ul class="pages">
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">شروط الإستخدام</a></li>
-                <li><a href="#">عن سياسي</a></li>
-                <li><a href="#">طاقم التدريس</a></li>
-                <li><a href="#">تواصل معنا</a></li>
-                <li><a href="#">الأسئلة الشائعة</a></li>
+                <li><a href="/">الرئيسية</a></li>
+                <li><a href="${marketing_link('TOS')}">شروط الإستخدام</a></li>
+                <li><a href="${marketing_link('ABOUT')}">عن سياسي</a></li>
+                <li><a href="${reverse('staff_page')}">طاقم التدريس</a></li>
+                <li><a href="${marketing_link('CONTACT')}">تواصل معنا</a></li>
             </ul>
             <ul class="social">
-                <li><a href="#">المدونة</a></li>
-                <li><a href="#">فيس بوك</a></li>
-                <li><a href="#">تويتر</a></li>
-                <li><a href="#">يوتيوب</a></li>
+                <li><a target="blank" href="https://facebook.com/syasi.ipt">فيس بوك</a></li>
+                <li><a target="blank" href="https://twitter.com/Syasi_IPT">تويتر</a></li>
             </ul>
         </footer>
     </section>

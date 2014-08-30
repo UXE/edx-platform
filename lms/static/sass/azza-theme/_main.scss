@@ -74,6 +74,11 @@ p, li {
 	font-family: $sans-serif;
 }
 
+.d-divider{
+	width: 100%;
+	border-bottom: 1px solid #c8c8c8;
+	margin: 30px 0;
+}
 #content {
 	background-color: #e9eaed;
 }
@@ -337,7 +342,7 @@ input[type="submit"].d-btn {
 .wrapper-footer {
 	border-top: 0;
 	background-color: lightSteelBlue;
-	color: darkslategrey;
+	color: #fff;
 
 	footer .colophon {
 		float: right;
