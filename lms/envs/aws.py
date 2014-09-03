@@ -418,3 +418,10 @@ ADVANCED_SECURITY_CONFIG = ENV_TOKENS.get('ADVANCED_SECURITY_CONFIG', {})
 ##### GOOGLE ANALYTICS IDS #####
 GOOGLE_ANALYTICS_ACCOUNT = AUTH_TOKENS.get('GOOGLE_ANALYTICS_ACCOUNT')
 GOOGLE_ANALYTICS_LINKEDIN = AUTH_TOKENS.get('GOOGLE_ANALYTICS_LINKEDIN')
+
+####################### uploadcare settings ###########################
+UPLOADCARE = {
+    'pub_key': '8ebd8746d73788ab89ab',
+    'secret': '2a83de5f354bf14f985a',
+}
+

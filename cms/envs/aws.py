@@ -282,3 +282,10 @@ X_FRAME_OPTIONS = ENV_TOKENS.get('X_FRAME_OPTIONS', X_FRAME_OPTIONS)
 
 ##### ADVANCED_SECURITY_CONFIG #####
 ADVANCED_SECURITY_CONFIG = ENV_TOKENS.get('ADVANCED_SECURITY_CONFIG', {})
+
+####################### uploadcare settings ###########################
+UPLOADCARE = {
+    'pub_key': '8ebd8746d73788ab89ab',
+    'secret': '2a83de5f354bf14f985a',
+}
+
