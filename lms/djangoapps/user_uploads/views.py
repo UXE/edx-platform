@@ -49,6 +49,11 @@ def upload_order_verification(request):
 
 	upload = PaymentOrderUpload(user=request.user, order=order)
 	form = PaymentOrderUploadForm(request.POST, instance=upload)
-	form.save()
+	
+	try:
+		# check for returned error, as it raise exception when choosing some file types like svg
+		form.save()
+	except Exception, e:
+		raise e
 
 	return redirect(reverse('dashboard'))
