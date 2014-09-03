@@ -54,7 +54,7 @@
             <div class="uploads">
               % if len(order.get_order_approval_uploads()) > 0:
                 % for upload in order.get_order_approval_uploads():
-                  <img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}">
+                  <a href="${upload.img.cdn_url}" target="_blank"><img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}"></a>
                 % endfor
               % else:
                 <span>هذا الطالب لم يقم بإرفاق أي ملفات</span>
