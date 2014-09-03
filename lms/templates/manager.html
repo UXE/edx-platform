@@ -28,11 +28,11 @@
 
       <ul class="vertical-card-listing">
         % for order, items in all_waiting_orders:
-          <li class="card tiny-rad" id="${order.id*7}">
+          <li class="card tiny-rad" id="${order.id}">
             <header class="top shaded-area">
               <div class="clearfix">
                 <div class="order-info">
-                  <span class="order-number"> ${_(u"طلب رقم")} : ${order.id*7}</span>
+                  <span class="order-number"> ${_(u"طلب رقم")} : ${order.id}</span>
                   <span class="ordered-by">${_("Ordered by: ")} ${order.user}</span>
                   <span class="order-cost">${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
                 </div>

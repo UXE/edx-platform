@@ -24,6 +24,16 @@
   <script type="text/javascript">
   (function() {
 
+    $('.verification_upload_form').submit(function(event){
+        var widget = $(this).find('[role=uploadcare-uploader]');
+        if(!widget.val()){
+          event.preventDefault();
+          alert('رجاءاً, قُم بإختيار صورة الحوالة أو إثبات الدفع!');
+        }else{
+          return
+        }
+      });
+
     $('.message.is-expandable .wrapper-tip').bind('click', toggleExpandMessage);
 
     function toggleExpandMessage(e) {
@@ -328,11 +338,11 @@
       <ul class="vertical-card-listing">
       ${payment_request_upload_form.media}
         % for order, items in waiting_orders_with_items:
-          <li class="card tiny-rad" id="${order.id*7}">
+          <li class="card tiny-rad" id="${order.id}">
             <header class="top shaded-area">
               <div class="clearfix">
                 <div class="order-info">
-                  <span class="order-number"> ${_(u"طلب رقم")} : ${order.id*7}</span>
+                  <span class="order-number"> ${_(u"طلب رقم")} : ${order.id}</span>
                   <span class="order-cost">${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
                 </div>
                 <section class="order-actions">
@@ -344,11 +354,11 @@
                   <a href="#" class="include-files-toggle">إرفاق ملفات</a>
                 </section>
               </div>
-              <form action="${reverse('upload_order_verification')}" method="post">
+              <form action="${reverse('upload_order_verification')}" method="post" id="upload_form_${order.id}" class="verification_upload_form">
                 ${payment_request_upload_form}
                 <input type="hidden" name="order_id" value="${order.id}">
                 <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                <input type="submit" class="d-btn small-padding" value="${_("Upload")}">
+                <input type="submit" class="d-btn small-padding" value="إرسال">
               </form>
             </header>
             <section class="uploads">
