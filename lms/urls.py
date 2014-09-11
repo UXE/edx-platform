@@ -17,6 +17,7 @@ urlpatterns = ('',  # nopep8
     url(r'^request_certificate$', 'certificates.views.request_certificate'),
     url(r'^$', 'branding.views.index', name="root"),   # Main marketing page, or redirect to courseware
     url(r'^dashboard$', 'student.views.dashboard', name="dashboard"),
+    url(r'^profile/(?P<username>[^/]*)$', 'student.views.user_profile', name="user_profile"),
     url(r'^login$', 'student.views.signin_user', name="signin_user"),
     url(r'^register$', 'student.views.register_user', name="register_user"),
 

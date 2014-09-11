@@ -125,9 +125,9 @@ class Order(models.Model):
         if status not in allowed_statuses:
             return None
         if user == None:
-            orders = cls.objects.filter(status=status).order_by('-id')
+            orders = cls.objects.prefetch_related('user').filter(status=status).order_by('-id')
         else:
-            orders = cls.objects.filter(user=user, status=status)
+            orders = cls.objects.prefetch_related('user').filter(user=user, status=status)
 
         orders_with_items = [(order, order.get_order_items()) for order in orders]
         return orders_with_items

@@ -131,6 +131,8 @@ $card-padding: 12px;
         //#d3d6db
         border-color: #e5e6e9 #dfe0e4 #d0d1d5;
         padding: $card-padding;
+        font-size: 14px;
+        line-height: 1.2em;
 
         &:last-child {
           margin-bottom: 0;
@@ -165,9 +167,20 @@ $card-padding: 12px;
 .order-info {
 	display: inline-block;
 	float: right;
+	word-break: break-all;
 
 	.order-number {
 		border-left: 1px solid #e1e2e3;
+		padding-left: 5px;
+	}
+
+	span {
+		border-left: 1px solid #e1e2e3;
+		padding-left: 5px;
+	}
+
+	span:last-child {
+		border-left: none;
 		padding-left: 5px;
 	}
 }

@@ -1,0 +1,118 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.template import RequestContext %>
+<%! from third_party_auth import pipeline %>
+
+<%!
+  from django.core.urlresolvers import reverse
+  import waffle
+%>
+
+<%
+  cert_name_short = settings.CERT_NAME_SHORT
+  cert_name_long = settings.CERT_NAME_LONG
+%>
+
+<%inherit file="main.html" />
+
+<%namespace name='static' file='static_content.html'/>
+
+<%block name="pagetitle">${_("Dashboard")}</%block>
+<%block name="bodyclass">view-dashboard is-authenticated</%block>
+<%block name="nav_skip">#my-courses</%block>
+
+<%block name="js_extra">
+</%block>
+
+
+<section class="container dashboard" id="dashboard-main" aria-hidden="false">
+  <section class="profile-sidebar">
+    <header class="profile">
+      <h1 class="user-name">${ profile.name }</h1>
+    </header>
+  </section>
+
+  <section class="my-courses" id="my-courses">
+    <header>
+      <h2>${_("Current Courses")}</h2>
+    </header>
+
+    % if len(course_enrollment_pairs) > 0:
+      <ul class="vertical-card-listing">
+        % for course, enrollment in course_enrollment_pairs:
+            <% course_mode_info = all_course_modes.get(course.id) %>
+            <%include file='dashboard/_dashboard_course_listing_on_profile.html' args="course=course, enrollment=enrollment, show_courseware_link=show_courseware_link, cert_status=cert_status, show_email_settings=show_email_settings, course_mode_info=course_mode_info, show_refund_option = show_refund_option" />
+      % endfor
+      </ul>
+    % else:
+      <section class="empty-dashboard-message">
+        % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+          <p>${_("Looks like you haven't registered for any courses yet.")}</p>
+          <a href="${marketing_link('COURSES')}">
+            ${_("Find courses now!")}
+          </a>
+        % else:
+          <p>${_("Looks like you haven't been enrolled in any courses yet.")}</p>
+        %endif
+      </section>
+    % endif
+
+    %if user.is_superuser:
+      <header>
+        <h2>${_(u"طلبات قيد المراجعة")}</h2>
+      </header>
+
+      % if len(waiting_orders_with_items) > 0:
+        
+        <ul class="vertical-card-listing">
+          % for order, items in waiting_orders_with_items:
+            <li class="card tiny-rad" id="${order.id}">
+              <header class="top shaded-area">
+                <div class="clearfix">
+                  <div class="order-info">
+                    <span class="order-number"> ${_(u"طلب رقم")} : ${order.id}</span>
+                    <span class="order-cost">${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
+                  </div>
+                </div>
+              </header>
+              <section class="uploads">
+                % if len(order.get_order_approval_uploads()) > 0:
+                  % for upload in order.get_order_approval_uploads():
+                    <a href="${upload.img.cdn_url}" target="_blank"><img src="${upload.img.cdn_url}-/resize/150x150/" alt="${upload.description}" title="${upload.description}"></a>
+                  % endfor
+                % else:
+                  <span>لم تقم بإرفاق إثبات الدفع</span>
+                % endif
+              </section>
+              
+              <section class="items-in-order vertical-card-listing">
+              <span>المقررات المطلوب التسجيل بها</span>
+              % for item in items:
+                <div class="card tiny-rad">
+                  <header class="top shaded-area">
+                    <div class="clearfix">
+                      <div class="item-info">
+                        <span class="item-description">${item.line_desc}</span>
+                        <span class="item-cost">${_(u"الإجمالي")} : ${item.unit_cost} ${item.currency}</span>
+                      </div>
+                    </div>
+                  </header>
+                </div>
+              % endfor
+              </section>
+            </li>
+          % endfor
+        </ul>
+      % else:
+        <section class="empty-dashboard-message">
+          <p>${_("Looks like you haven't registered for any courses yet.")}</p>
+        </section>
+      % endif  
+    % endif  
+  </section>
+</section>
+
+
+
+
+
+

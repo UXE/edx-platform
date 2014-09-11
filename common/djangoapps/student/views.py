@@ -545,6 +545,50 @@ def dashboard(request):
 
     return render_to_response('dashboard.html', context)
 
+@login_required
+@ensure_csrf_cookie
+def user_profile(request, username):
+    
+    try:
+        user = User.objects.get(username=username)
+    except User.DoesNotExist:
+        return HttpResponseBadRequest(_("User Not found"))
+
+    # for microsites, we want to filter and only show enrollments for courses within
+    # the microsites 'ORG'
+    course_org_filter = microsite.get_value('course_org_filter')
+
+    # Let's filter out any courses in an "org" that has been declared to be
+    # in a Microsite
+    org_filter_out_set = microsite.get_all_orgs()
+
+    # remove our current Microsite from the "filter out" list, if applicable
+    if course_org_filter:
+        org_filter_out_set.remove(course_org_filter)
+
+    # Build our (course, enrollment) list for the user, but ignore any courses that no
+    # longer exist (because the course IDs have changed). Still, we don't delete those
+    # enrollments, because it could have been a data push snafu.
+    course_enrollment_pairs = list(get_course_enrollment_pairs(user, course_org_filter, org_filter_out_set))
+
+    # get orders related to this student with status 'waiting_approval'so he can upload docs to it or cancel it
+    waiting_orders_with_items = shoppingcart.models.Order.get_orders_with_items_for_status(user=user, status='waiting_approval')
+
+
+    course_modes = {course.id: complete_course_mode_info(course.id, enrollment) for course, enrollment in course_enrollment_pairs}
+
+
+    context = {
+        'course_enrollment_pairs': course_enrollment_pairs,
+        'waiting_orders_with_items': waiting_orders_with_items,
+        'all_course_modes': course_modes,
+        'logout_url': reverse(logout_user),
+        'platform_name': settings.PLATFORM_NAME,
+        'provider_states': [],
+        'profile': user.profile,
+    }
+
+    return render_to_response('user_profile.html', context)
 
 def try_change_enrollment(request):
     """

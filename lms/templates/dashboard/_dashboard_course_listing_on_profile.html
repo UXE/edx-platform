@@ -1,0 +1,94 @@
+<%page args="course, enrollment, show_courseware_link, cert_status, show_email_settings, course_mode_info, show_refund_option" />
+
+<%! from django.utils.translation import ugettext as _ %>
+<%!
+  from django.core.urlresolvers import reverse
+  from courseware.courses import course_image_url, get_course_about_section
+  import waffle
+%>
+
+<%
+  cert_name_short = course.cert_name_short
+  if cert_name_short == "":
+    cert_name_short = settings.CERT_NAME_SHORT
+
+  cert_name_long = course.cert_name_long
+  if cert_name_long == "":
+    cert_name_long = settings.CERT_NAME_LONG
+  billing_email = settings.PAYMENT_SUPPORT_EMAIL
+%>
+
+<%namespace name='static' file='../static_content.html'/>
+
+<li class="card tiny-rad">
+  % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
+    <article class="course ${enrollment.mode}">
+  % else:
+    <article class="course">
+  %endif
+    <%
+      course_target = reverse('info', args=[course.id.to_deprecated_string()])
+    %>
+
+    % if show_courseware_link:
+      <a href="${course_target}" class="cover">
+        <img src="${course_image_url(course)}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) |h}" />
+      </a>
+    % else:
+      <div class="cover">
+        <img src="${course_image_url(course)}" alt="${_('{course_number} {course_name} Cover Image').format(course_number=course.number, course_name=course.display_name_with_default) | h}" />
+      </div>
+    % endif
+    % if settings.FEATURES.get('ENABLE_VERIFIED_CERTIFICATES'):
+        % if enrollment.mode == "verified":
+          <span class="sts-enrollment" title="${_("You're enrolled as a verified student")}">
+            <span class="label">${_("Enrolled as: ")}</span>
+            <img class="deco-graphic" src="${static.url('images/vcert-ribbon-s.png')}" alt="ID Verified Ribbon/Badge" />
+            <span class="sts-enrollment-value">${_("Verified")}</span>
+          </span>
+        % elif enrollment.mode == "honor":
+          <span class="sts-enrollment" title="${_("You're enrolled as an honor code student")}">
+            <span class="label">${_("Enrolled as: ")}</span>
+            <span class="sts-enrollment-value">${_("Honor Code")}</span>
+          </span>
+        % elif enrollment.mode == "audit":
+          <span class="sts-enrollment" title="${_("You're auditing this course")}">
+            <span class="label">${_("Enrolled as: ")}</span>
+            <span class="sts-enrollment-value">${_("Auditing")}</span>
+          </span>
+        % endif
+    % endif
+
+    <section class="info">
+      <hgroup>
+        <p class="date-block">
+        % if course.has_ended():
+        ${_("Course Completed - {end_date}").format(end_date=course.end_date_text)}
+        % elif course.has_started():
+        ${_("Course Started - {start_date}").format(start_date=course.start_date_text)}
+        % elif course.start_date_is_still_default: # Course start date TBD
+        ${_("Course has not yet started")}
+        % else:   # hasn't started yet
+        ${_("Course Starts - {start_date}").format(start_date=course.start_date_text)}
+        % endif
+        </p>
+        <h2 class="university">${get_course_about_section(course, 'university')}</h2>
+        <h3>
+          % if show_courseware_link:
+            <a href="${course_target}">${course.display_number_with_default | h} ${course.display_name_with_default}</a>
+          % else:
+            <span>${course.display_number_with_default | h} ${course.display_name_with_default}</span>
+          % endif
+        </h3>
+      </hgroup>
+
+      % if show_courseware_link:
+        % if course.has_ended():
+          <a href="${course_target}" class="enter-course archived">${_('View Archived Course')}</a>
+        % else:
+          <a href="${course_target}" class="enter-course">${_('View Course')}</a>
+        % endif
+      % endif
+  </section>
+</article>
+</li>

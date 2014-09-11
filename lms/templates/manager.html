@@ -21,7 +21,7 @@
 
   <section class="my-courses" id="my-courses">
     <header>
-      <h2>${_("All Waiting Approval Courses")}</h2>
+      <h2>طلبات تحتاج المراجعة</h2>
     </header>
 
     % if len(all_waiting_orders) > 0:
@@ -32,22 +32,27 @@
             <header class="top shaded-area">
               <div class="clearfix">
                 <div class="order-info">
-                  <span class="order-number"> ${_(u"طلب رقم")} : ${order.id}</span>
-                  <span class="ordered-by">${_("Ordered by: ")} ${order.user}</span>
-                  <span class="order-cost">${_(u"الإجمالي")} : ${order.total_cost} دولار</span>
+                  <span class="order-number"> طلب رقم : ${order.id}</span>
+                  <span class="ordered-by">بواسطة : <a href="${reverse('user_profile', kwargs={'username': order.user.username})}" target="_blank">
+                  ${order.user.profile.name}</a></span>
+                  <span class="ordered-by-email">إيميل : <a href="mailto:${order.user.email}" target="_blank">
+                  ${order.user.email}</a></span>
+                  <span class="order-cost">إجمالي : ${order.total_cost}$</span>
                 </div>
                 <section class="order-actions">
                   <form class="approve-order" action="${reverse('approve_order')}" method="post">
                     <input type="hidden" name="order_id" value="${order.id}">
                     <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                    <input type="submit" class="d-btn small-padding" value="${_("Approve")}">
+                    <input type="submit" class="d-btn small-padding" value="قبول">
                   </form>
                   <form class="decline-order" action="${reverse('cancel_order')}" method="post">
                     <input type="hidden" name="order_id" value="${order.id}">
                     <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
-                    <input type="submit" class="d-btn small-padding" value="${_("Decline")}">
+                    <input type="submit" class="d-btn small-padding" value="رفض">
                   </form>
+                  <!--
                   <a href="#" class="include-files-toggle">المفات المرفقة</a>
+                  -->
               </section>
               </div>
             </header>
@@ -69,7 +74,7 @@
                   <div class="clearfix">
                     <div class="item-info">
                       <span class="item-description">${_(item.line_desc)}</span>
-                      <span class="item-cost">${_(u"الإجمالي")} : ${item.unit_cost} دولار</span>
+                      <span class="item-cost">إجمالي : ${item.unit_cost}$</span>
                     </div>
                     <!--
                     <section class="item-actions">

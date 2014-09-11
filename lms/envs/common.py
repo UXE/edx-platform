@@ -1310,6 +1310,8 @@ INSTALLED_APPS = (
     # Monitoring functionality
     'monitoring',
 
+    # daress related
+
     # Manager Dashboard
     'manager',
 
