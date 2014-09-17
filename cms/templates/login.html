@@ -12,7 +12,7 @@ from django.utils.translation import ugettext as _
 <div class="wrapper-content wrapper">
   <section class="content">
     <header>
-      <h1 class="title title-1">${_("Sign In to edX Studio")}</h1>
+      <h1 class="title title-1">${_("Sign In to Daress Studio")}</h1>
       <a href="${reverse('signup')}" class="action action-signin">${_("Don't have a Studio Account? Sign up!")}</a>
     </header>
 
@@ -20,7 +20,7 @@ from django.utils.translation import ugettext as _
       <form id="login_form" method="post" action="login_post">
 
         <fieldset>
-          <legend class="sr">${_("Required Information to Sign In to edX Studio")}</legend>
+          <legend class="sr">${_("Required Information to Sign In to Daress Studio")}</legend>
 
           <ol class="list-input">
             <li class="field text required" id="field-email">
@@ -37,7 +37,7 @@ from django.utils.translation import ugettext as _
         </fieldset>
 
         <div class="form-actions">
-          <button type="submit" id="submit" name="submit" class="action action-primary">${_("Sign In to edX Studio")}</button>
+          <button type="submit" id="submit" name="submit" class="action action-primary">${_("Sign In to Daress Studio")}</button>
         </div>
 
         <!-- no honor code for CMS, but need it because we're using the lms student object -->
@@ -50,7 +50,7 @@ from django.utils.translation import ugettext as _
 
       <div class="bit">
         <h3 class="title-3">${_("Need Help?")}</h3>
-        <p>${_('Having trouble with your account? Use {link_start}our support center{link_end} to look over self help steps, find solutions others have found to the same problem, or let us know of your issue.').format(link_start='<a href="http://help.edge.edx.org" rel="external">', link_end='</a>')}</p>
+        <p>${_('Having trouble with your account? Use {link_start}our support center{link_end} to look over self help steps, find solutions others have found to the same problem, or let us know of your issue.').format(link_start='<a href="http://help.edge.Daress.org" rel="external">', link_end='</a>')}</p>
       </div>
     </aside>
   </section>

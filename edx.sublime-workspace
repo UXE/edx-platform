@@ -4,6 +4,162 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"user_profile"
+			],
+			[
+				"pre",
+				"preventDefault"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"borr",
+				"border-right"
+			],
+			[
+				"course",
+				"courseware"
+			],
+			[
+				"mig",
+				"migrated_username"
+			],
+			[
+				"use",
+				"username"
+			],
+			[
+				"post",
+				"post_data"
+			],
+			[
+				"ge",
+				"gender"
+			],
+			[
+				"las",
+				"last_name"
+			],
+			[
+				"fir",
+				"first_name"
+			],
+			[
+				"db_ta",
+				"db_table"
+			],
+			[
+				"coun",
+				"country"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"max",
+				"max_length"
+			],
+			[
+				"cla",
+				"class	New Class"
+			],
+			[
+				"p",
+				"p"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"cour",
+				"courses"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"im",
+				"img"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"ls",
+				"list-style"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"fos",
+				"font-style"
+			],
+			[
+				"q",
+				"quote"
+			],
+			[
+				"play",
+				"player"
+			],
+			[
+				"ply",
+				"player"
+			],
+			[
+				"y",
+				"ytplayer"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"na",
+				"navigation-logo"
+			],
+			[
+				"nav",
+				"navigation"
+			],
+			[
+				"head",
+				"header-horizontal-menu"
+			],
+			[
+				"he",
+				"header-horizontal-menu"
+			],
+			[
+				"big",
+				"big-branding"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
 				"a",
 				"a"
 			],
@@ -88,14 +244,6 @@
 				"all_waiting_orders"
 			],
 			[
-				"cour",
-				"course_key"
-			],
-			[
-				"course",
-				"course_id"
-			],
-			[
 				"clas",
 				"classmethod"
 			],
@@ -140,28 +288,12 @@
 				"slides_img_srcs"
 			],
 			[
-				"max",
-				"max-height"
-			],
-			[
-				"bac",
-				"background"
-			],
-			[
-				"mar",
-				"margin-top"
-			],
-			[
 				"lin",
 				"link-text"
 			],
 			[
 				"we",
 				"widget-title"
-			],
-			[
-				"im",
-				"important"
 			],
 			[
 				"skin",
@@ -244,50 +376,10 @@
 	"buffers":
 	[
 		{
-			"file": "cms/djangoapps/contentstore/course_info_model.py",
+			"file": "lms/templates/daress-landing.html",
 			"settings":
 			{
-				"buffer_size": 9249,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lms/djangoapps/instructor/views/api.py",
-			"settings":
-			{
-				"buffer_size": 50064,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lms/djangoapps/instructor/views/instructor_dashboard.py",
-			"settings":
-			{
-				"buffer_size": 12375,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lms/templates/dashboard.html",
-			"settings":
-			{
-				"buffer_size": 25483,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lms/djangoapps/user_uploads/views.py",
-			"settings":
-			{
-				"buffer_size": 2055,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lms/djangoapps/user_uploads/models.py",
-			"settings":
-			{
-				"buffer_size": 1047,
+				"buffer_size": 16514,
 				"line_ending": "Unix"
 			}
 		},
@@ -295,31 +387,39 @@
 			"file": "lms/templates/manager.html",
 			"settings":
 			{
-				"buffer_size": 4271,
+				"buffer_size": 4563,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lms/envs/common.py",
+			"file": "lms/static/sass/azza-theme/_main.scss",
 			"settings":
 			{
-				"buffer_size": 54108,
+				"buffer_size": 36268,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lms/djangoapps/instructor_task/api.py",
+			"file": "lms/urls.py",
 			"settings":
 			{
-				"buffer_size": 10264,
+				"buffer_size": 25158,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lms/envs/aws.py",
+			"file": "lms/djangoapps/shoppingcart/models.py",
 			"settings":
 			{
-				"buffer_size": 17986,
+				"buffer_size": 32912,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lms/djangoapps/manager/views.py",
+			"settings":
+			{
+				"buffer_size": 1213,
 				"line_ending": "Unix"
 			}
 		},
@@ -327,39 +427,31 @@
 			"file": "common/djangoapps/student/views.py",
 			"settings":
 			{
-				"buffer_size": 75804,
+				"buffer_size": 80550,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "common/djangoapps/user_api/admin.py",
+			"file": "lms/templates/user_profile.html",
 			"settings":
 			{
-				"buffer_size": 168,
+				"buffer_size": 4140,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lms/djangoapps/shoppingcart/views.py",
+			"file": "lms/templates/dashboard/_dashboard_course_listing_on_profile.html",
 			"settings":
 			{
-				"buffer_size": 12906,
+				"buffer_size": 3908,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<div>\n	<?php $upload_baseurl = ( $upload_dir['baseurl'] ); ?>\n	<span>\n		<a href=\"#\">\n			<img src=\"http://sharkiapost.com/wp-content/uploads/general/train-small.png\">\n		</a>\n	</span>\n	<span>\n		<a href=\"#\">\n			<img src=\"http://sharkiapost.com/wp-content/uploads/general/diamond-small.png\">\n		</a>\n	</span>\n	<span>\n		<a href=\"#\">\n			<img src=\"http://sharkiapost.com/wp-content/uploads/general/mosque-small.png\">\n		</a>\n	</span>\n	<span>\n		<a href=\"#\">\n			<img src=\"http://sharkiapost.com/wp-content/uploads/general/weather-small.png\">\n		</a>\n	</span>\n</div>",
+			"file": "lms/templates/static_templates/academic-system.html",
 			"settings":
 			{
-				"buffer_size": 553,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/ahmad/edxfork/scripts/server-vars.yml",
-			"settings":
-			{
-				"buffer_size": 1416,
+				"buffer_size": 5601,
 				"line_ending": "Unix"
 			}
 		}
@@ -407,7 +499,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 575.0
+		"width": 530.0
 	},
 	"console":
 	{
@@ -424,8 +516,97 @@
 	},
 	"file_history":
 	[
-		"/home/ahmad/edxfork/scripts/server-vars.yml",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/dashboard.html",
+		"/home/ahmad/edxfork/edx-platform/lms/envs/common.py",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/views.py",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/models.py",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/footer.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/academic-system.html",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/postman/views.py",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/postman/base.html",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/views.py",
+		"/home/ahmad/edxfork/scripts/syasi-server-vars.yml",
+		"/home/ahmad/edxfork/edx-platform/lms/urls.py",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/manager.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/course_about_inner_2.html",
+		"/home/ahmad/edxfork/edx-platform/lms/envs/aws.py",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/postman/base_folder.html",
 		"/home/ahmad/edxfork/edx-platform/cms/envs/common.py",
+		"/home/ahmad/edxfork/edx-platform/requirements/edx/base.txt",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/dashboard/_dashboard_refund.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/dashboard/support.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/navigation.html",
+		"/home/ahmad/edxfork/edx-platform/lms/static/sass/azza-theme/_main.scss",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/about.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/staff.html",
+		"/home/ahmad/edxfork/edx-platform/lms/static/sass/shared/_course_object.scss",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/courseware/courses.html",
+		"/home/ahmad/edxfork/edx-platform/lms/static/daress_landing/style.css",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/daress-landing.html",
+		"/home/ahmad/edxfork/edx-platform/edx_migration.sql",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/management/commands/create_user.py",
+		"/home/ahmad/edxfork/edx-platform/cms/envs/aws.py",
+		"/media/ahmad/alfa/Syasi/google apps/googlef31b51b01728b9a7.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/contact.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/tos.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/contact.html",
+		"/home/ahmad/edxfork/edx-platform/common/static/css/vendor/font-awesome.css",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/courseware/views.py",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/course_about_inner.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/courseware/course_about.html",
+		"/home/ahmad/edxfork/edx-platform/lms/static/css/daress_landing.css",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/media-kit.html",
+		"/run/user/ahmad/gvfs/gphoto2",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/wiki/includes/cheatsheet.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/verify_student/show_requirements.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/emails/reject_name_change.txt",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/verify_student/photo_reverification.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/verify_student/face_upload.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/registration/password_reset_email.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/linkedin/linkedin_email.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/privacy.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/press.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/jobs.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/honor.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/help.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/faq.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/static_templates/copyright.html",
+		"/home/ahmad/edxfork/scripts/fuel-migration.py",
+		"/home/ahmad/edxfork/edx-platform/cms/djangoapps/contentstore/course_info_model.py",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/instructor/views/api.py",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/instructor/views/instructor_dashboard.py",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/views.py",
+		"/home/ahmad/edxfork/scripts/server-vars.yml",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/main.html",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/index.html",
+		"/media/ahmad/alfa/nezam/daress/syasi/migration/edx_migration.sql",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/admin.py",
+		"/home/ahmad/edxfork/edx-platform/db_bk.json",
+		"/media/ahmad/alfa/nezam/daress/syasi/migration/edx_migration_ready.sql",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/sql/migrateduser.sql",
+		"/media/ahmad/alfa/nezam/daress/syasi/migration/test.sql",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/sql/migrated_user",
+		"/home/ahmad/edxfork/edx-platform/common/djangoapps/user_api/admin.py",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/django.mo",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/course.html",
+		"/home/ahmad/edxfork/edx-platform/static-templates/home.html",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/django.po",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/mako.po",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/mako-studio.po",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/djangojs.po",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/djangojs-studio.po",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/djangojs-partial.po",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/django-studio.po",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/django-partial.po",
+		"/home/ahmad/edxfork/edx-platform/conf/locale/ar/LC_MESSAGES/underscore-studio.po",
+		"/home/ahmad/edxfork/edx-platform/lms/templates/main_django.html",
+		"/home/ahmad/edxfork/edx-platform/static-templates/css/style.css",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/instructor_task/api.py",
+		"/home/ahmad/edxfork/edx-platform/static-templates/jquery-1.11.0.js",
+		"/home/ahmad/edxfork/edx-platform/static-templates/js/jquery-migrate-1.2.1.js",
+		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/models.py",
+		"/home/ahmad/edxfork/edx-platform/static-templates",
+		"/home/ahmad/edxfork/edx-platform/untitled",
 		"/home/ahmad/edxfork/edx-platform/.gitignore",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/models.py",
 		"/home/ahmad/edxfork/edx-platform/cms/startup.py",
@@ -434,7 +615,6 @@
 		"/home/ahmad/edxfork/edx-platform/lms/envs/devstack.py",
 		"/home/ahmad/edxfork/edx-platform/cms/envs/devstack.py",
 		"/home/ahmad/edxfork/edx-platform/requirements/edx/post.txt",
-		"/home/ahmad/edxfork/edx-platform/requirements/edx/base.txt",
 		"/home/ahmad/edxfork/edx-platform/requirements/edx-sandbox/post.txt",
 		"/home/ahmad/edxfork/edx-platform/requirements/edx/local.txt",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/instructor_task/tasks.py",
@@ -445,113 +625,25 @@
 		"/home/ahmad/edxfork/edx-platform/cms/urls.py",
 		"/home/ahmad/edxfork/edx-platform/cms/static/js/views/course_info_update.js",
 		"/home/ahmad/edxfork/edx-platform/cms/templates/course_info.html",
-		"/home/ahmad/edxfork/edx-platform/lms/envs/common.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/views.py",
 		"/home/ahmad/edxfork/edx-platform/cms/static/sass/_variables.scss",
 		"/home/ahmad/edxfork/edx-platform/lms/templates/dashboard/_dashboard_course_listing.html",
 		"/home/ahmad/edxfork/edx-platform/cms/static/sass/elements/_forms.scss",
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/bourbon/addons/_button.scss",
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/shared/_forms.scss",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/azza-theme/_main.scss",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/dashboard.html",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/manager.html",
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/multicourse/_dashboard.scss",
-		"/home/ahmad/edxfork/edx-platform/lms/urls.py",
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_variables.scss",
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_extends.scss",
 		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_mixins.scss",
-		"/home/ahmad/edxfork/edx-platform/lms/envs/aws.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/forms.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/models.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/urls.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/views.py",
-		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/views.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/manager/views.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/user_uploads/admin.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/courseware/views.py",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/processors/CyberSource.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/instructor/views/instructor_dashboard.py",
 		"/home/ahmad/edxfork/edx-platform/lms/templates/instructor/instructor_dashboard_2/instructor_dashboard_2.html",
 		"/home/ahmad/Documents/jQuery-File-Upload-9.6.0/index.html",
 		"/home/ahmad/Documents/jQuery-File-Upload-9.6.0/basic-plus.html",
 		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/courseware/module_render.py",
-		"/home/ahmad/edxfork/edx-platform/requirements/edx/github.txt",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/manager/manager.html",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/manager/__init__.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/manager/urls.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/instructor/views/api.py",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/courseware/course_about.html",
-		"/home/ahmad/edxfork/edx-platform/cms/templates/overview.html",
-		"/home/ahmad/edxfork/edx-platform/common/djangoapps/student/models.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/class_dashboard/views.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/dashboard/views.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/dashboard/models.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/class_dashboard/dashboard_data.py",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/admin.py",
-		"/home/ahmad/edxfork/edx-platform/common/djangoapps/django_future/csrf.py",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/shoppingcart/cybersource_form.html",
-		"/home/ahmad/edxfork/edx-platform/lms/djangoapps/shoppingcart/processors/__init__.py",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/video_modal.html",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/navigation.html",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/courseware/courses.html",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/shared/_course_object.scss",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/index.html",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/main.html",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/register.html",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/login.html",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_base.scss",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/footer.html",
-		"/home/ahmad/edxfork/edx-platform/lms/templates/help_modal.html",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/shared/_header.scss",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/base/_font_face.scss",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/application.scss.mako",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/application-extend2.scss.mako",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/application-extend1.scss.mako",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/views/courses/index.php",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/views/courses/view.php",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/controller/students.php",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/views/students/index.php",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/model/course.php",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/controller/courses.php",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/views/instructor/courses.php",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/controller/payments.php",
-		"/media/ahmad/alfa/Syasi/lms/fuel/app/classes/model/student.php",
-		"/media/ahmad/alfa/Syasi/lms/index.php",
-		"/home/ahmad/edxfork/edx-platform/Gemfile",
-		"/home/ahmad/edxfork/edx-platform/lms/static/sass/application.scss",
-		"/home/ahmad/edxfork/edx-platform/common/djangoapps/pipeline_mako/templates/static_content.html",
-		"/home/ahmad/edxfork/edx-platform/common/lib/xmodule/xmodule/x_module.py",
-		"/home/ahmad/edxfork/edx-platform/common/lib/xmodule/xmodule/static_content.py",
-		"/home/ahmad/edxfork/edx-platform/lms/startup.py",
-		"/home/ahmad/edxfork/edx-platform/common/lib/html_to_text.py",
-		"/home/ahmad/edxfork/edx-platform/common/lib/django_startup.py",
-		"/tmp/fz3temp-1/app.css",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/last-3-posts/last-3-posts.php",
-		"/var/www/wp/shrpost/wp-content/plugins/crumina_slider/cruminaslider.php",
-		"/tmp/fz3temp-1/topmenu.css",
-		"/tmp/fz3temp-1/sections.css",
-		"/tmp/fz3temp-1/blocks.css",
-		"/var/www/wp/shrpost/wp-content/themes/sharkiapost.wordpress.2014-03-17.xml",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/app.css",
-		"/var/www/wp/shrpost/wp-content/plugins/crumina_slider/css/crumina_slider.css",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/modules/news-row/news-row.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/head.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/parts/blocks.css",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/options/options.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/functions.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/style.css",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/menu.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/cleanup.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/inc/actions.php",
-		"/var/www/wp/shrpost/wp-admin/admin.php",
-		"/var/www/wp/noofoz/index.php",
-		"/home/ahmad/.cache/.fr-EjHRxv/noofoz/db/inc.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider-www-data/page-left-sidebar.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/content.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/templates/post-video.php",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/page-right-sidebar.php",
-		"/var/www/wp/shrpost/wp-content/plugins/siteorigin-panels/css/front.css",
-		"/var/www/wp/shrpost/wp-content/themes/Glider/assets/css/responsive.css"
+		"/home/ahmad/edxfork/edx-platform/requirements/edx/github.txt"
 	],
 	"find":
 	{
@@ -559,9 +651,12 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"",
+			"/home/ahmad/edxfork/edx-platform/lms/templates",
+			"/home/ahmad/edxfork/edx-platform/lms/templates/emails",
 			"",
 			"project,/home/ahmad/syasi/syasi/main",
 			"project",
@@ -573,134 +668,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"/wp-content/uploads/general/",
-			"btn",
-			"default",
-			"REGISTRATION_EXTRA_FIELDS",
-			"creat",
-			"create",
-			"DISABLE_COURSE_CREATION",
-			"example.com",
-			"EDXAPP_LMS_BASE",
-			"class ",
-			"testcase",
-			"class ",
-			"class",
-			"log",
-			"EMAIL_HOST",
-			"purchase",
-			"PaymentOrderUploadForm",
-			"payment_request_upload_form",
-			"rquest_form",
+			"${",
 			"form",
-			"force_d",
-			"language_code",
-			"set_pre",
-			"settings",
-			"uploads",
-			"features",
-			"settings",
-			"language",
-			"LANGUAGE_CODE",
-			"CONFIG_ROOT",
-			"ENV_TOKENS",
-			"LANGUAGES",
-			"lang",
-			"EMAIL_BACKEND",
-			"email",
-			"run_main_task",
-			"perform_delegate_email_batches",
-			"send_bulk_course_email",
-			"submit_bulk_course_email",
-			"bulk",
-			"max",
-			"connection",
-			"email",
-			"gith",
-			"DEFAULT_FROM_EMAIL",
-			"mandrillapp",
-			"mail",
-			"host",
-			"email",
-			"host",
-			"email",
-			"emai",
-			"order.get_order_approval_uploads()",
-			"uploads",
-			"get_order",
-			"uploads",
-			"items",
-			"course_info",
-			"require_post_params",
-			"send_email",
-			"require_level",
-			"send_emal",
-			"email",
-			"enrollment",
-			"content",
-			"course_update_dict",
-			"new-update-content",
-			".new-update-content",
-			"CourseInfoModule",
-			"update_course_updates",
-			"updates_url",
-			"course_info_update_handler",
-			"#course-update-view",
-			".new-update-form",
-			"el",
-			".new-update-form",
-			"new-update-form",
-			"لم تقم بإرفاق إثبات الدفع",
-			"الدفع",
-			"لم تقم بإرفاق إثبات الدفع",
-			"endif",
-			"h3",
-			"h2",
-			"form.save",
-			"media",
-			"h3",
-			"course-item",
-			"course",
-			"$baseline:",
-			"$baseline",
-			"@extend %ui-no-list;",
-			"ui-no-list",
-			".listing-courses ",
-			"section",
-			"div",
-			"d-btn",
-			"disabled",
-			"active",
-			"flat",
-			"falt",
-			"button",
-			"items",
-			"email",
-			"AUTH_TOKENS",
-			"EMAIL_HOST",
-			"EMAIL_BACKEND",
-			"email",
-			"lms.envs.common",
-			"DEFAULT_FROM_EMAIL",
+			"<form action=\"${reverse('upload_order_verification')}\" method=\"post\" id=\"upload_form_${order.id}\" class=\"verification_upload_form\">\n                <input type=\"hidden\" name=\"order_id\" value=\"${order.id}\">\n                <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"${csrf_token}\">\n                <input type=\"submit\" class=\"d-btn small-padding\" value=\"إرسال\">\n              </form>",
+			"\n                    ",
+			"user",
+			"bad",
+			"doesnotexist",
+			"UserDoesNotExist",
+			"UseDoesNotExist",
+			"User.objects.get",
+			"reverse",
+			"user_profile",
+			"student",
+			"manager",
+			"dashboard",
+			"manager",
+			"manager.html",
+			"name",
+			"الشؤ",
+			"installed_apps",
+			"write",
+			"pyupload",
+			"uploadcare",
+			"'django_extensions',",
+			"django-extensions",
+			"templatetags",
+			"load",
+			"main_django.html",
+			"installed_apps",
+			"</h1>",
+			"<h1>",
+			"1",
+			"academic",
+			"staff.html",
 			"EMAIL",
-			"EMAIL_HOST",
-			"cancel",
-			"manage",
-			"manger",
-			"approve",
-			"payment",
-			"upload_form",
-			"doesn",
-			"Doesn",
-			"add_course_to_cart",
-			"add_to_order",
-			"add_to",
-			"declined",
-			"status",
-			"waiting_approval=False",
-			"waiting_approval=True",
-			"waiting_approval",
-			"approve"
+			"email",
+			"smtp",
+			" البيانات غير مستكملة",
+			"uploads",
+			"#password_reset_complete",
+			"leanmodal",
+			"uploads",
+			"#chang",
+			"form.media",
+			"form",
+			"script",
+			"class=\"order-number\"",
+			"ADVANCED_SECURITY_CONFIG",
+			"8ebd8746d73788ab89ab",
+			"daress.me",
+			"logo",
+			"p",
+			"الإجتماعي",
+			"footer",
+			"- ",
+			"h2",
+			"span",
+			"h",
+			"h2",
+			"h3",
+			"قدم",
+			"h2",
+			"staff",
+			"href=\"",
+			"font",
+			"droid",
+			"font-awesome",
+			"HEAD",
+			"WAITING APPROVAL COURSES",
+			"lights_1",
+			"lights.j",
+			"id=\"add_to_cart_post\"",
+			"course-profile section-block",
+			"lights",
+			"steelB",
+			"lights",
+			"2048",
+			"messages",
+			"cards",
+			"\n            ",
+			"p",
+			"ul",
+			"u\"",
+			"</h2>",
+			"<h2>",
+			"</h2>",
+			"<h2>",
+			"</h2>",
+			"dir=\"rtl\"",
+			"style=\"color: #494949; font-family: 'Source Sans Pro', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 21px; line-height: 1.3;\"",
+			"أستاذ",
+			"style=\"color: #494949; font-family: 'Source Sans Pro', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 21px; line-height: 1.3;\">",
+			"style=\"color: #494949; font-family: 'Source Sans Pro', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 21px; line-height: 1.3;\"",
+			"sysadmin_urls.py",
+			"قدم",
+			"قدم  قدم",
+			"help",
+			"faq",
+			"Cover Image",
+			"courses-listing-item",
+			"courses-listing",
+			"courses-listing\ncourses-listing",
+			"courses-listing-item",
+			"play-yt",
+			"player",
+			"player\n\n\n",
+			"player",
+			"play",
+			"slick",
+			"staff",
+			".big-logo",
+			".big-branding .message",
+			".big-branding",
+			".big-logo",
+			"faq",
+			"edx",
+			"Login success",
+			"log",
+			"log(",
+			"log",
+			"userprofile",
+			"MT68zilZRkvCeIwE503a6bae58e8ed1d57189bdfd67605f36654ecdb9c94cef1cfe40288346f129d",
+			"def activate",
+			"address",
+			"do_create",
+			"do_create_",
+			"syasi",
+			".format(user"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -708,6 +803,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"تصفح المقررات",
+			"مقرر",
 			"echo __('وسوم', 'crum')",
 			"echo __('بواسطة', 'crum')",
 			"my_courses",
@@ -724,113 +821,112 @@
 	"groups":
 	[
 		{
-			"selected": 13,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "cms/djangoapps/contentstore/course_info_model.py",
+					"file": "lms/templates/daress-landing.html",
 					"settings":
 					{
-						"buffer_size": 9249,
+						"buffer_size": 16514,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								681,
-								681
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 79.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lms/djangoapps/instructor/views/api.py",
-					"settings":
-					{
-						"buffer_size": 50064,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								40276,
-								40276
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 15889.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "lms/djangoapps/instructor/views/instructor_dashboard.py",
-					"settings":
-					{
-						"buffer_size": 12375,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2869,
-								2869
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 724.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "lms/templates/dashboard.html",
-					"settings":
-					{
-						"buffer_size": 25483,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								5620,
+								5620
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1262.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lms/templates/manager.html",
+					"settings":
+					{
+						"buffer_size": 4563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2224,
+								2224
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 371.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lms/static/sass/azza-theme/_main.scss",
+					"settings":
+					{
+						"buffer_size": 36268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2593,
+								2593
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2171.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lms/urls.py",
+					"settings":
+					{
+						"buffer_size": 25158,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								842,
+								842
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -841,45 +937,46 @@
 				},
 				{
 					"buffer": 4,
-					"file": "lms/djangoapps/user_uploads/views.py",
+					"file": "lms/djangoapps/shoppingcart/models.py",
 					"settings":
 					{
-						"buffer_size": 2055,
+						"buffer_size": 32912,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								406,
-								406
+								5465,
+								5465
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1609.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "lms/djangoapps/user_uploads/models.py",
+					"file": "lms/djangoapps/manager/views.py",
 					"settings":
 					{
-						"buffer_size": 1047,
+						"buffer_size": 1213,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1047,
-								1047
+								646,
+								646
 							]
 						],
 						"settings":
@@ -896,18 +993,46 @@
 				},
 				{
 					"buffer": 6,
-					"file": "lms/templates/manager.html",
+					"file": "common/djangoapps/student/views.py",
 					"settings":
 					{
-						"buffer_size": 4271,
+						"buffer_size": 80550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3996,
-								3996
+								23775,
+								23775
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8374.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "lms/templates/user_profile.html",
+					"settings":
+					{
+						"buffer_size": 4140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1232,
+								1232
 							]
 						],
 						"settings":
@@ -917,226 +1042,63 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 701.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "lms/envs/common.py",
-					"settings":
-					{
-						"buffer_size": 54108,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								46858,
-								46858
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 20296.0,
+						"translation.y": 341.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "lms/djangoapps/instructor_task/api.py",
+					"file": "lms/templates/dashboard/_dashboard_course_listing_on_profile.html",
 					"settings":
 					{
-						"buffer_size": 10264,
+						"buffer_size": 3908,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								236,
-								236
+								3180,
+								3180
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2963.0,
+						"translation.y": 626.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 9,
-					"file": "lms/envs/aws.py",
+					"file": "lms/templates/static_templates/academic-system.html",
 					"settings":
 					{
-						"buffer_size": 17986,
+						"buffer_size": 5601,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3970,
-								3970
+								5102,
+								5102
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4808.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "common/djangoapps/student/views.py",
-					"settings":
-					{
-						"buffer_size": 75804,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								45405,
-								45405
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 16156.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "common/djangoapps/user_api/admin.py",
-					"settings":
-					{
-						"buffer_size": 168,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								168,
-								168
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "lms/djangoapps/shoppingcart/views.py",
-					"settings":
-					{
-						"buffer_size": 12906,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6514,
-								6514
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2119.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"settings":
-					{
-						"buffer_size": 553,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								553,
-								553
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "/home/ahmad/edxfork/scripts/server-vars.yml",
-					"settings":
-					{
-						"buffer_size": 1416,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2355.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1194,8 +1156,152 @@
 		"selected_items":
 		[
 			[
+				"academ",
+				"lms/templates/static_templates/academic-system.html"
+			],
+			[
+				"dashboard/_dashboard_course_listing.html",
+				"lms/templates/dashboard/_dashboard_course_listing.html"
+			],
+			[
+				"dash",
+				"lms/templates/dashboard.html"
+			],
+			[
+				"dashbo",
+				"lms/templates/dashboard.html"
+			],
+			[
+				"urls",
+				"lms/urls.py"
+			],
+			[
 				"comm",
-				"cms/envs/common.py"
+				"lms/envs/common.py"
+			],
+			[
+				"dashboard.html",
+				"lms/templates/dashboard.html"
+			],
+			[
+				"url",
+				"lms/urls.py"
+			],
+			[
+				"_main",
+				"lms/static/sass/azza-theme/_main.scss"
+			],
+			[
+				"student/models.py",
+				"common/djangoapps/student/models.py"
+			],
+			[
+				"man",
+				"lms/templates/manager.html"
+			],
+			[
+				"acade",
+				"lms/templates/static_templates/academic-system.html"
+			],
+			[
+				"dare",
+				"lms/templates/daress-landing.html"
+			],
+			[
+				"footer",
+				"lms/templates/footer.html"
+			],
+			[
+				"daress",
+				"lms/templates/daress-landing.html"
+			],
+			[
+				"base_fol",
+				"lms/templates/postman/base_folder.html"
+			],
+			[
+				"dar",
+				"lms/templates/daress-landing.html"
+			],
+			[
+				"aws",
+				"lms/envs/aws.py"
+			],
+			[
+				"inner",
+				"lms/templates/static_templates/course_about_inner_2.html"
+			],
+			[
+				"use_uplvi",
+				"lms/djangoapps/user_uploads/views.py"
+			],
+			[
+				"font",
+				"common/static/css/vendor/font-awesome.css"
+			],
+			[
+				"azza-theme/_main.scss",
+				"lms/static/sass/azza-theme/_main.scss"
+			],
+			[
+				"course_about.html",
+				"lms/templates/courseware/course_about.html"
+			],
+			[
+				"coursewvi",
+				"lms/djangoapps/courseware/views.py"
+			],
+			[
+				"about",
+				"lms/templates/static_templates/about.html"
+			],
+			[
+				"courses",
+				"lms/templates/courseware/courses.html"
+			],
+			[
+				"daress_la",
+				"lms/static/daress_landing/style.css"
+			],
+			[
+				"create_user",
+				"common/djangoapps/student/management/commands/create_user.py"
+			],
+			[
+				"edx_mi",
+				"edx_migration.sql"
+			],
+			[
+				"course_a",
+				"lms/templates/courseware/course_about.html"
+			],
+			[
+				"index",
+				"lms/templates/index.html"
+			],
+			[
+				"main",
+				"lms/templates/main.html"
+			],
+			[
+				"_mai",
+				"lms/static/sass/azza-theme/_main.scss"
+			],
+			[
+				"coursewarviews",
+				"lms/djangoapps/courseware/views.py"
+			],
+			[
+				"course.h",
+				"lms/templates/course.html"
+			],
+			[
+				"foot",
+				"lms/templates/footer.html"
+			],
+			[
+				"azz",
+				"lms/static/sass/azza-theme/_main.scss"
 			],
 			[
 				"shopmod",
@@ -1208,10 +1314,6 @@
 			[
 				"studenviews.p",
 				"common/djangoapps/student/views.py"
-			],
-			[
-				"aws",
-				"lms/envs/aws.py"
 			],
 			[
 				"insttaskap",
@@ -1238,10 +1340,6 @@
 				"lms/templates/manager.html"
 			],
 			[
-				"man",
-				"lms/templates/manager.html"
-			],
-			[
 				"user_uplo",
 				"lms/djangoapps/user_uploads/views.py"
 			],
@@ -1264,10 +1362,6 @@
 			[
 				"forms.s",
 				"lms/static/sass/shared/_forms.scss"
-			],
-			[
-				"dash",
-				"lms/templates/dashboard.html"
 			],
 			[
 				"aws.",
@@ -1304,10 +1398,6 @@
 			[
 				"courselis",
 				"lms/templates/dashboard/_dashboard_course_listing.html"
-			],
-			[
-				"dashbo",
-				"lms/templates/dashboard.html"
 			],
 			[
 				"dashboar",
@@ -1390,10 +1480,6 @@
 				"edx-platform/lms/templates/course.html"
 			],
 			[
-				"index",
-				"edx-platform/lms/templates/index.html"
-			],
-			[
 				"inde",
 				"edx-platform/cms/templates/index.html"
 			],
@@ -1452,10 +1538,6 @@
 			[
 				"nav",
 				"edx-platform/lms/templates/navigation.html"
-			],
-			[
-				"main",
-				"edx-platform/lms/templates/main.html"
 			],
 			[
 				"regis",
@@ -1526,20 +1608,12 @@
 				"edx-platform/lms/templates/courseware/course_about.html"
 			],
 			[
-				"about",
-				"edx-platform/lms/templates/static_templates/about.html"
-			],
-			[
 				"regist",
 				"edx-platform/lms/templates/register.html"
 			],
 			[
 				"paywith",
 				"edx-platform/lms/templates/coupons/pay_with_coupon.html"
-			],
-			[
-				"course_a",
-				"edx-platform/lms/templates/courseware/course_about.html"
 			],
 			[
 				"tempcours",
@@ -1564,10 +1638,6 @@
 			[
 				"login",
 				"edx-platform/cms/templates/login.html"
-			],
-			[
-				"foot",
-				"edx-platform/lms/templates/footer.html"
 			],
 			[
 				"tempmain",
