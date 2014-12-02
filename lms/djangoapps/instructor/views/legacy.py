@@ -680,7 +680,7 @@ def instructor_dashboard(request, course_id):
         if smdat:
             datatable = {'header': ['username', 'state']}
             datatable['data'] = [[x.student.username, x.state] for x in smdat]
-            datatable['title'] = _('Student state for problem {problem}').format(problem=problem_to_dump)
+            # datatable['title'] = _('Student state for problem {problem}').format(problem=problem_to_dump)
             return return_csv('student_state_from_{problem}.csv'.format(problem=problem_to_dump), datatable)
 
     elif 'Download CSV of all student anonymized IDs' in action:
