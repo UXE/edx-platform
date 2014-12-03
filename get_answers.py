@@ -43,3 +43,23 @@ def get_correctness_from_state(state_json):
 		correctness = ''
 
 	return correctness
+
+def return_csv(file_name, datatable):
+    """Outputs a CSV file from the contents of a datatable."""
+    with open('{}.csv'.format(file_name), "wb") as csvfile:
+	    writer = csv.writer(csvfile, dialect='excel', quotechar='"', quoting=csv.QUOTE_ALL)
+	    encoded_row = [unicode(s).encode('utf-8') for s in datatable['header']]
+	    writer.writerow(encoded_row)
+	    for datarow in datatable['data']:
+	        # 's' here may be an integer, float (eg score) or string (eg student name)
+	        encoded_row = [
+	            # If s is already a UTF-8 string, trying to make a unicode
+	            # object out of it will fail unless we pass in an encoding to
+	            # the constructor. But we can't do that across the board,
+	            # because s is often a numeric type. So just do this.
+	            s if isinstance(s, str) else unicode(s).encode('utf-8')
+	            for s in datarow
+	        ]
+	        writer.writerow(encoded_row)
+
+    return csvfile
