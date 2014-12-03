@@ -29,7 +29,7 @@ def get_answer_from_state(state_json):
 	student_answers = state.get('student_answers', '')
 	if student_answers:
 		answer = state['student_answers'].items()[0][1]
-	else
+	else:
 		answer = ''
 
 	return answer
@@ -39,7 +39,7 @@ def get_correctness_from_state(state_json):
 	student_answers = state.get('student_answers', '')
 	if student_answers:
 		correctness = state['correct_map'].items()[0][1]['correctness']
-	else
+	else:
 		correctness = ''
 
 	return correctness
