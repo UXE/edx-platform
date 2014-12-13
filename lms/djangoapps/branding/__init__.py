@@ -25,9 +25,12 @@ def get_visible_courses():
         filtered_visible_ids = frozenset(settings.COURSE_LISTINGS[subdomain])
 
     filtered_by_org = microsite.get_value('course_org_filter')
+    filtered_by_run = '2014_4'
 
     if filtered_by_org:
         return [course for course in courses if course.location.org == filtered_by_org]
+    if filtered_by_run:
+        return [course for course in courses if course.location.run == filtered_by_run]
     if filtered_visible_ids:
         return [course for course in courses if course.id in filtered_visible_ids]
     else:
