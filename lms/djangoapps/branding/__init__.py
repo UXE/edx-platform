@@ -30,7 +30,7 @@ def get_visible_courses():
     if filtered_by_org:
         return [course for course in courses if course.location.org == filtered_by_org]
     if filtered_by_run:
-        return [course for course in courses if course.location.run == filtered_by_run]
+        return [course for course in courses if course.location.run != filtered_by_run]
     if filtered_visible_ids:
         return [course for course in courses if course.id in filtered_visible_ids]
     else:
