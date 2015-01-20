@@ -20,6 +20,10 @@
 <section class="container dashboard" id="dashboard-main" aria-hidden="false">
 
   <section class="my-courses" id="my-courses">
+    <form action="${reverse('dump_all_users')}" method="GET">
+      <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
+      <input type="submit" value="Doooooo">
+    </form>
     <header>
       <h2>طلبات تحتاج المراجعة</h2>
     </header>
