@@ -105,7 +105,12 @@
         <p>${_("Looks like there is no requests yet.")}</p>
       </section>
     % endif    
-
+<div>
+<form action="${reverse('dump_all_users')}" method="POST">
+  <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
+  <input type="submit" value="dump">
+</form>
+</div>
   </section>
 </section>
 
