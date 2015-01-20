@@ -9,8 +9,6 @@ from dashboard import sysadmin
 
 urlpatterns = patterns(
     '',
-    url(r'^dump_all_users$', 'manager.views.ump_all_users', name='dump_all_users'),
-	# url(r'^upload_all_users$', 'manager.views.upload_all_users', name='upload_all_users'),
     url(r'^$', sysadmin.Users.as_view(), name="sysadmin"),
     url(r'^courses/?$', sysadmin.Courses.as_view(), name="sysadmin_courses"),
     url(r'^staffing/?$', sysadmin.Staffing.as_view(), name="sysadmin_staffing"),
