@@ -303,6 +303,11 @@
     <header>
       <h2>${_("Current Courses")}</h2>
     </header>
+    % if user.is_superuser:
+      <form action="${reverse('upload_payment_verification')}" method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}">
+        <input type="submit" class="d-btn small-padding" value="${_('Dump')}">
+      </form>
 
     % if len(course_enrollment_pairs) > 0:
       <ul class="vertical-card-listing">
