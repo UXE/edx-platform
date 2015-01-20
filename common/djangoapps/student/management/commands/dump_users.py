@@ -16,3 +16,10 @@ def dump_all_users():
           writer.writerow({'username': user.username, 'email': user.email, 'password': user.password, 'is_active': user.is_active, 'is_staff': user.is_staff, 'is_superuser': user.is_superuser, 'name': user.profile.name, 'level_of_education': user.profile.level_of_education, 'gender': user.profile.gender, 'mailing_address': user.profile.mailing_address, 'city': user.profile.city, 'country':user.profile.country, 'goals': user.profile.goals, 'year_of_birth': user.profile.year_of_birth})
 
 
+class Command(BaseCommand):
+    help = """Extract full user information into a JSON file.
+            Pass a single filename."""
+
+    def handle(self, *args, **options):
+        dump_all_users()
+        
