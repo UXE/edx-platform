@@ -6,7 +6,6 @@ Urls for sysadmin dashboard feature
 from django.conf.urls import patterns, url
 
 from dashboard import sysadmin
-from manager.views import dump_all_users
 
 urlpatterns = patterns(
     '',
