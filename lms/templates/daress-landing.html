@@ -140,6 +140,8 @@
                             </li>
                             <li><a href="${reverse('register_user')}">التسجيل</a>
                             </li>
+                            <li><a href="#show-payments-modal" class="show-payment-methods" rel="leanModal">وسائل الدفع</a>
+                            </li>
                         </ul>
                     </nav>
 
@@ -186,6 +188,38 @@
                     إن تأخير تكوين المثقف في العالم العربي أمر يؤثر في التنمية فهذا يعني أن الكثيرين يتساقطون في أثناء العملية التربوية ، وإن من يخرج سليما منها فإن سنين العطاء عنده تكون محدودة للغاية
                 </blockquote>
                 
+            </section>
+            <section>
+              <section id="payments-methods-modal" class="modal payments-methods-modal" aria-hidden="true">
+                <div class="inner-wrapper" role="alertdialog" aria-labelledy="unenrollment-modal-title">
+                  <button class="close-modal">
+                    <i class="icon-remove"></i>
+                    <span class="sr">
+                      ## Translators: this is a control to allow users to exit out of this modal interface (a menu or piece of UI that takes the full focus of the screen)
+                      ${_('Close')}
+                    </span>
+                  </button>
+
+                  <header>
+                    <h2 id="unenrollment-modal-title">
+                      ${_('<span id="track-info"></span> {course_number}?  <span id="refund-info"></span>').format(course_number='<span id="unenroll_course_number"></span>')}
+                      <span class="sr">,
+                        ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
+                        ${_("window open")}
+                      </span>
+                    </h2>
+                    <hr/>
+                  </header>
+                  <div id="unenroll_error" class="modal-form-error"></div>
+                  <form id="unenroll_form" method="post" data-remote="true" action="${reverse('change_enrollment')}">
+                    <input name="course_id" id="unenroll_course_id" type="hidden" />
+                    <input name="enrollment_action" type="hidden" value="unenroll" />
+                    <div class="submit">
+                      <input name="submit" type="submit" value="${_('Unregister')}" />
+                    </div>
+                  </form>
+                </div>
+              </section>
             </section>
             <section id="staff" class="branding-section staff clearfix">
                 <div class="browse-courses">
@@ -316,6 +350,9 @@
             arrows: false,
             speed: 3000
         });
+
+        # modals
+        accessible_modal('.show-payment-methods', "#show-payments-modal .close-modal", "#payments-methods-modal", ".content-wrapper");
     });
     </script>
 
