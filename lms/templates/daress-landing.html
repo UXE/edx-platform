@@ -140,7 +140,7 @@
                             </li>
                             <li><a href="${reverse('register_user')}">التسجيل</a>
                             </li>
-                            <li><a href="#show-payments-modal" class="show-payment-methods" rel="leanModal">وسائل الدفع</a>
+                            <li><a href="#payments-methods-modal" class="show-payment-methods" rel="leanModal">وسائل الدفع</a>
                             </li>
                         </ul>
                     </nav>
@@ -352,7 +352,7 @@
         });
 
         # modals
-        accessible_modal('.show-payment-methods', "#show-payments-modal .close-modal", "#payments-methods-modal", ".content-wrapper");
+        accessible_modal('.show-payment-methods', "#payments-methods-modal .close-modal", "#payments-methods-modal", "#content");
     });
     </script>
 
