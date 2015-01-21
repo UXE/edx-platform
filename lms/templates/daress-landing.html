@@ -202,20 +202,40 @@
 
                   <header>
                     <h2 id="unenrollment-modal-title">
-                      ${_('<span id="track-info"></span> {course_number}?  <span id="refund-info"></span>').format(course_number='<span id="unenroll_course_number"></span>')}
-                      <span class="sr">,
-                        ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
-                        ${_("window open")}
+                       وسائل الدفع
                       </span>
                     </h2>
                     <hr/>
                   </header>
                   <div id="unenroll_error" class="modal-form-error"></div>
                   <form id="unenroll_form" method="post" data-remote="true" action="${reverse('change_enrollment')}">
-                    <input name="course_id" id="unenroll_course_id" type="hidden" />
-                    <input name="enrollment_action" type="hidden" value="unenroll" />
+
+                    <div>
+                    <h2>التحويل البنكي للكويت </h2>
+                    <p>
+
+                      
+                      RISE COMPANY 
+                      حساب رقم : 471010000630 
+                      بيت التمويل الكويتي - الكويت 
+                      فرع اليرموك
+                      Kuwait Finance House 
+                      Al-Yarmouk Branch 
+                      Account#: 471010000630 
+                      IBAN: KW07 KFHO 0000 0000 0047 1010 0006 30 
+                      Swift Code: kfhokwkw
+
+                    </p>
+                    <br/>
+                    <h2>اونلاين عن طريق الباقات الائتمانية</h2>
+                    <p>
+                    
+                      
+                      عن طريق عمل حساب على www.paypal.com  و الدفع عبر "باي بال" الى حسابانا في باي بال المتصل بهذا الايميل
+                      igooglizer@gmail.com
+
+                    </div>
                     <div class="submit">
-                      <input name="submit" type="submit" value="${_('Unregister')}" />
                     </div>
                   </form>
                 </div>
