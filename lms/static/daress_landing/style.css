@@ -418,3 +418,80 @@ footer .pages li, footer .social li {
     display: inline-block;
     margin-left: 20px;
 }
+
+.header-container {
+    width: 100%;
+    background: #fff;
+    height: 69px;
+    overflow: hidden;
+}
+
+.header-inner {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.header-inner .logo {
+    float: right;
+}
+
+.header-inner .logo img{
+    width: 300px;
+}
+
+.header-horizontal-menu {
+    width: auto;
+}
+
+.header-horizontal-menu ul {
+    position: static;
+}
+
+.header-horizontal-menu ul li {
+    position: static;
+}
+
+.header-horizontal-menu ul li a {
+    padding: 25px 10px;
+    font-size: 14px;
+    background: #fff;
+    color: #1d9dd9;
+}
+
+.header-horizontal-menu ul li a:hover, 
+.header-horizontal-menu ul li a:focus {
+    background: #1d9dd9;
+    color: #fff;
+    text-decoration: none;
+}
+
+.join-cta {
+    width: 130px;
+    margin: 80px auto;
+}
+ 
+.join-cta .register {
+    padding: 5px 30px;
+    background: #1C5D91;
+    color: #fff;
+}
+
+.video-player iframe {
+    float: left;
+}
+
+#vision h2 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 40px;
+    letter-spacing: -1px;
+    margin-top: 30px;
+}
+
+.news-scroller h1 {
+    padding: 10px;
+}
+
+.news-scroller {
+    margin: 30px 0;
+}

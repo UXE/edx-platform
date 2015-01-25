@@ -106,64 +106,59 @@
 <body class="<%block name='bodyclass'/> lang_${LANGUAGE_CODE}" dir='rtl'>
   <div class="content-wrapper" id="content">
         <section class="page-container">
+        <header class="header-container">
+                <div class="header-inner clearfix">
+                    <div class="logo">
+                        <a href="/"><img src="http://syasi.org/static/images/syasi-logo.c7850b3f3dfc.png">
+                        </a>
+                    </div>
+                    <nav class="header-horizontal-menu">
+                            <ul>
+                                <li><a href="/about">عن سياسي</a>
+                                </li>
+                                <li><a href="/courses">المقررات</a>
+                                </li>
+                                <li><a href="/staff">طاقم التدريس</a>
+                                </li>
+                                <li><a href="/academic-system">نظام الدراسة</a>
+                                </li>
+                                <li><a href="/contact">تواصل معنا</a>
+                                </li>
+                                <li><a href="#payments-methods-modal" class="show-payment-methods" rel="leanModal">وسائل الدفع</a>
+                                </li>
+                                <li><a href="/register">التسجيل</a>
+                                </li>
+                                <li><a href="/login">دخول</a>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                </div>
+            </header>
         <header class="upper-part">
             <section class="big-branding container">
-                <div class="users-actions">
-                  <a class="register" href="${reverse('register_user')}">حساب جديد</a>
-                  <a class="login" href="${reverse('signin_user')}">دخول</a>
-                </div>
-                <div class="big-logo">
-                    <img src="${static.url('images/syasi-logo.png')}">
-                </div>
                 <div class="messages-cards">
                     <div><h1>مرحباً بكم في الموقع الرسمي لمعهد سياسي</h1></div>
                     <div><h1>أول معهد تدريب سياسي إلكتروني في العالم العربي</h1></div>
                     <div><h1>هدفنا تقديم الدعم الأكاديمي و التدريب المهاري لكل الراغبين في المشاركة السياسية الإحترافية</h1></div>
                 </div>
             </section>
-            <section id="navigation" class="navigation">
-                <div class="navigation-container">
-                    <div class="navigation-logo">
-                        <img src="${static.url('images/syasi-logo-mark.png')}" alt="دارِس">
-                    </div>
-                    <nav class="header-horizontal-menu">
-                        <ul>
-                            <li><a href="${reverse('courses')}">تصفح المقررات</a>
-                            </li>
-                            <li><a href="${marketing_link('ABOUT')}">عن سياسي</a>
-                            </li>
-                            <li><a href="${reverse('staff_page')}">طاقم التدريس</a>
-                            </li>
-                            <li><a href="${reverse('academic_system_page')}">نظام الدراسة</a>
-                            </li>
-                            <li><a href="${marketing_link('CONTACT')}">تواصل معنا</a>
-                            </li>
-                            <li><a href="${reverse('register_user')}">التسجيل</a>
-                            </li>
-                            <li><a href="#payments-methods-modal" class="show-payment-methods" rel="leanModal">وسائل الدفع</a>
-                            </li>
-                        </ul>
-                    </nav>
-
+            <div class="join-cta">
+                  <a class="register" href="${reverse('register_user')}">انضم الأن</a>
                 </div>
-
-            </section>
         </header>
         <div class="lower-part">
             <section id="vision" class="branding-section vision">
-                <div class="video-player container">
+                <div class="video-player container clearfix">
+
+                  <iframe width="600" height="450" frameborder="0" allowfullscreen="1" src="https://www.youtube.com/embed/WGlS5oamhcI?theme=light&showinfo=0&color=white&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8000"></iframe>
+                  <h2>نطمح إلى الوصول إلى جيل من الشباب القادر على ممارسة السياسة بحرفية و وعي</h2>
+                </div>
                 <div class="news-scroller container">
                     <div><h1>نهنئ طلاب دفعة سبتمبر 2014 على إجتيازهم المقررات الدراسية بنجاح</h1></div>
                     <div><h1>تقدم إدارة المعهد لأوائل المقررات منحة مجانية لدراسة أحد المقررات من إختيارهم </h1></div>
                     <div><h1>تم فتح باب التسجيل لدفعة يناير 2015 ستبدأ الدراسة بجميع المقررات يوم السبت 31 يناير 2015</h1></div>
                 </div>
-                  <iframe width="800" height="450" frameborder="0" allowfullscreen="1" src="https://www.youtube.com/embed/WGlS5oamhcI?theme=light&showinfo=0&color=white&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8000"></iframe>
-                </div>
-                <!--
-                <div class="play-yt"></div>
-                <div id="player"></div>
-                -->
-                <h2>نطمح إلى الوصول إلى جيل من الشباب القادر على ممارسة السياسة بحرفية و وعي</h2>
             </section>
 
             <section id="courses-show" class="call-to-action-section courses-show">
