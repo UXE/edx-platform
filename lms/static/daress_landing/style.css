@@ -92,6 +92,9 @@ table {
 .big-branding .messages-cards h1 {
     padding-bottom: 20px;
     padding-top: 10px;
+    color: #fff;
+    letter-spacing: -1px;
+    font-size: 24px;
 }
 .navigation {
     background: #addadd;
@@ -493,6 +496,8 @@ footer .pages li, footer .social li {
 
 .news-scroller h1 {
     padding: 10px;
+    letter-spacing: -1px;
+    font-size: 18px;
 }
 
 .news-scroller {
