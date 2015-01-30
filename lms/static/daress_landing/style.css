@@ -55,6 +55,9 @@ table {
 }
 .upper-part {
     width: 100%;
+    background: url('../images/cover-home.jpg') no-repeat center center;
+    background-size: cover;
+    padding-bottom: 80px;
 }
 .big-branding {
     /*height: 280px;*/
@@ -467,7 +470,7 @@ footer .pages li, footer .social li {
 
 .join-cta {
     width: 130px;
-    margin: 80px auto;
+    margin: 80px auto 0 auto;
 }
  
 .join-cta .register {
@@ -523,3 +526,4 @@ footer .social {
     border-radius: 0;
     width: 100%;
 }
+
