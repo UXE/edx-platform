@@ -121,7 +121,7 @@
   <script src="${static.url('js/course_info.js')}"></script>
 </%block>
 
-<%block name="pagetitle">${_("About {course.display_number_with_default}").format(course=course) | h}</%block>
+<%block name="pagetitle">${get_course_about_section(course, "title")}</%block>
 
 <section class="course-info">
   <header class="course-profile section-block" style="background: url(${course_image_url(course)}) center center no-repeat, url(/static/images/lights_1.jpg) center center no-repeat aliceblue;background-size: cover, cover;">
