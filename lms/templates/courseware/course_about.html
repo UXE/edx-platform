@@ -139,7 +139,7 @@
       <section class="intro">
         <hgroup>
           <h1>
-            <span class="hide">${course.display_number_with_default | h}:</span> ${get_course_about_section(course, "title")}
+            <span class="hide">${get_course_about_section(course, "title")}:</span> ${get_course_about_section(course, "title")}
             % if not self.theme_enabled():
               <a href="#" class="hide">${get_course_about_section(course, "university")}</a>
             % endif
@@ -187,6 +187,10 @@
                       cost=registration_price)}
           </a>
           <div id="register_error"></div>
+        % elif invitation_only and not can_enroll:
+          <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
+        % elif not can_enroll:
+          <span class="register disabled">${_("Enrollment is Closed")}</span>
         %else:
           <a href="#" class="register">
             ${_("Register for {course.display_number_with_default}").format(course=course) | h}
