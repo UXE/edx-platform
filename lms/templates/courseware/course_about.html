@@ -175,7 +175,7 @@
         % elif invitation_only and not can_enroll:
           <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
         % elif not can_enroll:
-          <span class="register disabled">باب التسجيل مقفل</span>
+          <span class="register disabled">تم غلق باب التقديم في الفصل الدراسي الحالي</span>
         %elif settings.FEATURES.get('ENABLE_PAID_COURSE_REGISTRATION') and registration_price:
           <%
           if user.is_authenticated():
